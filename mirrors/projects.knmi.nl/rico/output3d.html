@@ -1,0 +1,504 @@
+<head>
+  <link rel="stylesheet" href="/styles/vinkstyle.css" type="text/css">
+  <title>
+    Output 3D models
+  </title>
+  <!-- Changed by: Margreet van Zanten, Nov 2006 -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="Margreet van Zanten">
+  <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+
+<body>
+
+  <script language="javascript" src="/library/javascript/pop_sitemap.js"></script>
+  <script language="javaScript1.3" src="/library/javascript/makelogicalpath.js"></script>
+
+  <a href="#nadekop" title="skip page header"></a>
+  <a name="pagetop">
+  <table border="0" cellpadding="0" cellspacing="0" width=100% bgcolor="#000099">
+    <tr>
+      <td width="542" align="left" valign="top" height="10"><img src="/vinklude/images/kopboven_en.png" align="left" hspace="0" vspace="0" valign="top" usemap="#kopboven" border="0">
+
+      </td>
+      <form name="zoek" method=POST action="/cgi-www/searchtools/htdig/htsearch.cgi">
+      <td bgcolor="#000099" align=left valign="middle">
+         <!-- Search ht://Dig -->
+         <input type="hidden" name="method" value="and">
+
+         <input type="hidden" name="format" value="builtin-long">
+         <input type="hidden" name="sort" value="score">
+         <input type="hidden" name="config" value="htdig_www_eng">
+
+         <input type="hidden" name="restrict" value="">
+         <input type="hidden" name="exclude" value="">
+
+         <table border=0 cellpadding=0 cellspacing=0>
+            <tr>
+               <td valign="middle">
+
+                  <input type="text" name="words" size=20 maxlength=255 value="" bgcolor="#D3E3E3" style="background-color: #ffffff; width: 200px">
+               </td>
+               <td align=left valign="middle" width=10>
+
+                  <input type=image alt="zoek!" title="Zoek!" img src="/vinklude/images/zoekglas.png" border=0 align=left valign="middle">
+               </td>
+            </tr>
+         </table>
+         <!-- Search ht://Dig -->
+      <td bgcolor="#000099" width="600">&nbsp;
+
+      </td>
+      </form>
+
+    </tr>
+  </table>
+  
+  <table border="0" cellpadding="0" cellspacing="0" width=100% bgcolor="#000099">
+    <tr>
+      <td width="542" align="left" valign="top"><img border=0 src="/vinklude/images/koplinksonder_en.png" hspace=0 vspace=0 align=left valign="top" usemap="#koplinksonder">
+      </td>
+      <td width="220" align="left" valign="top"><img border=0 src="/vinklude/images/koprechtsonder_en.png" hspace=0 vspace=0 align=left valign="top" usemap="#koprechtsonder"> 
+      </td>
+      <td bgcolor="#000099" align=left width="600">&nbsp;
+
+      </td>
+    </tr>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr> 
+      <td width="80" bgcolor="#9999CC" valign="top">&nbsp;</td>
+      <td width="585" height=20 bgcolor="#9999CC" align=left class="crumbpath" valign="centre">
+        <script language="JavaScript">
+          <!-- cloaking
+          document.write(makeLogicalPath());
+          // uncloaking -->
+        </script>
+
+      </td>
+      <td bgcolor="#9999CC">&nbsp;
+      </td>
+    </tr>
+  </table>
+
+  <map name="koplinksonder">
+    <area shape="rect" alt="About KNMI" coords="80,6,150,23" href="/about_knmi/" title="About KNMI" onMouseOver="window.status='About KNMI'; return true;" onMouseOut="window.status=''; return true;">
+    <area shape="rect" alt="Colloquia and workshops" coords="163,6,290,25" href="/research/colloquia/" title="Colloquia and workshops" onMouseOver="window.status='Colloquia and workshops'; return true;" onMouseOut="window.status=''; return true;">
+
+    <area shape="rect" alt="Staff" coords="303,6,335,23" href="/research/staff.html" title="Staff" onMouseOver="window.status='Staff'; return true;" onMouseOut="window.status=''; return true;">
+    <area shape="rect" alt="Publications" coords="347,6,421,24" href="/publications/" title="Publications" onMouseOver="window.status='Publications'; return true;" onMouseOut="window.status=''; return true;">
+    <area shape="rect" coords="501,5,535,23" href="/research/links/" title="Links" onMouseOver="window.status='Links'; return true;" onMouseOut="window.status=''; return true;">
+    <area shape="rect" alt="Contact" coords="435,6,489,23" href="/contact/index_eng.html" title="Contact" onMouseOver="window.status='Contact'; return true;" onMouseOut="window.status=''; return true;">
+    <area shape="default" nohref>
+  </map>
+
+  <map name="kopboven">
+    <area shape="rect" alt="Sitemap" coords="424,14,475,32" href="javascript:pop_sitemap('/sitemap.html',568,250)" title="Sitemap" onMouseOver="window.status='Sitemap'; return true;" onMouseOut="window.status=''; return true;">
+
+    <area shape="rect" alt="Homepage" coords="33,3,73,35" href="/" title="Homepage" onMouseOver="window.status='Homepage'; return true;" onMouseOut="window.status=''; return true;">
+    <area shape="default" nohref>
+  </map>
+
+  <map name="koprechtsonder">
+    <area shape="rect" alt="Research" coords="131,10,206,27" href="/research/" title="Research" onMouseOver="window.status='Research'; return true;" onMouseOut="window.status=''; return true;">
+    <area shape="rect" alt="KODAC: KNMI Operational Data Centre" coords="124,28,206,44" href="/kodac/" title="KODAC: KNMI Operational Data Centre" onMouseOver="window.status='KODAC: KNMI Operational Data Centre'; return true;" onMouseOut="window.status=''; return true;">
+    <area shape="default" nohref>
+  </map>
+
+  
+  <a name="nadekop"></a>
+
+
+  <table border="0" width="762" cellspacing="0" cellpadding="0">
+    <tbody> 
+      <tr> 
+        <td rowspan="6" width="80"> </td><td valign="top" colspan="3"></td>
+
+        <td valign="top" align="left" width="451" valign=top>
+          <div id="printable" name="printable"  align="justify">      
+
+            
+
+   <div class="rubriekkop">  </div>        
+<div class="hoofdkop"> Output 3D models </div>         
+	    
+	    
+
+<div class="alineakop"> General remarks on the data format  </div>     
+
+
+We ask for the following NETCDF files: one with a time series of scalars and two with 
+the time series of profiles, of which certain profiles are to be averaged over 3600 s, 
+while others should represent an instantaneous field.
+Please provide in each NETCDF file any useful information as a global attribute, 
+for example the investigator name, email address and model characteristics.<br>
+
+<div class="alineakop"> Notes  </div>
+
+<ul>
+<li> When specifications in the output list are unclear, don't hesitate to ask. Rather one question to many than one to few! 
+<li>Liquid water includes all (cloud and rain) condensed water (ql = qc + qr).
+<li>A cloudy grid cell is defined as one which contains cloud water 
+qc</sub>>0.01 g/kg
+<li>A rainy grid cell is defined as one which contains rain water 
+qr</sub>>0.001 g/kg
+<li>A precipitating grid cell is defined as one with a precipitation flux of 3.65e-5 kg/kg m/s or higher.
+<li>A cloud core grid cell is defined as one which is cloudy and positively buoyant, i.e. &theta<sub>v</sub> is larger than the slab averaged &theta<sub>v</sub>.
+<li>Rain water (qr) is defined as drops having a diameter of 80 micron or larger.
+<li>Mean drop(let) concentration (Nc or Nr) should be averaged over resp. cloudy or rainy grid cells only.
+<li>Whether or not your model includes rainwater in its internal representation
+of liquid water potential temperature and total specific humidity, rain water should 
+be included in the profiles of these variables and their fluxes.
+<li>Precipitation flux includes sedimentation of all (cloud and rain) liquid water.
+<li>The timeseries of precipitation flux at various heights should be based on all precipitation fluxes, so no threshold value is applied.
+<li> Surface sensible heat flux is the surface flux of temperature, not potential temperature.
+<li> The histogram of the surface precipitation flux should contain 100 bins, with a lowest value sampled of 6.2 10^-8 kg/kg m/s and a highest value sampled of 3.421 10^-3 kg/kg m/s. (Eq. with a lower limit of .18 W m^-2 and an upper limit of 10000.18 W m^-2, thus equidistant bins with a width of 100 W m^-2.) The sum of all bins together should be equal to 1. The sampling rate should be equivalent to the one chosen for the fluxes and variances calculations.
+<li> All profile output is asked for at so called full level (i.e., 20, 60, 100 m etc), if specific model output is generated at an intermediate level, please linearly interpolate the output to the full level. Please send in only output at the 100 levels specified, e.g., leave out any output of a level below the surface.
+</ul>
+
+<div class="alineakop"> Time serie of scalars  </div>
+
+Instantaneous values are to be provided 
+at an interval of 60&nbsp;s for the duration of each simulation.<br>
+File name = lastname_scalars.nc (e.g. vanZanten_scalars.nc) for the simulation without microphysics and file name = lastname_scalars_micro.nc for the simulation with microphysics<br>
+<br>
+Dimensions: 
+<ul>
+<li>{time} Number of output times
+</ul>
+<br>
+Variables: 
+<ul>
+<li>{time} - Time [s]
+<li>{zi} - Mean height of grid cells with largest potential temperature gradient [m]
+<li>{zcb} - Height of bottom of lowermost cloudy grid cells [m]
+<li>{zct} - Height of top of highest cloudy grid cells [m]
+<li>{zmaxcfrac} - Height of bottom of gridlevel with highest mean cloud fraction [m]
+<li>{M_zmaxcfrac} - Cloud core massflux at zmaxfrac height [kg/m^2s ]
+<p>
+<li>{LWP} - Mean liquid water path [g/m^2]
+<li>{LWP_var} - Liquid water path variance [g^2/m^4]
+<li>{RWP} - Mean rain water path [g/m^2]
+<li>{cc} - Fraction of columns with number of cloudy grid cells  >&nbsp;0&nbsp; []
+<p>
+<li>{shf} - Mean upward surface sensible heat flux [K m/s]
+<li>{lhf} - Mean upward surface latent heat flux [kg/kg m/s]
+<li>{Nc} - Mean cloud droplet concentration [cm^-3]
+<li>{Nr} - Mean rain drop concentration [cm^-3]
+<li>{tke} - Vertically integrated TKE (sgs plus resolved), not density weighted [m^3/s^2]
+<p>
+<li>{prec_srf} - Mean (downward) precipitation flux at the surface [kg/kg m/s]
+<li>{prec_500} - Mean (downward) precipitation flux at 500 m [kg/kg m/s]
+<li>{prec_980} - Mean (downward) precipitation flux at 980 m [kg/kg m/s]
+<li>{prec_1500} - Mean (downward) precipitation flux at 1500 m [kg/kg m/s]
+<li>{prec_1980} - Mean (downward) precipitation flux at 1980 m [kg/kg m/s]
+<li>{prec_2500} - Mean (downward) precipitation flux at 2500 m [kg/kg m/s]
+<li>{prec_srf_prc} - Precipitation flux (downward) at the surface, averaged over precipitating surface grid cells only [kg/kg m/s]
+<li>{prec_500_prc} - Precipitation flux (downward)at 500m, averaged over precipitating  grid cells at 500 m only [kg/kg m/s]
+<li>{prec_fracsrf} - Fraction of surface grid cells with a surface precipitation flux of 3.65e-5 kg/kg m/s or higher[-]
+</ul>
+
+<div class="alineakop"> Time serie of instanteneous profiles  </div>
+Instantaneous profiles are only to be provided at t = 0 s for the simulation without microphysics.<br>
+File name = lastname_profiles_inst.nc (e.g. vanZanten_profiles_inst.nc)<br>
+<br>
+Dimensions: 
+<ul>
+<li>{time} Number of output times (25)
+<li>{zf} Number of layers (full level)
+
+</ul>
+<br>
+Independent variables: 
+<ul>
+<li>{time} Time [s]
+<li>{zf} Altitude of layer mid-points (full level) [m]
+</ul>
+<br>
+Dependent variables, indexed (time, zf or zh): <br>
+
+<ul>
+<li>{rho} Reference density [kg/m^3]
+<li>{u} Zonal wind [m/s]
+<li>{v} Meridional wind [m/s]
+<li>{thetal} Liquid water potential temperature [K]
+<li>{qt} Total water (vapor+liquid) [g/kg]
+</ul>
+
+<div class="alineakop"> Time serie of hourly averaged profiles  </div>
+Profiles are to be averaged over 3600&nbsp;s intervals for the
+duration of each simulation. The average over the first hour (1-3600 s) is given at t = 3600 s etc.<br>
+File name = lastname_profiles.nc (e.g. vanZanten_profiles.nc) for the simulation without microphysics and file name = lastname_profiles_micro.nc for the simulation with microphysics<br>
+<br>
+Dimensions: 
+<ul>
+<li>{time} Number of output times (24)
+<li>{zf} Number of layers (full level)
+<li>{llim} Number of bins in histogram
+</ul>
+<br>
+Independent variables: 
+<ul>
+<li>{time} Time [s]
+<li>{zf} Altitude of layer mid-points (full level) [m]
+<li>{llim} Value of the left limit of the bins in the histogram [kg/kg m/s]
+</ul>
+<br>
+Dependent variables, indexed (time, zf): 
+<ul>
+
+<li>{u} Zonal wind [m/s]
+<li>{v} Meridional wind [m/s]
+<li>{thetal} Liquid water potential temperature [K]
+<li>{qt} Total water (vapor+liquid) [g/kg]
+<li>{ql} Condensed water [g/kg]
+<li>{qr} Rain water[g/kg]
+<li>{u_var} Resolved variance of zonal wind [m^2/s^2]
+<li>{v_var} Resolved variance of meridional wind [m^2/s^2]
+<li>{w_var} Resolved variance of vertical wind [m^2/s^2]
+<li>{w_skw} Resolved (w'<sup>3</sup>)/(w'<sup>2</sup>)<sup>3/2</sup> [-]
+<li>{thetal_var} Resolved variance of <i>&theta<sub>l</sub></i> [K^2]
+<li>{qt_var} Resolved variance of <i>q<sub>t</sub></i> [kg^2/kg^2]
+
+<p>
+<li>{tot_wthl} Total <i>&theta<sub>l</sub></i> flux, including subgrid-scale [K m/s]
+<li>{sgs_wthl} Subgrid-scale <i>&theta<sub>l</sub></i> flux [K m/s]
+<li>{tot_wqt} Total <i>q<sub>t</sub></i> flux, including subgrid-scale[kg/kg m/s]
+<li>{sgs_wqt} Subgrid-scale <i>q<sub>t</sub></i> flux [kg/kg m/s]
+<li>{tot_wthv} Total &theta<sub>v</sub> flux [K m/s]
+<li>{tot_uw} Total (sgs plus resolved) zonal momentum flux [m^2/s^2]
+<li>{tot_vw} Total (sgs plus resolved) meridional momentum flux [m^2/s^2]
+
+<p>
+<li>{res_tke} Resolved TKE [m^2/s^2]
+<li>{sgs_tke} Subgrid TKE [m^2/s^2]
+<li>{res_buoy} Resolved buoyancy TKE production [m^2/s^3]
+<li>{res_shr} Resolved shear TKE production [m^2/s^3]
+<li>{res_transport} Resolved TKE transport (turbulent plus pressure) [m^2/s^3]
+<li>{res_diss} TKE dissipation (explicit plus numerical) [m^2/s^3]
+<p>
+
+<li>{cfrac} Fraction of cloudy grid cells [-]
+<li>{prec} Precipitation flux (positive downward) [kg/kg m/s]
+<li>{prec_prc} Precipitation flux (positive downward), averaged over precipitating grid cells only [kg/kg m/s]
+<li>{frac_prc} Fraction of precipitating grid cells with a precipitation flux of 3.65e-5 kg/kg m/s or higher[-]
+<li>{Nr} Mean rain drop concentration (see notes) [cm^-3]
+<li>{Nc} Mean cloud droplet concentration (see notes) [cm^-3]
+<p>
+
+<li>{w_cld} average over all cloudy grid points of w (m/s)
+<li>{thl_cld} average over all cloudy grid points of <i>&theta<sub>l</sub></i> (K)
+<li>{qt_cld} average over all cloudy grid points of <i>q<sub>t</sub></i>t
+(g/kg)
+<li>{ql_cld} average over all cloudy grid points of <i>q<sub>l</sub></i>
+(g/kg)
+<li>{thv_cld} average over all cloudy grid points of <i>&theta<sub>v</sub></i> (K)
+<p>
+
+<li>{cofrac} Fraction of cloud core grid points [-]
+<li>{w_core} average over all cloud core grid points of vertical velocity
+&lt;w&gt;_core (m/s)
+<li>{thl_core} average over all cloud core grid points of <i>&theta<sub>l</sub></i> (K)
+<li>{qt_core} average over all cloud core grid points of <i>q<sub>t</sub></i>
+(g/kg)
+<li>{ql_core} average over all cloud core grid points of <i>q<sub>l</sub></i>
+(g/kg)
+<li>{thv_core} average over all cloud core grid points of <i>&theta<sub>v</sub></i> (K)
+
+</ul>
+<br>
+Dependent variables, indexed (time, llim): 
+<ul>
+<li> {histo_srf} Histogram of surface precipitation  
+</ul>
+<p>
+
+<div class="alineakop"> Updates  </div>
+
+<ul>
+<li> Units of M_zmaxcfrac added and tke units corrected. [Nov 14, thanks to A. Ackerman]
+<li> Added two more decimals to the upperlimit of the histogram (3.421*10^-3 instead of 3.4*10^-3)[Nov 17]
+<li> Added units to llim [Nov 20, thanks to A. Ackerman]
+</ul>
+<br>
+
+	    
+    
+	    
+        
+<!-- * onderstaande 2 regels niet wijzigen *-->
+
+          </div> <!-- end printable section -->
+
+ 
+ 
+ 
+ <td width="11" &nbsp;></td>
+<td width="220" valign="top">
+ 
+<div class="menukopje">3D models</div>
+<div class="menulink"><a href="index.html">Home</a></div>
+<div class="menulink"><a href="intro3d.html">Introduction</a></div>
+<div class="menulink"><a href="background3d.html">Background</a></div>
+<div class="menulink"><a href="setup3d.html">Set up</a></div>
+<div class="menulink"><a href="output3d.html">Output</a></div>
+<div class="menulink"><a href="appendix3d.html">Appendix</a></div>
+<div class="menulink"><a href="references.html">References</a></div>
+<div class="menulink"><a href="contact3d.html">Contact</a></div>
+
+<div class="menukopje">1D models</div>
+<div class="menulink"><a href="index.html">Home</a></div>
+<div class="menulink"><a href="background1d.html">Background</a></div>
+<div class="menulink"><a href="setup1d_composite.html">Set up short composite run </a></div>
+<div class="menulink"><a href="output1d_composite.html">Output short composite run</a></div>
+<div class="menulink"><a href="appendix1d_composite.html">Appendix composite run</a></div>
+<div class="menulink"><a href="setup1d_long.html">Set up long run</a></div>
+<div class="menulink"><a href="output1d_long.html">Output long run</a></div>
+<div class="menulink"><a href="appendix1d_long.html">Appendix long run</a></div>
+<div class="menulink"><a href="references.html">References</a></div>
+<div class="menulink"><a href="contact1d.html">Contact</a></div>
+
+ 
+
+ 
+ 
+ 
+          
+<!-- * einde links * -->
+<!-- * einde toevoegen van de html-code *-->
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+<script language="javascript">
+<!-- cloaking
+
+function printpage() {
+  newwindow = window.open("","Printje","toolbar=0,location=0,status=0,menubar=0,scrollbars=0,width=600,height=400")
+  newwindow.document.open();
+  newwindow.focus();
+  newwindow.document.write("<html><head><link rel='stylesheet' ");
+  newwindow.document.write("href='/styles/vinkstyle.css' type='text/css'></head>");
+  newwindow.document.write("<body onLoad='this.print();this.close()'>");
+  var body = document.getElementById('printable').innerHTML;
+  newwindow.document.write(body);
+  newwindow.document.write("</body></html>");
+  newwindow.document.close();
+}
+
+if (!document.layers)
+document.write('<div id="divStayBottomRight" style="position:absolute; z-index:100">')
+// uncloaking -->
+</script>
+<layer id="divStayBottomRight" style="z-index:100">
+
+<!--EDIT BELOW CODE TO YOUR OWN MENU-->
+<script language="javascript">
+<!-- cloaking
+var ns = (navigator.appName.indexOf("Netscape") != -1 && navigator.appVersion.charAt(0) <= "6" );
+var maxY = ns ? document.height : document.body.scrollHeight;
+var scrY = ns ? innerHeight : document.body.clientHeight;
+//alert(maxY + " " + scrY);
+if (document.getElementById('printable') || maxY > scrY) {
+   document.write('<div class="bottomfloat">');
+   document.write('<table border=0 cellspacing=0 cellpadding=0 bgcolor="#E3E3F4" style="padding-right:2px;">');
+
+   if (document.getElementById('printable')) {
+      document.write('<tr>');
+      document.write('   <td style="background-image: URL(/images/printertje.gif); background-repeat: no-repeat; padding-left: 18px;">');
+      document.write('     <a class="kalelink" href="javascript:printpage();">Print&nbsp;this&nbsp;page</a></td>');
+      document.write('</tr>');
+   }
+   if (maxY > scrY) {
+      document.write('<tr>');
+      document.write('   <td style="background-image: URL(/images/top_pijl.gif); background-repeat: no-repeat; padding-left: 18px;">');
+      document.write('     <a class="kalelink" href="javascript:void(scrollTo(0,0));">To&nbsp;top&nbsp;of&nbsp;page</a></td>');
+      document.write('</tr>');
+   }
+   document.write('</table>');
+   document.write('</div>');
+}
+// uncloaking -->
+</script> 
+<!--END OF EDIT-->
+
+</layer>
+
+
+<script type="text/javascript">
+<!-- cloaking
+
+/*
+Floating Menu script-  Roy Whittle (http://www.javascript-fx.com/)
+Script featured on/available at http://www.dynamicdrive.com/
+This notice must stay intact for use
+*/
+
+//Enter "frombottom" or "fromtop"
+var verticalpos="frombottom"
+
+if (!document.layers)
+document.write('</div>')
+
+function JSFX_FloatBottomDiv()
+{
+//	var startX = 0,
+	var startX = 539,
+	startY = 50;
+	var ns = (navigator.appName.indexOf("Netscape") != -1 && navigator.appVersion.charAt(0) <= "6" );
+	var d = document;
+	function ml(id)
+	{
+		var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+		if(d.layers)el.style=el;
+		el.sP=function(x,y){this.style.left=x;this.style.top=y;};
+		el.x = startX;
+		if (verticalpos=="fromtop")
+		el.y = startY;
+		else{
+		el.y = ns ? pageYOffset + innerHeight : document.body.scrollTop + document.body.clientHeight;
+		el.y -= startY;
+		}
+		return el;
+	}
+	window.stayBottomRight=function()
+	{
+		if (verticalpos=="fromtop"){
+		var pY = ns ? pageYOffset : document.body.scrollTop;
+//		ftlObj.y += (pY + startY - ftlObj.y)/8;
+		ftlObj.y += (pY + startY - ftlObj.y)/1;
+		}
+		else{
+		var pY = ns ? pageYOffset + innerHeight : document.body.scrollTop + document.body.clientHeight;
+//		ftlObj.y += (pY - startY - ftlObj.y)/8;
+		ftlObj.y += (pY - startY - ftlObj.y)/1;
+		}
+		ftlObj.sP(ftlObj.x, ftlObj.y);
+		setTimeout("stayBottomRight()", 10);
+
+	}
+	ftlObj = ml("divStayBottomRight");
+	stayBottomRight();
+}
+JSFX_FloatBottomDiv();
+// uncloaking -->
+</script>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=80><div style="float:right; padding-right:11px;"><img src="/vinklude/images/bolletjes.gif" border=0 align=right></div></td>
+
+<td>
+<div align=left style="width: 686px; height: 1px; margin-top: 14px; border-top: solid 1px #999999; color: #999999;">
+&#169; KNMI
+</div>
+</td>
+</tr>
+</table>
+<p><br>
+
+</body>
+</html>
