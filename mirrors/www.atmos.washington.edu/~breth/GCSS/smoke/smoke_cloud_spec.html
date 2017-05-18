@@ -1,0 +1,422 @@
+<html> <head>
+<title>GCSS Smoke Cloud Case Specifications</title>
+</head>
+
+<body>
+<h1>GCSS Smoke Cloud Case Specifications</h1>
+<pre>
+Dear GCSS Intercomparison Participants,
+
+   Attached is a description of a second GCSS-sponsored
+intercomparison (GCSS2) which we invite you to participate in.  Based
+on discussions at the Aug 94 workshop, this is a smoke cloud case, in
+which a radiatively active smoke layer cools radiatively at a
+prescribed rate below an inversion.  The layer thickness, smoke-top
+radiative flux divergence, and inversion strength are patterned on our
+previous case for ease of comparison.  The UKMO and Univ. of
+Washington groups have tested this case already, with quite intriguing
+preliminary results.  We anticipate writing a paper comparing 2D LES,
+3D LES and experimental results for this case in which your
+contributions will be published.
+
+  The following discussion is divided into four sections, Background,
+Run Setup, Data Format for Results, and Model Description.  Enjoy!
+
+   Please email results to Malcolm MacVean
+(mkmacvean@email.meto.govt.uk), who will synthesize them as Chin-Hoh
+and Steve did for the first GCSS intercomparison.  If there is
+interest, as results become available, Chris can take graphs produced
+by Malcolm and make them available through Mosaic.  Let Chris
+(breth@amath.washington.edu) know if you have access to Mosaic and are
+interested in this.  If there is enough interest, we can have a
+discussion of this case at the Charlotte AMS Boundary Layer
+Conference.  We plan to have a discussion of this case, along with
+ASTEX Lagrangians cases which you will hear about within a month or
+so, at a planned GCSS workshop in the Netherlands at the end of
+August...more details on this later.
+
+                      Chris Bretherton and Malcolm MacVean
+
+*******************************************************************************
+     Background:  The A Dilemma, Stratocumulus Entrainment, and LES Modelling
+
+   A proposed smoke-cloud simulation could help shed light on an important 
+and currently paradoxical problem with entrainment closures for marine
+stratocumulus clouds.  This problem was first raised by the work of Nicholls
+and Turton (1986,QJRMS,112,461-480), or NT, who compared entrainment calculated
+from aircraft measurements at the tops of stratocumulus over the North Sea
+with a laboratory experiment of McEwan & Paltridge (1976,JGR,81,1095-1102), or
+MP, which was very analogous to our proposed smoke plume simulation (more on 
+this later).
+   Both results were placed in the nondimensional form
+
+    we/wstar = A/Ri
+
+where we is entrainment rate, wstar is a convective velocity scale such that
+wstar^3 = 2.5*(vertical integral of buoyancy flux over the convective layer),
+the bulk Richardson number Ri = zinv*{g*dthetav_inv/theta0}/wstar^2, where
+g is gravity, zinv is the inversion height, theta0 is a reference potl. temp.,
+and (dthetav)inv is the virtual potential temp. jump across the inversion.
+For a dry layer heated from below, A = 0.2 is consistent with both lab
+experiments and atmospheric observations.  For stratocu, however, typical
+values of we (0.005 m/s), wstar (0.6 m/s), dthetav_inv (7 K) and zinv (500 m)
+give Ri = 300 and A = 2.5, more than ten times as large.
+   The experiment of McEwan and Paltridge studied entrainment into a purely
+radiatively driven mixed layer with no condensation.  The strategy was to
+turn the geophysical system upside down, starting with two homogeneous layers 
+of different densities and stimulating convection in the upper layer by
+radiatively heating its base.  This was accomplished by putting a strongly 
+light-absorbing dye in the upper layer, and beaming light up through the lower
+layer so that it would be absorbed in a thin skin at the bottom of the dyed
+upper layer.  The entrainment of the upper layer into the lower layer could
+then be studied.  This may be recognized as the smoke-cloud upside-down.
+MP drew some curious conclusions from their experiments due to the rather
+limited parameter regime that they studied.  For instance, they found no clear
+dependence of entrainment rate on the amount of stratification as measured
+by Ri.  However, NT took MP's typical values of we, wstar, etc. and deduced a
+typical A = 0.05 from their experiments...a factor of 50 smaller than the
+stratocumulus values!.  They attributed the difference to evaporative
+enhancement of entrainment, which therefore should be a dominant influence on
+entrainment rate even for CTEI-stable cloud layers.  One caveat in comparing
+MP's results with the atmosphere is that they were conducted in water, which
+has a different Prandtl number than air, and also that while the large-scale
+convective motions were turbulent, the entrainment processes may not have been
+fully turbulent.  Nevertheless the difference from aircraft observations was
+striking.
+   Bob Breidenthal, an experimental fluid dynamicist at the University of 
+Washington, became intrigued by this problem after work he did with his
+student Shanqyang Shy on entrainment at a stably stratified interface between
+two fluids exhibiting buoyancy reversal (an analogue to evaporative cooling)
+upon mixing showed that if turbulence was mechanically stimulated in the lower
+layer, the entrainment rate was only weakly sensitive to the amount of 
+buoyancy reversal, suggesting that the A's in stratocumulus should be almost
+identical (with 20%) to within smoke layers.  Since MP's experiments left 
+something to be desired in covering a large range of Ri, another student
+working with Breidenthal, Ben Sayler, repeated MP's experiments with a
+slightly more flexible arrangement for varying Ri. Their results (recently
+submitted to JFM) are consistent with Ri^-1 scaling for we/wstar, and 
+generally corroborate MP's result in the overlap region, with A = 0.08.  The
+paradox remains...why are clouds different?  We call this the A dilemma.
+
+   We are in a unique position to attack the A dilemma numerically.
+Can we reproduce MP and Sayler & Breidenthal's A = 0.05-0.08 for smoke-cloud
+LES simulations?  Since the previous workshop showed that LES entrainment
+rates (0.7-1.5 cm/s) were at least in the ballpark for stratocu, we may
+be able to numerically capture and resolve the huge difference in A between
+real clouds and smoke clouds.  This provides both a motivation for the smoke
+cloud intercomparison as our next case study, and also may provide a 
+scientific forum for publishing our results, for if we can present results
+for the two cases from many LES's using different numerical schemes and which
+all show a large difference in A, we can better argue that our we's have 
+physical meaning.
+
+******************************************************************************
+      Run Setup
+
+   The numerical setup is quite simple.  We use a very similar
+domain size and vertical and horizontal resolution to that in our last
+intercomparison.  However, we set mixing ratio qv to zero and start
+with a prescribed two-layer potential temperature distribution.  We
+introduce a passive 'smoke' tracer S initially equal to 1 in the lower
+layer and 0 in the upper layer.  At all later times, S will correspond
+to the fraction of lower layer fluid in any fluid parcel.  We then let
+S be radiatively active by assuming a radiative flux Fr0 exiting
+upward out of the top of our numerical domain and then assuming that
+at the half-way heights between gridpoints (indexed by k, with spacing dz)
+
+   Fr(k-.5) = Fr0*exp(-Ka*S_path(k-.5))
+   dtheta/dt (k) = -(Fr(k+.5) - Fr(k-.5))/(rho(k)*Cp*dz)
+   S_path(k-.5) = sum from K = k to nz of rho(k)*S(k)*dz
+
+Fr0>0 corresponds to a negative downward flux of radiation, so
+'absorption' or this negative flux causes cooling at the top of the
+lower layer.  The absorption coefficient Ka = .02 m^2/kg, giving an
+optical depth of 44 m (realistic for a stratocumulus cloud).  Taking
+Fr0= 60 W/m2 at a 7 K inversion at the top of a 700 m deep smoke
+layer, we get a pretty good radiative analogue of the stratocu with
+similar radiative flux divergence.
+
+*********************************************
+             Initial sounding
+*********************************************
+
+  Potential temperature (K) at height z (m):
+    0<= z <= 687.5   : 288
+    687.5< z < 712.5 : 288+0.28*(z-687.5)
+    712.5<= z <=1250 : 295+1x10^(-4)*(z-712.5)
+  Total-water mixing ratio:
+    0
+  Smoke:
+    0<= z <= 687.5   : 1
+    687.5< z < 712.5 : 1-0.04*(z-687.5)
+    712.5<= z <=1250 : 0
+
+  If you use a prognostic equation for subgridscale turbulent kinetic energy
+  or other turbulent quantities, initialize these to zero.  Also, for such
+  models choose the surface roughness length as 0 and von Karman's constant
+  as 0.4.
+
+  Mean surface pressure = 1000 mb
+  Definition of potential temperature is theta = T*(pref/p)^(Rd/Cp), where
+    pref = 1000 mb, Rd = 287 J/(kg-K) is the gas constant for dry air, and
+    Cp = 1004 J/(kg-K) is the isobaric specific heat of dry air.
+  If you are using a Boussinesq model, use as your reference density the
+    density  1.1436 kg/m^3 of air of theta = 291.5 and pressure = 940 mb
+  If you are using an anelastic model that is based upon an isentropic 
+    reference profile, use theta0 = 291.5 K to generate this profile.
+*********************************************
+             Domain
+*********************************************
+  Duration of run : 180 min
+  Domain Height      : 1250. m
+  Domain Length (X)  : 3200. m
+  Domain Width  (Y)  : 3200. m
+
+  Vertical Grid Points : 50  (dz = 25 m)
+         X Grid Points : 64  (dx = 50 m)     
+         Y Grid Points : 64  (dy = 50 m)
+
+  If your model uses variable vertical resolution, try to match dz = 25 m as 
+  best as you can, at least near the inversion.
+
+  If you are doing a 2D run, our preliminary results suggest that you
+  are likely to find large temporal variations of the smoke layer average 
+  potential temperature flux related to the domain size.  We suggest that 
+  you also try and submit to us results from a wide domain run with
+  a horizontal domain size of 25.6 km and otherwise identical to the simulation
+  specified here.  
+
+********************************************
+        Other Details
+********************************************
+
+  Free slip, rigid lid top and bottom BC's
+  No scalar fluxes through top or bottom boundary
+  Periodic lateral BC's
+  No subsidence
+  No Coriolis forcing
+  No mean wind
+  No sponge at the top of the domain
+
+  Random Initialization : spatially uncorrelated random perturbation uniformly
+                          distributed between -0.1 and 0.1 K, applied
+                          to initial temperature field at all gridpoints with
+                          z < 700 m.
+
+*************************************************************************** 
+            Data Format for Presenting Results
+
+
+Our intercomparison results will be presented in five different
+sets.  If you have a 1D model, you may choose to enter just the first
+four sets. The data format for presenting intercomparisons is modelled
+on Chin-Hoh's format for the first intercomparison, but because of the
+nature of the run, there are some differences, so read carefully.  In
+what follows, f-bar refers to a horizontal average of f.  The layer
+average of f is the vertical average of f-bar from the surface to the
+smoke top height zi (which is defined in A.2 below).  Please precede
+each dataset below by a line of up to 80 characters including the letter 
+identifying it, (for sets B-E) the middle of the averaging hour, the 
+investigator first initial_last name and, optionally, any further
+distinguishing characteristics, separated by spaces, e. g.
+
+A M_MacVean 2D run in 25.6km domain 
+...data for set A...
+B 1.5 M_MacVean 2D run in 25.6km domain
+...data for set B...
+    .
+    .
+    .
+E 1.5 M_MacVean 2D run in 25.6km domain
+...data for set E...
+B 1.5 M_MacVean 2D run in 25.6km domain
+...data for set B...
+    .
+    .
+    .
+E 1.5 M_MacVean 2D run in 25.6km domain
+...data for set E...
+B 2.5 M_MacVean 2D run in 25.6km domain
+...data for set B...
+    .
+    .
+    .
+E 2.5 M_MacVean 2D run in 25.6km domain
+...data for set E...
+
+Since models change, we are asking all participants to again fill out
+a model description section as was done last time.  Since the purpose
+of an intercomparison is to understand how and why different models
+yield different results when applied to the same problem, please
+complete applicable parts of this section carefully.
+
+----------------------------------------------------------------------
+
+Set A of the intercomparison compares the time evolution, throughout
+the whole three hour simulation period, of:
+
+(1) simulation time (in min)
+(2) smoke top height zi (in meters), defined as the horizontal average
+    of the column smoke top height zicol(i,j).  The column smoke-top 
+    height is obtained by finding the highest grid level k at which 
+    S > 0.5, then linearly interpolating above this level to find the 
+    height at which S = 0.5: 
+      zicol(i,j) = (1-chi)*z(k) + chi*z(k+1), 
+      chi = (S(i,j,k)-0.5)/(S(i,j,k)-S(i,j,k+1)) 
+(3) Layer averaged total (resolved + subgrid) turbulent kinetic energy 
+    (in m^2/s^2)
+(4) Layer averaged subgrid turbulent kinetic energy 
+    (in m^2/s^2)
+(5) Layer averaged total (resolved + subgrid) potential temperature 
+    flux rho*Cp*w'theta'-bar (in W/m^2)
+(6) Layer averaged subgrid potential temperature 
+    flux rho*Cp*w'theta'-bar (in W/m^2)
+(7) The horizontally averaged smoke path, defined as the integral from surface
+    to top of rho(k)S(k)-bar (this is a check on smoke conservation).
+
+The data format for Set A is: (7F10.2).
+
+---------------------------------------------------------------------
+
+Set B compares the horizontal mean profiles after 2.5 hours
+
+(1) height (in meters), where the following mean values locate, 
+(2) U-bar (in m/s) 
+(3) V-bar (in m/s) 
+(4) potential temperature theta-bar (in K) 
+(5) mean smoke mixing ratio S-bar (0-1)
+(6) Reference density profile rho(z) (kg/m^3) 
+    (use mean density for compressible models)
+
+ The data format for Set B is (3F8.2, 3F8.3).
+
+Set C compares the flux profiles (resolved plus subgrid, except where
+explicitly mentioned), together with the skewness, eddy viscosity and
+eddy diffusivity, averaged over hours 2-3:
+
+(1) height (in meters), where the following fluxes locate, 
+(2) u^2 + v^2-bar  (in m^2/s^2)
+(3) w^2-bar  (in m^2/s^2)
+(4) Potential temperature flux rho*Cp*w'theta'-bar (in W/m^2)
+(5) Subgrid potential temperature flux rho*Cp*w'theta'-bar (in W/m^2)
+(6) Radiation flux (in W/m^2) 
+(7) Smoke flux w'S'-bar (in m/s) 
+(8) Subgrid smoke flux w'S'-bar (in m/s) 
+(9) The skewness profile w'^3-bar/w'^2-bar^(3/2)
+(10)Eddy viscosity-bar
+(11)Eddy diffusivity for heat, smoke-bar (in m^2/s)
+ 
+
+ The data format for Set C is (F8.2, 2F8.4, 3F8.2, 3F10.6, 2F8.2).
+ If your subgridscale scheme uses higher-order closure and cannot
+ be formulated in terms of downgradient diffusion, write -1. for
+ all levels in (10) and (11).
+
+Set D compares parameters relevant to entrainment closure:
+
+(1) Entrainment rate we = (zi(3 hrs) - zi(2 hrs))/3600  (in m/s)
+(2) wstar = (2.5*vertical integral from z=0 to domain top of 
+    the 2-3 hour average w'b'-bar)^(1/3) (in m/s)
+    Here buoyancy flux w'b'-bar = g*w'theta'-bar/theta0 (units of m^2/s^3) and
+    theta0 = 291.5 K is the reference potential temperature.
+(3) deltab = g*(theta(zi( 2.5 hrs)+100 m)
+                 - theta(zi(2.5 hrs)-100 m))/theta0          (m/s^2)
+(4) A = we*deltab*zi(2.5 hrs)/wstar^3
+
+ The data format for Set D is (3F8.5, F8.2)
+
+
+For set D, we encourage you to also submit statistics based on the
+1.5 hour values and 1-2 hour averages, and the 3.5 hour values and 3-4
+hour averages if you can carry out the run further than 3 hours. This
+will give some measure of the representativeness of the 2.5h values.
+
+---------------------------------------------------------------------
+
+Set E compares the vertical profiles of the turbulent kinetic energy (in
+m^2/s^2) and its budget terms, each multiplied by 10**4 (in m^2/s^3), 
+averaged over hour 2-3 for 2D and 3D runs:
+
+(1) height (in meters), where the following variables locate,
+(2) resolved turbulent kinetic energy q'-bar = 0.5*(u'^2 + v'^2 +<w'^2)-bar,
+    where u' = u - u-bar, etc.
+(3) resolved shear production -(u'w'-bar*du-bar/dz + v'w'-bar*dv-bar/dz)
+(4) resolved buoyancy production w'b'-bar
+(5) resolved transport (turbulent plus pressure transport)
+      -d/dz(w'(q'+p'/rho(k)) -u'*tau_13 - v'*tau_23 - w'*tau_33)-bar
+(6) dissipation tau_ij*du_i/dx_j-bar, summed over i, j = 1,2,3.  Here u_i
+    are the velocity components and tau_ij are the components of the
+    subgridscale stress tensor.
+(7) storage (i. e. (RTKE-bar(3h)- RTKE-bar(2h))/3600s)
+(8) residual  (3) + (4) + (5) - (6) - (7)
+
+ The data format for Set E is (F8.2, F9.2, 6F10.5).  
+ The formulas above are correct for a Boussinesq fluid, but should be
+ modified as needed to correspond to the equation set you are using.
+---------------------------------------------------------------------
+
+
+
+**************************   MODEL DESCRIPTION *********************
+|
+|
+|
+| Scientist Name:
+| Model Type (1D ensemble mean, 2D cloud resolving, or 3D LES):
+|
+--------------------------------------------------------------------
+|(1) Computation
+|
+|Computer used for simulation:
+|CPU time:
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+|(2) Numerical Domain 
+|
+|Dimensions (fill in if different than specified in problem description):
+|Domain size in x-direction:
+|Domain size in y-direction:
+|Domain size in z-direction:
+|Number of grid points in x-direction:
+|Number of grid points in y-direction:
+|Number of grid points in z-direction:
+|Grid size in x-direction:
+|Grid size in y-direction:
+|Grid size in z-direction:
+|
+|Time step for dynamics:
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+|(3) Numerical Technique 
+|
+|Numerical method (finite-difference, spectral, etc.):
+|Advection scheme and its order of accuracy:
+|Time scheme and its order of accuracy:
+|Dynamical equations (elastic, anelastic, etc.):
+|Lateral boundary conditions:
+|Upper boundary condition:
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+|(5) Turbulence Closure Scheme
+|
+|Turbulence closure (SGS or ensemble mean):
+|Specific turbulence closure type (Mellor-Yamada, etc.):
+|Variables predicted by the turbulence closure
+| (eddy diffusivities, turbulent kinetic energy, etc.):
+|Closure for dissipation rate:
+|Closure for turbulent dissipation length scale:
+|Closure for turbulent diffusion length scale:
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+|(6) Documentation
+|
+|Please provide references that more fully describe your model, if 
+|available.
+--------------------------------------------------------------------
+
+
+</pre>

@@ -1,0 +1,659 @@
+<html> <head>
+<title>GCSS ASTEX Lagrangian Case Specifications</title>
+</head>
+
+<body>
+<h1>GCSS ASTEX Lagrangian Case Specifications</h1>
+<pre>
+*****************************************************************
+Run Description and Setup for ASTEX Lagrangian GCSS Intercomparison
+
+This intercomparison is based on the <A href="http://www.atmos.washington.edu/~breth/astex/lagr/README.hourly.html">hourly ASTEX Lagrangian dataset</A>.  
+Follow this link to read about this
+dataset and link to the data directory.  All filenames herein are
+relative to that directory.
+
+(a)  Full Lagrangian simulations
+
+We propose two simulations appropriate for 1D and 2D models that
+can be used in a 'Lagrangian' mode in which the properties of
+air above the boundary layer are relaxed to specified
+time-varying profiles:
+
+(1) Lagrangian 1 (42 hours, starting on June 12.67)
+(2) Lagrangian 2 (40 hours, starting on June 18.93).
+
+The initial conditions for simulation 1 are in the files
+lagr1/hourly/lagr1_00.  The changing boundary conditions at hour hh
+(together with the observed boundary layer sounding) are in file
+lagr1_hh.  See file README.hourly for a complete description of the
+hourly data, as well as a description of currently available
+verification datasets.
+
+(b)  Short simulations
+
+We also propose two shorter simulations feasible for 3D LES models
+(and also interesting comparisons for 2D and 1D models).  These are
+based on shorter intervals within the Lagrangian experiments.  The
+simulated periods have been chosen so that upper air thermodynamic
+properties change negligibly during the integration, making a
+'Lagrangian' simulation simpler to carry out:
+
+(3) A three hour long simulation starting at hour 12 of Lagrangian 1 
+    (June 13.167) suitable for both 2D and 3D models.  At this time,
+    stratocumulus with sustained drizzle rates of more than 1 mm/day
+    at the ground was observed as the SST under the air column
+    increased very rapidly.  This simulation is largely (but not 
+    entirely) nocturnal.  The initial conditions for simulation (3)
+    can be found in file lagr1/hourly/lagr1_12 and the variation of
+    SST, lat, lon can be taken from file lagr1/lagr1/hourly/scalars.
+
+(4) A six hour long simulation suitable for both 2D and 3D
+    models of a deep 'decoupled' boundary layer with cumulus
+    clouds rising into patchy stratocumulus, starting at hour 32
+    of Lagrangian 2 (June 20.25) .  The goal here is 
+    to compare the predictions of cloud fraction and optical
+    properties by different models.  The initial conditions for simulation (4)
+    can be found in file lagr2/hourly/lagr_32 and the variation of
+    SST, lat, lon can be taken from file lagr2/hourly/scalars.
+
+Simulations 3 and 4 have been chosen so that the time variations of
+the above-inversion conditions appear to be small over the length of
+the simulation.  For simplicity, we will run them with all external
+boundary conditions fixed at their initial values in the hourly
+sounding archive except SST and the diurnal cycle.  SST and solar
+zenith angle should be computed for these simulations as discussed in
+the Boundary Conditions section below.  Both cases 3 and 4 include
+daytime periods, though for case 3, solar radiation may be
+comparatively unimportant.
+
+----------------------------------------------------------------
+Initial & boundary conditions, modelling assumptions and other useful
+information
+
+
+(a) Time interpolation
+
+For all simulations, we recommend that between hours, linear
+interpolation in time be used to get continuously varying boundary
+data.
+
+
+(b) Domain translation velocity
+
+Those of you with LES type models will probably choose to use a
+reference frame that moves along approximately with the mean flow to
+minimize numerical stability constraints on the model timestep.  We
+see two choices for handling domain translation:
+
+1. Choose a constant domain translation speed (in x, y directions). The
+frame does not accelerate relative to the earth's surface.
+
+2. Choose a time-varying domain translation speed (in x, y directions)
+(so as to follow changes in the mean boundary layer wind with time in
+a Lagrangian simulation).  The frame now accelerates relative to the
+surface of the earth, and the acceleration of the frame should be
+accounted for in the model momentum equations.
+
+
+(c) Initial conditions in saturated air
+
+As mentioned in README.hourly, the water vapor mixing ratio in the
+hourly sounding may not be saturated even though mean liquid water is
+present, due both to horizontal inhomogeneity and measurement errors.
+Thus, to ensure thermodynamic consistency with the measured mean
+liquid water in your initial conditions, you should replace the water
+vapor mixing ratio by the saturation water vapor mixing ratio at any
+heights in the sounding at which either (i) the droplet concentration
+is at least 0.5 as large as the estimated in-cloud droplet
+concentration or (ii) the liquid water mixing ratio ql is at least
+0.05 g/kg.
+
+
+(d) Baroclinicity
+
+If the geostrophic wind varies with height, thermal wind balance
+implies that there must be horizontal temperature gradients, and it is
+inconsistent to assume that the temperature and pressure fields are
+periodic in the horizontal.  However, if your model cannot handle
+this, you should ignore the mean horizontal temperature gradients, and
+treat temperature and pressure fields are periodic in the horizontal.
+This assumption, most accurate for a small model domain such as we
+are using, is akin to including mean subsidence without explicitly
+including the divergent component of the horizontal mean wind.  Note
+how baroclinicity is handled in the Model Description section of your
+output in the Physical Parameterizations section.
+
+
+(e) Downwelling longwave radiation
+
+Boundary layer cloud simulations are well known to be quite sensitive
+to the downwelling flux of longwave radiation at the boundary layer
+top.  To ensure we are all in the same ballpark, note that the hourly
+sounding files all contain a measured value of downwelling LW flux at
+700 mb (Austin and Bretherton 1995).  With the exception of June
+19.4-19.75 during Lagrangian 2, during which there was cirrus cloud
+cover, these downwelling fluxes agree very well with clear air
+calculations based on temperature and moisture profiles taken from
+ECMWF analyses done for ASTEX (Austin and Bretherton 1995).  The
+hourly soundings include coarse resolution ECMWF-analyzed profiles
+above 700 mb suitable for radiative transfer calculations.  
+
+If your code uses a full atmospheric column radiation subroutine, use
+it but check that your downwelling longwave flux at 700 mb is close
+(within 10 W/m2) of the hourly specified value.  If it isn't you might
+want to adjust your mixing ratio at pressures below 700 mb to match
+the desired downwelling longwave flux at 700 mb.  If your code
+specifies the radiative fluxes at the top of the model domain, use the
+hourly value given, correcting it to the height of your domain top as
+described in README.hourly in the discussion of LW_dn in the header of
+the hourly file.
+
+
+(f) Relaxation in free atmosphere for Lagrangian runs
+
+For simulations (1) and (2) in which free atmospheric conditions are
+to be varied in a specified fashion with time, use the following
+relaxation, which has a time constant long enough to not suppress the
+transmission of gravity waves and which is only applied significantly above the
+maximum inversion height:
+
+zimax = max over all columns of local zi
+local zi = height at which gradient of total water mixing ratio is maximum.
+
+For any scalar field F, add a term onto dF/dt at heights z >= zimax + 75 m:
+
+(dF/dt)_relax = - (F - Fe(z,t))/tau
+
+where F is the actual value of the scalar, Fe(z,t) is its target value, and
+tau = 3 hrs.
+
+No relaxation is used on the velocities, because the time varying
+geostrophic wind maintains a reasonable wind profile.
+
+
+(g) Upper boundary condition for gravity waves
+
+In the effort to be as realistic as possible, you may want to use
+either a sponge layer for damping perturbation momentum or a radiation
+upper boundary condition to minimize spurious reflection of upward
+propagating gravity waves.  The sponge layer should not start any
+lower than 200 m above the mean inversion height.
+
+
+(h) For use with your radiation scheme:
+
+Solar constant:  1323 W/m2  (due to the variation of the earth-sun distance
+d from its mean value dm, the solar ``constant'' is reduced from its mean
+value. For June 16, the ratio (dm/d)**2 = 0.9690, so S = smean * (dm/d)**2
+= 1323 W / m^2.)
+
+
+If you need formulas for the variation of zenith angle with time, lat, lon:
+
+cosine(zenith angle) = 
+     max( -cos(sun_lat)*cos(sun_azim)*cos_lat + sin(sun_lat)*sin_lat, 0.)   
+  where
+     lat = latitude (degrees N),   sin_lat = sin(pi*lat/180.)
+                                   cos_lat = cos(pi*lat/180.)
+     lon = longitude (degrees E, <0 for degrees W)
+     day = decimal day of June (UTC).
+     month = 6 + day/30.
+     pi   = 3.1415926...
+     sun_azim = 2*pi*(day - lon/360.) (radians)
+     sun_lat = (pi*23./180.)*cos((month - 6.75)*pi/6) (radians)
+
+(h) Changing surface pressure
+
+  Over the course of each Lagrangian, surface pressure changes
+slightly (by 2-4 mb over 40 hours).  If you use reference profiles in
+your dynamical equations and to compute thermodynamic coefficients, it
+should suffice to choose reference values based on the initial
+sounding.  However, be aware of the surface pressure variations in
+calculations (such as finding saturation mixing ratio and temperature
+knowing potential temperature and height) which depend upon the
+horizontal mean pressure at a given height at a given time.
+
+
+(i)  Use your model's regular scheme for calculating surface heat,
+moisture and momentum fluxes, and for determining eddy diffusivity,
+TKE, etc. at the lowest gridpoint above the sea-surface. Contact one
+of us if you would like to know what we use. However, the purpose of
+this intercomparison is to compare the effect of different approaches
+to physical parameterization as well as different numerics.
+
+
+(j)        Other Details
+
+* Set sea-surface albedo = 0.05
+
+* Periodic lateral BC's
+
+* Mean subsidence specified from given horizontal divergence on hourly
+file header
+
+* Coriolis forcing based on given latitude (use fixed latitude of 
+35 degrees N if it is inconvenient to make f time-varying)
+
+* Holton's values for physical constants:
+    g=9.81 m/s^2, R=287 J/(K-kg), Cp=1004 J/(K-kg), L=2.5e6 J/kg.
+  If it is convenient for you to use these values, please do so.
+
+* Random Initialization : spatially uncorrelated random perturbation
+uniformly distributed between -0.1 and 0.1 K, applied to initial
+temperature field at all gridpoints below the initial inversion height.
+
+
+-----------------------------------------------------------------
+                      Numerical Domain Specifications
+
+*********************************************
+             Case 1:  Lagr1
+*********************************************
+  Duration of run : 42 hours
+  Initial sounding file : /lagr1/hourly/lagr1_00
+  Domain Height      : 3000. m
+  Domain Length (X)  : 6400. m
+
+  Vertical Grid Points : 60  (dz = 50 m)
+         X Grid Points : 64  (dx = 100 m)     
+
+
+*********************************************
+             Case 2:  Lagr2
+*********************************************
+  Duration of run : 40 hours
+  Initial sounding file : /lagr2/hourly/lagr2_00
+  Domain Height      : 3000. m
+  Domain Length (X)  : 6400. m
+
+  Vertical Grid Points : 60   (dz = 50 m)
+         X Grid Points : 64   (dx = 100 m)     
+
+
+*********************************************
+             Case 3:  Drizzle
+*********************************************
+  Duration of run : 180 min
+  Initial sounding file : /lagr1/hourly/lagr1_12
+  Domain Height      : 1500. m
+  Domain Length (X)  : 3200. m
+  Domain Width  (Y)  : 3200. m
+
+  Vertical Grid Points : 60  (dz = 25 m)
+         X Grid Points : 64  (dx = 50 m)     
+         Y Grid Points : 64  (dy = 50 m)
+
+
+*********************************************
+             Case 4:  Cumulus
+*********************************************
+  Duration of run : 360 min
+  Initial sounding file : /lagr2/hourly/lagr2_32
+  Domain Height      : 3000. m
+  Domain Length (X)  : 6400. m
+  Domain Width  (Y)  : 6400. m
+
+  Vertical Grid Points : 60  (dz = 50 m)
+         X Grid Points : 64  (dx = 100 m)     
+         Y Grid Points : 64  (dy = 100 m)
+
+  If your model uses variable vertical resolution, try to match the 
+  given resolution near the inversion.
+
+*************************************************************************** 
+            Data Format for Presenting Results
+
+
+Our intercomparison results will be presented in seven different sets,
+some split into two parts to avoid making lines of more than 80
+characters that may be mangled by electronic mailers.  The data format
+chosen here has been optimized for Steve Krueger's plotting programs.
+Sets F and G are optional, and investigate in more detail the TKE
+budget and use of conditional sampling.  If you have a 1D model or if
+you don't wish to do parts F and G, just enter just the first five
+sets.
+
+The data format for presenting intercomparisons is modelled on
+Chin-Hoh's format for the first intercomparison, but because of the
+nature of the run, there are some differences, so read carefully.  We
+have made an effort to only refer to quantitities (i. e., total liquid
+water, rather than cloud water separately) that also make sense for
+models with explicit microphysics. In what follows, f-bar refers to a
+horizontal average of f.  The layer average of f is the vertical
+average of f-bar from the surface to the boundary layer top (inversion)
+height zi (which is defined in C1.2 below).  Please precede each
+dataset below by a line of up to 80 characters including a comment
+identifier #k, the run number (1,2,3, or 4), letter identifying the
+dataset, (for sets D-G) the middle of the averaging hour, the
+investigator first initial_last name and, optionally, any further
+distinguishing characteristics, separated by spaces, e. g.
+
+#k 1 A1     S_Krueger 2D run in 6.4km domain 
+...data for set A1...
+#k 1 A2     S_Krueger 2D run in 6.4km domain 
+...data for set A2...
+#k 1 B     S_Krueger 2D run in 6.4km domain 
+...data for set B...
+#k 1 C1     S_Krueger 2D run in 6.4km domain 
+...data for set C1...
+#k 1 C2     S_Krueger 2D run in 6.4km domain 
+...data for set C2...
+#k 1 D  0.5 S_Krueger 2D run in 6.4km domain
+...data for set D...
+#k 1 E1 0.5 S_Krueger 2D run in 6.4km domain
+...data for set E1...
+#k 1 E2 0.5 S_Krueger 2D run in 6.4km domain
+...data for set E2...
+#k 1 F  0.5 S_Krueger 2D run in 6.4km domain
+...data for set F...
+#k 1 G1 0.5 S_Krueger 2D run in 6.4km domain
+...data for set G1...
+#k 1 G2 0.5 S_Krueger 2D run in 6.4km domain
+...data for set G2...
+#k 1 D  1.5 S_Krueger 2D run in 6.4km domain
+...data for set D...
+#k 1 E1 1.5 S_Krueger 2D run in 6.4km domain
+...data for set E1...
+#k 1 E2 1.5 S_Krueger 2D run in 6.4km domain
+...data for set E2...
+#k 1 F  1.5 S_Krueger 2D run in 6.4km domain
+...data for set F...
+#k 1 G1 1.5 S_Krueger 2D run in 6.4km domain
+...data for set G1...
+#k 1 G2 1.5 S_Krueger 2D run in 6.4km domain
+...data for set G2...
+    .
+    .
+    .
+
+Since models change, we are asking all participants to again fill out
+a model description section as was done last time.  Since the purpose
+of an intercomparison is to understand how and why different models
+yield different results when applied to the same problem, please
+complete applicable parts of this section carefully.
+
+---------------------------------------------------------------------
+
+Sets A1 and A2 document the initial conditions and attempt a crude radiative
+      intercomparison between models.
+
+Set A1
+(1) height (in meters), where the following initial values in A1/A2 locate, 
+(2) U-bar (ground-relative, in m/s) 
+(3) V-bar (ground-relative, in m/s) 
+(4) potential temperature theta-bar (in K) 
+(5) water vapor mixing ratio qv-bar (g/kg)
+(6) liquid water mixing ratio (including rainwater) ql-bar (g/kg)
+(7) Upward longwave radiative flux (W/m^2)
+(8) Downward longwave radiative flux (W/m^2)
+
+ The data format for Set A1 is (f7.1,3f7.2,2f6.2,2f6.1)
+
+Set A2
+(9) Upward shortwave radiative flux (W/m^2) for a zenith angle of 0 degrees
+(10)Downward shortwave radiative flux (W/m^2) for a zenith angle of 0 degrees
+(11)Upward shortwave radiative flux (W/m^2) for a zenith angle of 60 degrees
+(12)Downward shortwave radiative flux (W/m^2) for a zenith angle of 60 degrees
+(13)Initial reference density profile rho(z) (kg/m^3)
+    (use mean density for compressible models)
+
+ The data format for Set A2 is (4f7.1,f6.3)
+
+----------------------------------------------------------------------
+
+Sets B and C1/C2 compare the time evolution of various scalars through 
+the whole simulation period.
+  
+For set B, use instantaneous values with a sampling time interval of
+between 1 and 5 minutes for cases 3 and 4, and between 5 and 10
+minutes for cases 1 and 2.  
+
+(1) Simulation time (in min)
+(2) SST (K)
+(3) Cloud fraction (0-1), defined as the fraction of columns with at
+     least one gridpoint in which liquid water mixing ratio exceeds 0.01 g/kg.
+(4) 'Satellite-detectable' cloud fraction (0-1), defined as the fraction of
+     grid columns in which the column-integrated liquid water path exceeds 
+     13 g/m^2 (this corresponds to a cloud optical depth of 2, roughly
+     the minimum thickness of cloud detectable from its increased albedo
+     compared to the sea-surface.)
+(5) Mean column-integrated liquid water path (in g/m^2).  The mean is 
+    taken only over cloudy columns as defined in B.3.  If there are no such
+    columns, enter 0.
+(6) Mean of the cloud base height (defined as the lowest height at which the
+    cloud fraction defined by D.7 exceeds 0.01) (in m).  The mean is 
+    taken only over cloudy columns as defined in B.3.  If there are no such
+    columns, enter 0.
+(7) Domain-averaged precipitation rate at sea surface (in mm H20/day)
+(8) Maximum updraft strength in domain (in m/s)
+(9) Maximum liquid water (cloud water + rain water) mixing ratio in domain
+    (in g/kg)
+
+The data format for Set B is (f7.1,8f9.3)
+
+------------------------------------------------------------------------------
+
+For sets C1/C2, use hourly average values.  For the 'simulation time'
+enter the midpoint of the hour.  While some of this information
+duplicates entries in Set D, this data format is more convenient for
+our plotting script.  Other scalars duplicate set B.  For these
+scalars, the hourly average in C is useful for comparing with other
+hourly average profiles and B helps pin down the variability of that
+scalar.
+
+Set C1
+(1) Simulation time (in min)
+(2) Mean inversion height zi (in meters), defined as the horizontal average
+     over all columns of the half grid level with the strongest decrease
+     in total (liquid + vapor) water content with height
+(3) Cloud fraction (0-1), defined as the fraction of columns with at
+     least one gridpoint in which liquid water mixing ratio exceeds 0.01 g/kg.
+(4) Mean column-integrated liquid water path (in g/m^2)
+(5) Domain-averaged precipitation rate at sea surface (in mm H20/day)
+(6) Surface sensible heat flux rho(0)*Cp*w'theta'-bar  (in W/m^2)
+(7) Surface latent heat flux rho(0)*L*w'qv'-bar  (in W/m^2)
+(8) Mean air temperature at first gridpoint above surface (in K)
+(9) Mean water vapor mixing ratio at first gridpoint above surface (in g/kg)
+
+The data format for Set C1 is (f7.1,8f9.3)
+
+Set C2
+(10)Layer averaged total (resolved + subgrid) turbulent kinetic energy 
+    (in m^2/s^2)
+(11)Total solar + longwave radiative flux divergence between sea surface
+    and 50 m above mean inversion height zi (in W/m^2)
+(12)Upward solar flux at top of numerical model domain (either 3000 m or
+    1500 m, depending on the case) (in W/m^2)
+(13)Downward solar flux at top of numerical model domain (in W/m^2)
+(14)Upward longwave flux at top of numerical model domain (in W/m^2)
+(15)Downward longwave flux at top of numerical model domain (in W/m^2)
+(16)Downward solar flux at sea surface (in W/m^2)
+(17)Downward longwave flux at sea surface (in W/m^2)
+
+The data format for Set C2 is (8f9.3)
+
+---------------------------------------------------------------------
+
+Set D compares the horizontal mean profiles averaged over each hour
+of simulation
+
+(1) height (in meters), where the following mean values locate, 
+(2) U-bar (in m/s) 
+(3) V-bar (in m/s) 
+(4) potential temperature theta-bar (in K) 
+(5) water vapor mixing ratio qv-bar (g/kg)
+(6) liquid water mixing ratio (including rainwater) ql-bar (g/kg)
+(7) Cloud fraction: (fraction of saturated gridpoints at the given level, or
+    area average of the grid point cloud cover if grid points can be partly
+    cloudy) (0-1).
+(8) Reference density profile rho(z) (kg/m^3) 
+    (use mean density for compressible models)
+
+ The data format for Set D is (3F8.2, 5F8.3).
+
+---------------------------------------------------------------------
+
+Set E1/E2 compares the hourly averaged turbulent velocity variances, skewness,
+and flux profiles (resolved plus subgrid, except where explicitly mentioned):
+
+Set E1
+(1) height (in meters), where the following fluxes in E1/E2 locate, 
+(2) u'^2 + v'^2-bar  (in m^2/s^2)
+(3) w'^2-bar  (in m^2/s^2)
+(4) Skewness profile w'^3-bar/w'^2-bar^(3/2)
+(5) x-momentum flux u'w'-bar  (in m^2/s^2)
+(6) y-momentum flux v'w'-bar  (in m^2/s^2)
+
+ The data format for Set E1 is (F7.1,2f6.3,f7.3,2F7.4)
+
+Set E2
+
+(7) Heat flux rho(k)*Cp*w'theta'-bar (in W/m^2)
+(8) Water vapor flux rho(k)*L*w'qv'-bar (in W/m^2)
+(9) Convective liquid water flux rho(k)*L*w'ql'-bar (in W/m^2) 
+    (note that ql includes both cloud and rain water)
+(10) Water sedimentation (precipitation) flux
+    rho(k)*L*sum over i of w_t(i)ql(i)-bar (in W/m^2),
+    where w_t(i) is the terminal velocity and ql(i) is liquid water, summed 
+    over all categories i of liquid water.  Sign convention is that w_t(i)  0.
+(11) Net (upward-downward) longwave radiative flux (W/m^2)
+(12) Net (upward-downward) shortwave radiative flux (W/m^2)
+
+ The data format for Set E2 is (4f7.2,2f8.1).
+
+---------------------------------------------------------------------
+
+Set F compares the hourly average vertical profiles of the resolved
+turbulent kinetic energy (in m^2/s^2) and its budget terms, each
+multiplied by 10**4 (in m^2/s^3):
+
+(1) height (in meters), where the following variables locate,
+(2) resolved turbulent kinetic energy q'-bar = 0.5*(u'^2 + v'^2 +<w'^2)-bar,
+    where u' = u - u-bar, etc.
+(3) resolved shear production -(u'w'-bar du-bar/dz + v'w'-bardv-bar/dz)
+(4) resolved buoyancy production w'b'-bar
+(5) resolved transport (turbulent plus pressure transport)
+      -d/dzw'(q'+p'/rho(k)) -u'*tau_13 - v'*tau_23 - w'*tau_33-bar
+(6) dissipation tau_ij*du_i/dx_j-bar, summed over i, j = 1,2,3.  Here u_i
+    are the velocity components and tau_ij are the components of the
+    subgridscale stress tensor.
+(7) storage (i. e. (RTKE-bar(hour+1)- RTKE-bar(hour))/3600s)
+(8) residual  (3) + (4) + (5) - (6) - (7)
+
+ The data format for Set F is (F8.2, F9.2, 6F10.5).  
+ The formulas above are correct for a Boussinesq fluid, but should be
+ modified as needed to correspond to the equation set you are using.
+
+------------------------------------------------------------------------------
+
+Set G1/G2 compares the hourly average vertical profiles of conditionally
+sampled fields. The purposes of this dataset are (a) to follow the
+evolution of the boundary layer circulation, and (b) to
+provide these results in a form that can be compared with aircraft
+measurements. Each grid point will be classified as either an updraft
+point (w > 0.5 m/s), a downdraft point (w  -0.5 m/s), or an environment
+point (-0.5 .le. w .le. 0.5 m/s).  Note that w is the vertical velocity
+relative to the specified large-scale subsidence, so that w-bar = 0.
+
+Set G1
+(1) height (m) where the following values in G1/G2 are located
+(2) fraction of updraft grid points, sigma_u (0-1)
+(3) fraction of downdraft grid points, sigma_d (0-1)
+(4) average over all updraft points of vertical velocity, w_u (m/s)
+(5) average over all downdraft points of vertical velocity, w_d (m/s);
+note that sigma_u * w_u + sigma_d * w_d + sigma_e * w_e = w-bar = 0.
+(6) updraft mass flux, Mu= rho(z) * sigma_u * w_u (kg m^-2 s^-1)
+(7) downdraft mass flux, Md= rho(z) * sigma_d * w_d (kg m^-2 s^-1)
+
+ The data format for set G1 is (f7.1,2f7.3,2f6.2,2f7.3)
+
+Set G2
+(8) avg over all updraft points of virtual potential temperature,
+    thv = theta ( 1. + 0.61 qv - ql ) (K)
+(9) avg over all downdraft points of thv (K)
+(10) avg over all points of thv, thv-bar (K)
+(11) avg over all updraft points of ql (liquid water mixing ratio
+including rainwater) (g/kg)
+(12) avg over all downdraft points of ql (g/kg)
+(13) avg over all points of ql, ql-bar (g/kg)
+(14) Updraft buoyancy flux rho(k)*cp*sigma_u*{average over all updraft 
+     points of w * thv'} (W/m^2), where thv' = thv - thv-bar.
+(15) Downdraft buoyancy flux rho(k)*cp*sigma_d*{average over all downdraft 
+     points of w * thv'} (W/m^2)
+
+ The data format for set G2 is (8f8.3)
+
+**************************   MODEL DESCRIPTION *********************
+|
+|
+|
+| Scientist Name:
+| Model Type (1D ensemble mean, 2D cloud resolving, or 3D LES):
+|
+--------------------------------------------------------------------
+|(1) Computation
+|
+|Computer used for simulation:
+|CPU time:
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+|(2) Numerical Domain 
+|
+|Dimensions (fill in if different than specified in problem description):
+|Domain size in x-direction:
+|Domain size in y-direction:
+|Domain size in z-direction:
+|Number of grid points in x-direction:
+|Number of grid points in y-direction:
+|Number of grid points in z-direction:
+|Grid size in x-direction:
+|Grid size in y-direction:
+|Grid size in z-direction:
+|
+|Time step for dynamics:
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+|(3) Numerical Technique 
+|
+|Numerical method (finite-difference, spectral, etc.):
+|Advection scheme and its order of accuracy:
+|Time scheme and its order of accuracy:
+|Dynamical equations (elastic, anelastic, etc.):
+|Lateral boundary conditions:
+|Upper boundary condition:
+!How was translation velocity of the reference frame chosen?
+!Are accelerations due to time variation of the reference frame
+! velocity compared to the ground included in the dynamical equations?
+--------------------------------------------------------------------
+|(4) Physical Parameterizations
+|
+|Surface flux parameterization for heat, moisture, momentum:
+|Longwave radiation parameterization:
+|Shortwave radiation parameterization:
+|How were radiative fluxes above the computational domain handled?
+|Were horizontal temperature gradients in thermal wind balance
+| with the vertical shear of the geostrophic wind included?
+|Drizzle/Rain parameterization:
+|Other comments on physical parameterizations:
+--------------------------------------------------------------------
+|(5) Turbulence Closure Scheme (if applicable)
+|
+|Turbulence closure (SGS or ensemble mean):
+|Specific turbulence closure type (Mellor-Yamada, etc.):
+|Variables predicted by the turbulence closure
+| (eddy diffusivities, turbulent kinetic energy, etc.):
+|Closure for dissipation rate:
+|Closure for turbulent dissipation length scale:
+|Closure for turbulent diffusion length scale:
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+|(6) Documentation
+|
+|Please provide references that more fully describe your model, if 
+|available.
+--------------------------------------------------------------------
+</pre>

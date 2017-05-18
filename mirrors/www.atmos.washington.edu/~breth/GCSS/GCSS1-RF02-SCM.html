@@ -1,0 +1,121 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>DYCOMS RF02 SCM Intercomparison</title>
+</head>
+
+<body>
+
+<h2>DYCOMS RF02 SCM Intercomparison</h2>
+<h3><a href="http://www.atmos.washington.edu/~breth/GCSS/GCSS.html">GCSS 
+Boundary Layer Cloud WG</a></h3>
+<h4>SCM intercomparison organizers:
+<a href="http://www.atmos.washington.edu/~breth">Chris Bretherton</a> and Matt 
+Wyant, University of Washington</h4>
+<p><u>Deadline for submission of revised results</u>:&nbsp; <b>1 August 2005</b></p>
+<p>Preliminary results were <a href="GCSS1-200505-Athens/RF02-SCM.ppt">presented by Chris
+Bretherton</a> and discussed at BLCWG breakout of pan-GCSS meeting.</a>, Athens Greece, 
+16-20 May 2005. This discussion led to several small modifications to the LES
+case that we are also adopting, including changed droplet conc.,
+changed geostrophic winds, and specified surface heat and moisture fluxes. </p>
+<p><b>Registered Participants</b></p>
+<p>Please email Chris ( <a href="mailto:(breth@atmos.washington.edu">
+breth@atmos.washington.edu</a> ) and cc Matt (
+<a href="mailto:(mwyant@atmos.washington.edu">mwyant@atmos.washington.edu</a> ) 
+if you plan to participate. A list of participants who have already emailed that 
+they plan to do the case is below.&nbsp; Those in <b>bold</b> 
+submitted preliminary results for the Athens meeting:</p>
+<ul>
+  <li>Phil Austin, U. British Columbia <a href="mailto:(paustin@eos.ubc.ca">(paustin@eos.ubc.ca</a>; CCC SCM)</li>
+  <li>Andreas Chlond, MPI-Hamburg (<a href="mailto:chlond@dkrz.de">chlond@dkrz.de</a>)</li>
+  <li><b>Hitoru Kitagawa</b>, Japan Meteor. Agency
+  <a href="mailto:(kitagawa@naps.kishou.go.jp">(kitagawa@naps.kishou.go.jp</a>)</li>
+  <li><b>Cara-Lyn Lappen</b>, Colo. State. U. (<a href="mailto:lappen@atmos.colostate.edu">lappen@atmos.colostate.edu</a>; NCAR SCAM and SCAM3-UW), USA</li>
+  <li><b>Vince Larson</b>, U. Wisc.-Milwaukee, USA (<a href="mailto:vlarson@uwm.edu">vlarson@uwm.edu</a>; Assumed PDF)</li>
+  <li><b>Adrian Lock</b>, UKMO (<a href="mailto:Adrian.Lock@metoffice.gov.uk">Adrian.Lock@metoffice.gov.uk</a>)</li>
+  <li>Surabi Menon, Lawrence Berkeley Natl. Labs., USA (<a href="mailto:smenon@lbl.gov">smenon@lbl.gov</a>)</li>
+  <li><b>Stephan de Roode</b>, KNMI <a href="mailto:(S.R.deRoode@phys.uu.nl">(S.R.deRoode@phys.uu.nl</a>; RACMO SCM)</li>
+</ul>
+<h4>Discussion and Motivation</h4>
+<p>This single column model (SCM) intercomparison is a companion to the GCSS 
+DYCOMS RF02 LES intercomparison, organized by Andy Ackerman of NASA-Ames.&nbsp; 
+The goal is to compare SCM simulations of a <b>nocturnal drizzling 
+stratocumulus-topped boundary layer</b> with each other, with LES simulations, 
+and with comprehensive observations taken during DYCOMS-II.&nbsp; The
+<a href="http://sky.arc.nasa.gov:6996/ack/gcss9/index.html">RF02 LES 
+intercomparison web page</a> describes the case, corresponding observations and 
+papers discussing them,&nbsp; and some minor idealizations made to facilitate 
+model intercomparison. </p>
+<p>This case follows on our GCSS BLCWG intercomparison of a nocturnal 
+non-precipitating stratocumulus-topped mixed layer observed in DYCOMS RF01.&nbsp; 
+The intercomparison (<a href="ftp://eos.atmos.washington.edu/pub/breth/papers/in-review/GCSS1-DYCOMS-LES.html">Stevens 
+et al. 2005</a> for LES,
+<a href="ftp://eos.atmos.washington.edu/pub/breth/papers/in-review/GCSS1-DYCOMS-SCM.html">
+Zhu et al. 2005</a> for SCM, both accepted by <i>Mon. Wea. Rev.</i>) showed that 
+even in this particularly simple boundary layer, cloud liquid water path (LWP) 
+varied by almost an order of magnitude between both SCM and LES models.&nbsp; A 
+few LES models (with subgrid turbulence and advection schemes that tended to 
+suppress mixing across the strong inversion overlaying the stratocumulus)&nbsp; 
+did obtain approximately correct LWP for this case. However, a challenge in the 
+drizzling case both for LES and SCM models is sorting out the effects of 
+turbulent mixing and of drizzle in determining the boundary layer structure and 
+LWP.&nbsp; Another challenge for SCM models is that aerosol and cloud droplet 
+concentrations were lower in RF02 than RF01, favoring drizzle production. This 
+feedback is not represented in many SCMs.&nbsp; However, given the potential 
+importance of precipitation processes to both the mean albedo of stratocumulus 
+in some regions, and the second aerosol indirect ('Albrecht') effect on climate, 
+this is an important issue to tackle in an intercomparison format.</p>
+<p><b>SCM Specifications</b></p>
+<p><u>Setup</u></p>
+<ul>
+  <li>Initial sounding, surface fluxes, and geostrophic wind as in LES 
+  specifications. Upon request, I will provide an alternative wind profile based 
+  on LES simulations if you want to specify the wind profile rather than 
+  determine it from the geostrophic forcing.</li>
+  <li>Mean horizontal divergence and radiation as specified in LES 
+  specifications, which are the same as in RF01 case.</li>
+  <li>Cloud droplet concentration of 55 cm<sup>-3</sup>, if this is an input 
+  parameter your SCM can use.&nbsp; Otherwise, use your SCM's default 
+  microphysical assumptions over the ocean. Please let us know which
+  of these options you are using!</li>
+  <li>Six hour simulations</li>
+</ul>
+<p><u>Sensitivity studies</u> - do whichever you can.</p>
+<ul>
+  <li>As with the previous SCM intercomparison, we request results with both 
+  (HR) 10 m vertical and 5 s temporal grid spacing and (LR) a standard vertical 
+  and temporal resolution at which the SCM or associated GCM is run.</li>
+  <li>At each resolution, compare whichever of the following your
+  model can be configured to do: (PS) default precipitation microphysics, including
+  sedimentation, (P) default precipitation microphysics, no
+  sedimentation, (S) no precipitation but sedimentation included, (N)
+  no precipitation or sedimentation.</li>
+  <li>Using your model's default vertical/time resolution and
+  microphysics (but drop conc.=55 if possible) try (C) default cumulus convection scheme and (NC) no cumulus convection 
+  (shallow or deep).</li>
+</ul>
+<p><u>Output</u> (netcdf format)</p>
+<ul>
+  <li>NetCDF, use self-describing file name such as HR.P.C.wyant-scalars.nc for 
+  scalars from Wyant's hi-res SCM run with default precipitation microphysics 
+  and cumulus convection. Use suffix -profiles.nc for hourly profiles. Variables 
+  in the following sets are as described in
+  <a href="http://sky.arc.nasa.gov:6996/ack/gcss9/output.html">Andy's output 
+  specs</a> (please check you have the right dimensions for all variables!)</li>
+  <li>Scalar time series (every timestep) of variables: {time}, {zi}, {zb}, {lwp}, 
+  {cfrac}, {shf}, {vhf}, {precip}, {ustar}. For {cfrac} use the maximum cloud 
+  fraction obtained at any model level at that time.</li>
+  <li>Half-hourly-average profiles: Dimensions and independent variables as in 
+  Andy's specs: {rho}, {u}, {v}, {thetal}, {qt}, {ql}, {cfrac, {rad_flx}, {precip}, 
+  {tot_tw}, {tot_qw}, {tot_uw}, {tot_vw}, {tot_boy}, {tot_shr}&nbsp; If your 
+  model does not compute all the fluxes, just do not define those profiles. 
+  Initial flux profiles can be left undefined. </li>
+</ul>
+
+</body>
+
+</html>

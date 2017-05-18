@@ -1,0 +1,335 @@
+   table               {font-family: Verdana, Arial, Helvetica, sans-serif; 
+                        font-size:11px;
+                        line-height: 1.3;}
+
+   body                {font-family: Verdana, Arial, Helvetica, sans-serif; 
+                        font-size:11px;
+                        line-height: 1.25;
+                        background-color: #ffffff;
+                        margin: 0px 0px; 
+                        padding: 0px 0px;
+                        margin-bottom: 20px;}
+
+   hr                  {color: #999999; background-color: #999999; 
+                        height: 1px; border: none;}
+
+   ul                  {list-style: disc url(/images/bullet.gif);
+                        margin-left:9px; padding-left:15px;
+                        margin-top:0px; padding-top:0px;
+                        margin-bottom:0px; padding-bottom:0px;}
+
+   .thumbnail60        {height: 60px;
+                        margin-right: 1px;
+                        margin-top: 11px;
+                        border: none;}
+
+   .thumbnail90        {width: 90px;
+                        margin-right: 11px;
+                        margin-bottom: 11px;
+                        border: none;}
+
+   .realimage          {margin-top: 11px;
+                        margin-bottom: 11px;}
+
+   .realtable          {font-size: 10px; line-height:1.4;
+                        background-color: #D3E3E3;
+                        border-collapse: collapse;
+                        border-bottom: solid 2px #D3E3E3;
+                        margin-top:11px;
+                        margin-bottom:11px;}
+   .realtable th       {background-color: #99CCCC; 
+                        border-bottom: solid #ffffff 1px; 
+                        border-right: solid #ffffff 1px; 
+                        padding: 3px 0px 3px 4px;
+                        text-align: left;
+                        vertical-align: top;}
+   .realtable td       {border-bottom: solid #ffffff 1px; 
+                        border-right: solid #ffffff 1px; 
+                        vertical-align: top;
+                        padding: 3px 0px 3px 4px;}
+
+   .widetable          {font-size: 10px; line-height:1.4;
+                        background-color: #D3E3E3;
+                        border-collapse: collapse;
+                        border-bottom: solid 2px #D3E3E3;
+                        margin-top:11px;
+                        margin-bottom:11px;
+                        width: 100%}
+   .widetable th       {background-color: #99CCCC; 
+                        border-bottom: solid #ffffff 1px; 
+                        border-right: solid #ffffff 1px; 
+                        padding: 3px 3px 3px 4px;
+                        text-align: left;
+                        vertical-align: top;}
+   .widetable td       {border-bottom: solid #ffffff 1px; 
+                        border-right: solid #ffffff 1px; 
+                        vertical-align: top;
+                        padding: 3px 3px 3px 4px;}
+
+   .onelinetable       {font-size: 10px; line-height:1.3;
+                        background-color: #D3E3E3;
+                        border-collapse: collapse;
+                        border-bottom: solid 2px #D3E3E3;
+                        margin-top:11px;
+                        margin-bottom:11px;}
+   .onelinetable th    {background-color: #99CCCC; 
+                        line-height:1.4;
+                        border-bottom: solid #ffffff 1px; 
+                        border-right: solid #ffffff 1px; 
+                        padding: 3px 0px 3px 4px;
+                        text-align: left;
+                        vertical-align: top;}
+   .onelinetable td    {border-bottom: solid #ffffff 1px;
+                        border-right: solid #ffffff 1px; 
+                        vertical-align: top;
+                        padding: 0px 0px 0px 4px;}
+
+   a:link              {color: #000099;}
+   a:visited           {color: #8A8ADD;}
+   a:active            {color: #000099;}
+   
+   input               {background-color: #ffffff}
+   select              {background-color: #ffffff}
+
+   .crumbpath a:link   {text-decoration: none;
+                        color: #000099}
+   .crumbpath a:visited {text-decoration: none;
+                        color: #000099}
+   .crumbpath a:hover  {text-decoration: underline}
+
+   .kalelink a:link    {text-decoration: none;
+                        color: #000099}
+   .kalelink a:visited {text-decoration: none;
+                        color: #8A8ADD}
+   .kalelink a:hover   {text-decoration: underline}
+
+   .menulink a:link    {text-decoration: none;
+                        color: #000099}
+   .menulink a:visited {text-decoration: none;
+                        color: #8A8ADD}
+   .menulink a:hover   {text-decoration: underline}
+
+   .menulink           {background-image: URL(/images/go_pijl.gif);
+                        background-color: #ffffff;
+                        background-repeat: no-repeat;
+                        padding-left: 16px;}
+   .menulink a:hover   {text-decoration: underline}
+
+   .menukopje          {background-color: #E3E3F4;
+                        padding-left: 16px;
+                        margin-top: 14px;
+                        font-weight: bold;}
+
+   .linkroodvet a:hover {color: red;
+                        font-weight: bold}
+   .linkroodvet a:visited {color: red;
+                        font-weight: bold}
+   .linkroodvet a:link  {color: red;
+                        font-weight: bold}
+
+   .hoofdkoprood       {font-size: 14px;
+                        line-height: 1.3;
+                        font-weight: bold;
+                        color: red;}
+
+   .inhoudsopgave      {border-top: solid 1px #999999;
+                        border-bottom: solid 1px #999999;
+                        padding-top: 11px;
+                        padding-bottom: 11px;}
+   .inhoudlink a:link  {text-decoration: none;
+                        color: #000099}
+   .inhoudlink a:visited {text-decoration: none;
+                        color: #8A8ADD}
+   .inhoudlink a:hover {text-decoration: underline}
+
+   .inhoudlink         {background-image: URL(/images/go_pijl.gif);
+                        background-color: #ffffff;
+                        background-repeat: no-repeat;
+                        padding-left: 16px;}
+   .inhoudlink a:hover {text-decoration: underline}
+
+   .bottomfloat        {border: solid 1px #9999CC;}
+   .bottomfloat a:link {text-decoration: none;
+                        color: #000099}
+   .bottomfloat a:visited {text-decoration: none;
+                        color: #8A8ADD}
+   .bottomfloat a:hover {text-decoration: underline}
+
+   .hoofdkop           {font-size: 14px;
+                        line-height: 1.3;
+                        font-weight: bold;
+                        color: #009999;}
+
+   .rubriekkop         {line-height: 1.5;
+                        margin-top: 14px;
+                        color: #999999;}
+
+   .subkop             {font-size: 12px;
+                        line-height: 1.4;
+                        margin-bottom: 14px;
+                        font-weight: bold;}
+
+   .alineakop          {font-weight: bold;
+                        margin-top: 14px;}
+
+   .subalineakop       {font-style: italic;
+                        margin-top: 14px;}
+
+   .subalineakopzonderwit       {font-style: italic;
+                       }
+
+   .inhoudsubkop       {font-style: italic;
+                        margin-top: 14px;}
+
+   .nieuwskop          {background-color: #d3e3e3;
+                        line-height: 1.5;
+                        border-bottom: solid 4px #ffffff;
+                        text-indent: 1px;
+                        width: 451px;}
+
+   .datumtijd          {font-size: 10px;
+                        font-style: italic;
+                        color: #000000;}
+
+   .auteur             {font-size: 10px;
+                        font-style: italic;
+                        margin-bottom: 14px;}
+
+   .inleiding          {font-weight: bold;}
+
+   .bijschrift         {font-size: 10px;
+                        margin-top: 22px;
+                        border-top: solid 1px #999999;}
+
+   .bijschriftpopup    {font-size: 10px;
+                        margin-top: 22px;
+                        margin-right: 4px;
+                        border-top: solid 1px #999999;}
+ 
+   .bijschriftzonderwit {font-size: 10px;
+                        margin-top:6px;
+                        margin-bottom:11px;
+                        border-top: solid 1px #999999;}
+
+   .noot               {font-size: 10px;
+                        line-height: 1.4;
+                        border-top: solid 1px #999999;}
+
+   .formbody           {background-color: #D3E3E3;
+                        padding: 3px 4px 3px 4px;}
+   .formheader         {background-color:#99CCCC; 
+                        border-bottom: solid #ffffff 1px; 
+                        font-weight:bold; 
+                        line-height:1.4;
+                        padding: 3px 4px 3px 4px;}
+   .forminput          {background-color:#ffffff;}
+   .formcheck          {background-color: #D3E3E3;}
+   .formradio          {background-color: #D3E3E3;}
+   .formbutton         {background-color: #99CCCC;
+                        color: #000000; 
+                        border: solid #009999 1px; 
+                        font-weight: bold;}
+   .formsingle         {background-color:#d3e3e3;}
+
+   .onzichtbaar        {display: none;}
+
+   .resultbutton       {background-color: #99CCCC;
+                        color: #000000; 
+                        border: solid #009999 1px; 
+                        font-weight: bold;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        padding-top: 2px;
+                        padding-bottom: 5px;
+                        margin-top: 2px;}
+   .resultbutton a     {text-decoration: none;
+                        color:#000099;}
+
+
+   .hoofdstuknummer    {height:14px;
+                        border: solid 1px #9999CC; 
+                        font-family: Verdana, Arial, Helvetica, sans-serif; 
+                        font-size:10px;
+                        line-height:12px;
+                        margin-left:0px;
+                        margin-right:6px;
+                        padding-left:2px;
+                        padding-right:2px;
+                        display:inline;}
+
+   .hoofdstuknummer a:link    {text-decoration: none;
+                               color:#9999CC;}
+   .hoofdstuknummer a:visited {text-decoration: none;
+                               color:#9999CC;}
+   .hoofdstuknummer a:hover   {text-decoration: underline;
+                               color:#9999CC;}
+
+/* added by finalist */
+
+
+   .zoekform            {margin-top: 0px;
+                        margin-bottom: 0px;}
+                        
+   .zoekveld            {background-color:#d3e3e3;
+                        width:250px;}
+                        
+   .zoekknop            {background-color: #99CCCC;
+                        color: #000000;
+                        border: solid #009999 1px;
+                        font-weight: bold;}
+
+   .foto                {margin-top: 2px;
+                         float: right;}
+
+   .contenttekst        {text-align: left;}
+   
+   .contentbody         {margin-top: 14px;}    
+
+   .contentfoto         {width: 160px;
+                        float: right;
+                        padding-left: 11px;
+                        border: none;}
+
+   .bijschriftpopup    {font-size: 10px;
+                        margin-top: 22px;
+                        margin-right: 4px;
+                        border-top: solid 1px #999999;}
+
+   #navcontainer ul     {margin-top: 1px;
+                        padding-left: 0;
+                        margin-left: 0;
+                        background-color: #ffffff;
+                        color: #000000;
+                        float: left;
+                        font-weight: bold;}
+ 
+   #navcontainer ul li { display: inline; }
+ 
+   #navcontainer ul li a
+                        {padding: 0.1em 0.4em;
+                        background-color: #99CCCC;
+                        color: #000000;
+                        text-decoration: none;
+                        float: left;
+                        border: solid #009999 1px;
+                        margin-left: 2px;
+                        margin-right: 2px;}
+ 
+   
+	#printblok {
+  		/* floating optiemenu */
+  		position:absolute;
+  		z-index:1000;
+  		top:-545px;
+  		left:545px;
+  		visibility:visible;
+	}
+
+	#printkolom {
+  		/* kolom rond optiemenu rechts */
+  		position:absolute;
+  		z-index:2000;
+  		top:-1000px;
+  		left:545px;
+  		visibility:visible;
+  	}

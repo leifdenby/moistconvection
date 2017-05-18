@@ -1,0 +1,58 @@
+           GCSS BLCWG Agenda
+           Pan-GCSS meeting
+           Royal Olympic Hotel, Athens, 16-20 May 2005
+
+Mo 16 May  1400-1800 RF02 case study and upcoming WG plans
+
+1400-1430  Margreet van Zanten, KNMI
+           RF02 case observational background
+
+1430-1530  Andy Ackerman, NASA-Ames 
+           Case discussion and intercomparison of LES results
+           submitted so far
+
+1530-1600  Coffee break 
+
+1600-1630  Andy, continued (if necessary)
+
+1630-1645  Chris Bretherton
+           Status of SCM intercomparison results
+
+1645-1700  Adrian Lock, UKMO
+           RF02 case sensitivity studies with UKMO LES.
+
+1700-1715  Chin-Hoh Moeng, NCAR, USA
+           Coherent structure of drizzle events--the movie
+
+1715-1730  Margreet van Zanten
+           KNMI LES results from the RF02 case.
+
+1730-1800  Discussion: Chris Bretherton, moderator
+           Next steps - does this case need more iteration?
+            Is it publishable, and if so when?
+            Are we ready for a new case, and if so, what (EPIC, RICO?)
+
+Tu 17 May  1400-1700 Participant talks of general WG interest (15 mins or so) 
+
+1400-1420  Stephan de Roode, KNMI, Netherlands
+           The role of the mean relative humidity on the dynamics of shallow
+            cumuli - Sensitivity experiments with an LES model.
+
+1420-1440  Frank Mueller, MPI-Hamburg
+           Treatment of microphysics in the MPI-Hamburg LES model
+
+1440-1500  Akiro Noda, Tohoku U., Japan
+           Development and application of a new shallow cloud parameterization
+            scheme for the JMA non-hydrostatic regional model.
+
+1500-1520  Martin Koehler and Roel Neggers, ECMWF
+           The new ECMWF PBL scheme and beyond.
+    
+1530-1600  Coffee break
+
+1600-1700  Discussion of BLCWG direction (continued).
+            Next case what/when/where/who (continued) 
+            Strategy for improving relevance of intercomparison
+            results to NWP/GCMs?
+ 
+            

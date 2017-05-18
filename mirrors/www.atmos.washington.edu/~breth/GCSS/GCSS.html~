@@ -1,0 +1,264 @@
+<html> <head>
+<title> GCSS Boundary Layer Cloud WG Home Page </title>
+</head>
+
+<body>
+<h1> GCSS Boundary Layer Cloud WG Home Page </h1>
+<IMG SRC="xsmoke_LES.gif.pagespeed.ic.2Gwz-5Pk1E.png" width="288" height="288">
+<p>
+
+The <a href="http://www.gewex.org/gcss.html">GCSS</a> (<a href="http://www.gewex.org/">GEWEX</a> Cloud System Study) Boundary Layer Cloud Working
+Group aims to improve physical parameterizations of clouds, other
+boundary layer processes, and their interactions.  We
+conduct careful intercomparisons between observational or laboratory
+case studies, one-dimensional GCM single-column-model (SCM) results, and 3D
+large-eddy-simulation models of cloud-topped boundary layers. Most of the
+leading groups modelling boundary layer clouds have participated in
+our annual workshops, held every 12-18 months.  The BLCWG is currently chaired by <A HREF="http://www.atmos.washington.edu/~breth/">Chris Bretherton</A>
+(breth@atmos.washington.edu) of the Department of Atmospheric
+Sciences, University of Washington, Seattle, WA, USA.
+<p>
+If you would like to keep in touch with our activities, you can join our email
+list.  Our email address is gcss-l@phys.uu.nl. To join, send a message
+containing the words
+<p>
+subscribe gcss-l
+<p>
+to server Majordomo@phys.uu.nl. To unsubscribe from the list, send this server
+the message
+<p>
+unsubscribe gcss-l
+
+
+<h3> Current GCSS BLCWG activities </h3>
+
+<p> <b>Current DYCOMS RF02 nocturnal drizzling stratocumulus case</b> Preliminary results from this case were discussed in Athens. Final submissions following the slightly revised  <a href="http://sky.arc.nasa.gov:6996/ack/gcss9/index.html">LES</a>
+
+    and <a href="GCSS1-RF02-SCM.html">SCM</a> case specifications are
+    due <b>1 August 2005</b>.
+
+<p><b>Pan-GCSS meeting, Athens, 16-20 May 2005</b>
+<ul>
+  <li><a href="GCSS1-200505-Athens/agenda.txt">Athens BLCWG meeting agenda</a>
+  <li><a href="GCSS1-200505-Athens/talks.html">Talks</a> from BLCWG session
+  <li><a href="GCSS1-200505-Athens/GCSS1_Athens_summary.ppt">Summary
+  presentation </a> of BLCWG activities given at Athens.
+</ul>
+
+<h3> Related activities </h3> 
+<ul>
+  <li><a href="Arrowhead-200506/presentations.html">Presentations from Lake Arrowhead
+    Workshop on the Planetary Boundary Layer</a>, 14-16 June 2005
+
+  <li><a href="http://www.gewex.org/gabls.htm">GABLS </a>(the GEWEX Atmospheric 
+  Boundary Layer Study), whose mission is to coordinate research on boundary 
+  layer physics to improve the representation of the atmospheric boundary layer 
+  in numerical models.<li>
+  <a href="http://www.bom.gov.au/bmrc/wefor/staff/cnj/GCSS_pacific_case_final_files/frame.htm">
+  GPCI</a> (the GCSS Pacific Cross-Section Intercomparison), which is comparing 
+  the observed thermodynamic structure and clouds along a vertical cross-section 
+  from the California coast to the central Pacific ITCZ during July 1998 and 
+  2003 with simulations from regional and global simulations.
+</ul>
+
+<DT><STRONG> List of all GCSS BLCWG cases to date</STRONG>
+  <DD> 
+  <DD><STRONG>Nocturnal subtropical stratocumulus case</STRONG>.
+      August 1994, Boulder, Colorado, USA
+  <DD><UL>
+    <LI>Case coordinator: Chin-Hoh Moeng, NCAR, USA (moeng@ucar.edu)
+
+    <LI> Moeng, C.-H., W. R. Cotton, C. S. Bretherton, A. Chlond,
+       M. Khairoutdinov, S. Krueger, W.  S. Lewellen, M. K. MacVean,
+       J. R. M. Pasquier, H. A. Rand, A. P. Siebesma, R. I.  Sykes, and
+       B. Stevens, 1996: Simulation of a stratocumulus-topped PBL:
+       Intercomparison among different numerical codes.  <i>Bull. Amer.
+       Meteor. Soc.</i>, 77, 261-278.
+
+    <LI> Bechtold, P., S. K. Krueger, W. S. Lewellen, E. van Meijgaard,
+       C.-H. Moeng, D. A. Randall, A. van Ulden, and S. Wang, 1996: Modeling a
+       stratocumulus-topped PBL: Intercomparisons amng different 1D codes 
+       and with LES.  <i>Bull. Amer. Meteor. Soc.</i>, 77, 2033-2042.
+    </UL>
+
+  <DD><STRONG>Smoke cloud case</STRONG>.
+      August 1995, De Bilt, Netherlands
+  <DD><UL>
+    <LI>Case coordinators: Malcolm MacVean, UKMO, England
+         (mkmacvean@meto.gov.uk)
+         and <A HREF="http://www.atmos.washington.edu/~breth">Chris
+         Bretherton</A>, Univ. of Washington, USA
+
+    <LI><A HREF="ftp://eos.atmos.washington.edu/pub/breth/papers/GCSS/smoke_intercomparison.html">Bretherton,
+C. S., M. K. MacVean, and 14 coauthors, 1999</A>: An intercomparison of
+radiatively-driven entrainment and turbulence in a smoke cloud, as simulated
+by different numerical models. <i>Quart. J. R. Meteor.  Soc.</i>, <b>125</b>,
+  391-423.
+
+    <LI><A HREF="smoke/smoke_cloud_spec.html">Case summary, goals, and 
+      specifications</A>
+
+  </UL>
+
+  <DD><STRONG>ASTEX Lagrangians</STRONG>, August 1995, De Bilt, Netherlands
+  <DD><UL>
+    <LI>Case coordinators: Steve Krueger, Univ. of Utah, USA
+         (skrueger@atmos.met.utah.edu),
+         and <A HREF="http://www.atmos.washington.edu" ~breth>Chris
+         Bretherton</A>, Univ. of Washington, USA 
+    <LI> <A HREF="ftp://eos.atmos.washington.edu/pub/breth/papers/GCSS/lagr1_intercomparison.html">Bretherton,
+  C. S., S. K. Krueger, M.  C. Wyant, P. Bechtold, E. van Meijgaard,
+  B. Stevens, and J.  Teixeira, 1999</A>: A GCSS boundary layer model
+  intercomparison study of the first ASTEX Lagrangian experiment.
+  <i>Bound.-Layer Meteor.</i>, <b>93</b>, 341-380.
+
+    <LI><A href="http://www.atmos.washington.edu/~breth/astex/lagr/README.hourly.html">
+  ASTEX Lagrangians modellers data set</A>
+
+    <LI><A HREF="ASTEX_lagr/ASTEX_spec.html">Case summary,
+      goals, and specifications</A>
+
+  </UL>
+
+  <DD><STRONG>Drizzle/no drizzle LES intercomparison</STRONG>, 
+      based on ASTEX Lagrangian 1. August 1996, Clermont-Ferrand, France
+  <DD><UL>
+    <LI>Case Coordinator: Peter Duynkerke, IMAU, Netherlands
+    <LI><A HREF="http://www.fys.ruu.nl/~wwwimau/ASTEX/astexcomp.html">Case summary,
+      goals, and specifications</A>
+    <LI>Related <A HREF=http://www.phys.uu.nl/~roode/ASTEX.html>observations</A> from
+    Stephan de Roode of IMAU, including references.
+  </UL>
+
+  <DD><STRONG>BOMEX Trade cumulus case</STRONG>. 
+      July 1997, Seattle, WA, USA
+  <DD><UL>
+    <LI>Case Coordinator: Pier Siebesma, KNMI, Netherlands (siebesma@knmi.nl)
+
+    <li><a HREF="http://ams.allenpress.com/amsonline/?request=get-abstract&issn=1520-0469&volume=060&issue=10&page=1201">
+Siebesma, A. P., and coauthors, 2003:</a> A
+large-eddy simulation intercomparison study of shallow cumulus
+convection. <i>J. Atmos. Sci.</i>, <b>60</b>, 1201-1219.
+
+    <LI><A HREF="http://www.knmi.nl/~siebesma/gcss/bomex.html">Case summary and goals, detailed case specifications, and preliminary results.</A>
+
+    <LI><A HREF="BOMEX/trade.mpg">Animation</A> of cloud top heights
+	from a BOMEX trade cumulus simulation on an approximately 25
+	by 25 km domain using 256x256x72 gridpoints and a 100 m
+	horizontal and 50 m vertical grid spacing, made by Dave
+	Stevens of Lawrence Berkeley Labs. Blue cloudtops are at 600
+	m, just above the subcloud lifted condensation level, and red
+	corresponds to about 2 km cloud tops. Note range of cloud top
+	heights.
+	
+  </UL>
+
+  <DD><STRONG>Transitional trade cumulus case from ATEX</STRONG>.
+      Aug. 24-26, 1998, Madrid, Spain
+  <DD><UL>
+
+    <LI>Case coordinator: Bjorn Stevens, NCAR, USA (bstevens@mmm.ucar.edu)
+
+    <LI><A HREF="http://www.atmos.ucla.edu/~bstevens/papers/atex.pdf">
+        B. Stevens et al., 2000</A>: Simulations of trade-wind cumuli
+        under a strong inversion, <i>J. Atmos. Sci</i>, <b>58</b>,1870-1891.
+
+    <LI><A HREF="http://www.asp.ucar.edu/~bstevens/atex/contents.html">Case 
+        summary, goals, specifications and results</A>
+
+    <LI><A HREF="http://sky.arc.nasa.gov:6996/~ack/iso.atex120cs.5.7-8h.html">
+        Animation of simulated cloud field</A>, from 7-8 hours into an ATEX
+        simulation, and one with a <A HREF="http://sky.arc.nasa.gov:6996/~ack/iso.deardorff120.8-9h.html">
+        smaller subgridscale turbulent
+        mixing length</A> which generates a much larger cloud fraction 
+        near the inversion (courtesy Andy Ackerman of NASA/Ames).
+
+  </UL>
+
+  <DD><STRONG>Continental shallow cumulus boundary layer diurnal cycle
+    (ARM Oklahoma site)</STRONG>.  Jan. 2000, Boulder, Colorado,
+    USA 
+  <DD><UL>
+
+    <LI>Case coordinator: Andy Brown, UKMO
+      (arbrown@meto.govt.uk)
+
+    <LI><A HREF="arm.ps.gz">Brown et al., 2002</A>: Large-eddy
+     simulation of the diurnal cycle of shallow cumulus convection over
+     land. <i>QJRMS</i>, accepted.
+
+    <LI><A HREF="http://www.knmi.nl/samenw/eurocs/">EUROCS single-column
+      model intercomparison</A> study for this case.
+    </UL>
+
+  <DD><STRONG>EUROCS FIRE-I Sc diurnal cycle intercomparison</STRONG>.
+       Aug. 2002, Madrid, Spain.
+  <DD><UL>
+
+    <LI>Case coordinator: Peter Duynkerke, KNMI (deceased)
+
+    <LI><A HREF="xxx">Paper</A> describing intercomparison results.
+    </UL>
+   
+  <DD><STRONG>Nocturnal nonprecipitating stratocumulus</STRONG> off the
+     California coast during DYCOMS RF01.  Nov. 2003, Broomfield, Colorado, USA
+  <DD><UL>
+
+    <LI>LES case coordinator: Bjorn Stevens, UCLA (bstevens@atmos.ucla.edu)
+
+    <LI>SCM case coordinators: Martin Koehler, ECMWF
+      (Martin.Koehler@ecmwf.int) and Ping Zhu, U. Washington (pzhu@ucar.edu)
+
+    <LI><A HREF="ftp://eos.atmos.washington.edu/pub/breth/papers/in-review/GCSS1-DYCOMS-LES.html">Stevens,
+B., and coauthors, 2004:</A> Observations of nocturnal marine
+stratocumulus as represented by large eddy simulation. 
+<i>Mon Wea. Rev.</i>, submitted 8/04.
+
+    <LI><A HREF="ftp://eos.atmos.washington.edu/pub/breth/papers/in-review/GCSS1-DYCOMS-SCM.html">Zhu,
+P., and coauthors, 2004:</A> Intercomparison and interpretation of
+single column model simulations of a nocturnal stratocumulus topped
+marine boundary layer.  <i>Mon Wea. Rev.</i>, submitted 8/04.
+
+    <LI><a href="http://www.atmos.ucla.edu/~bstevens/dycoms/rf01/rf01.html">
+      LES case description/instructions/results</a> 
+
+    <LI><a href="http://www.ecmwf.int/staff/martin_koehler/docs/dycoms/index.html">
+      SCM case description/instructions/results</a> 
+    </UL>
+
+  <DD><STRONG>Nocturnal drizzling stratocumulus</STRONG> off the
+    California coast during DYCOMS RF02. Discussed May
+    2005, Athens. Final submissions due 1 August 2005.
+  <DD><UL>
+
+    <LI>LES case coordinator:
+      <a href="mailto:andrew.ackerman@nasa.gov">Andy Ackerman</a>, NASA/Ames.
+
+    <LI>SCM case coordinators: <a href="mailto:breth@atmos.washington.edu">Chris 
+    Bretherton</a> and <a href="mailto:mwyant@atmos.washington.edu">Matt Wyant</a>, 
+    U. Washington.<LI><a href="http://sky.arc.nasa.gov:6996/ack/gcss9/index.html">
+
+      Case overview and LES case specifications</a> (Revised June 2005).
+
+    <LI><a href="GCSS1-RF02-SCM.html">SCM case specifications</a>
+  </UL>
+
+  <DD><strong>Precipitating trade cumulus</strong> off Antigua during RICO. To be discussed at 
+  GCSS BLCWG/GPCI meeting at GISS, Sept. 18-22,
+    2005. Final submissions due 1 September 2006.
+  
+  <DD><UL>
+
+    <LI>Case coordinator: <a href="mailto:zanten@knmi.nl">Margreet van 
+    Zanten</a>, KNMI.
+
+    <LI><a href="http://www.knmi.nl/samenw/rico/">Case specifications</a></p>
+  </UL>
+
+
+  <p>&nbsp;</DL>
+
+<hr>
+<address><a href="http://www.atmos.washington.edu/~breth/"> Chris Bretherton </a> &lt;breth@atmos.washington.edu&gt;</address>
+
+</body> </html>
