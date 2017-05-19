@@ -33,3 +33,24 @@ shallow to deep convection (*GCSS Working Group 4, Case 4*)
 - [TOGA_COARE_deep_convection_transition](cases/TOGA_COARE_deep_convection_transition/)
 transition from suppressed to deep convection over land (*GCSS Working Group 4,
 Case 5*)
+
+## List of acronyms
+
+- *GCSS* GEWEX Cloud System Study
+
+- *GEWEX* [Global Energy and Water cycle Exchanges
+Project](http://www.gewex.org/about/)
+
+- *GCSS PCS*: GCSS Precipitating Cloud Systems
+
+- GEWEX GASS: GEWEX Global Atmospheric System Studies Panel
+
+- GCSS BLCWG: GCSS Boundary Layer Cloud Working Group
+
+## List of working groups
+
+- GCSS Working Group 4
+
+- GCSS BLCWG (Boundary Layer Cloud Working Group)
+
+- GCSS PCS (Precipitating Cloud Systems) Working Group
