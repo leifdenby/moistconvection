@@ -26,6 +26,10 @@ tropics
 
 - [BOMEX](cases/BOMEX/) non-precipitating shallow cumulus
 
+- [TOGA_COARE_tropical_squall_line](cases/TOGA_COARE_tropical_squall_line/)
+oceanic tropical squall line (*GCSS Working Group 4,
+Case 5*)
+
 - [TRMM_LBA_deep_convection_transition](cases/TRMM_LBA_deep_convection_transition/)
 development of daytime convective boundary layer and the transition from
 shallow to deep convection (*GCSS Working Group 4, Case 4*)
