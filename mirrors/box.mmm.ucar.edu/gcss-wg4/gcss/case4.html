@@ -1,0 +1,1609 @@
+<html>
+<head>
+<title>GEWEX Cloud System Study - Working Group 4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="weather modeling, weather models, meteorology, numerical models, numerics, precipitation, climate, surface processes, parameterizations, atmosphere, land-atmosphere interactions, prediction, precipitating weather systems, data assimilation, forecast systems, meteorological research, convective systems">
+<meta name="description" content="The Mesoscale and Microscale Meteorology Division of NCAR strives to advance the understanding of the mesoscale and microscale aspects of weather and climate, and to create and refine computer models to predict these processes in order to benefit society.">
+<link rel="stylesheet" href="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/assets/MMMweb.css" type="text/css">
+<link rel="stylesheet" href="../assets/MMMweb.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#333333" leftmargin="6" topmargin="3" link="#006699" vlink="#006699" alink="#00CC66">
+<table width="100%" border="0" cellspacing="0" cellpadding="4" height="744">
+  <tr> 
+    <td colspan="3" height="13"><img src="../images/title.jpg" width="639" height="46"></td>
+  </tr>
+  <tr bgcolor="dddddd"> 
+    <td colspan="3" height="36"><img src="../images/tabs_newscience.jpg" width="698" height="48" usemap="#MapMap" border="0"> 
+      <map name="MapMap"> 
+        <area shape="rect" coords="17,15,65,45" href="http://www.mmm.ucar.edu/">
+        <area shape="rect" coords="68,15,114,45" href="http://www.mmm.ucar.edu/science.html">
+        <area shape="rect" coords="120,15,166,47" href="http://www.mmm.ucar.edu/service.html">
+        <area shape="rect" coords="166,14,223,45" href="http://www.mmm.ucar.edu/computing.html">
+        <area shape="rect" coords="225,14,274,46" href="http://www.mmm.ucar.edu/general.html">
+        <area shape="rect" coords="278,15,327,45" href="http://www.mmm.ucar.edu/staff.html">
+        <area shape="rect" coords="498,14,557,45" href="http://www.mmm.ucar.edu/about.html">
+        <area shape="rect" coords="616,18,649,46" href="http://www.ncar.ucar.edu/ncar/" target="_blank">
+        <area shape="rect" coords="561,17,610,46" href="http://www.ucar.edu/ucar/search.html">
+        <area shape="rect" coords="655,13,693,46" href="http://www.ucar.edu/ucar/" target="_blank">
+      </map>
+    </td>
+  </tr>
+  <tr bgcolor="#FFFFCC"> 
+    <td colspan="3" height="7">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="130" bgcolor="#FFFFCC" valign="top" height="542"> 
+      <table width="130" border="0" cellspacing="0" cellpadding="7">
+        <tr> 
+          <td class="leftnavtitles" bgcolor="#CCCCCC">GCSS WG4 Links</td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.mmm.ucar.edu/gcss-wg4/" class="leftnavlinks">Overview</a></td>
+        </tr>
+        <tr> 
+          <td height="22"><a href="../model/intercomp.html" class="leftnavlinksON">Model 
+            Intercomparison Projects</a></td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.mmm.ucar.edu/gcss-wg4/meetings.html" class="leftnavlinks">Meetings</a></td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.mmm.ucar.edu/gcss-wg4/pubs.html" class="leftnavlinks">Publications</a></td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.mmm.ucar.edu/gcss-wg4/news.html" class="leftnavlinks">News</a></td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.mmm.ucar.edu/gcss-wg4/email.html" class="leftnavlinks">Join 
+            Email List</a></td>
+        </tr>
+        <tr> 
+          <td class="leftnavtitles">&nbsp;</td>
+        </tr>
+      </table>
+      <p>&nbsp; </p>
+    </td>
+    <td valign="top" bgcolor="#FFFFFF" width="922" height="542"> 
+      <table width="100%" border="0" cellspacing="15" cellpadding="5" align="center">
+        <tr> 
+          <td height="5" valign="top" bgcolor="#FFFFFF"> 
+            <div align="center"> 
+              <p><font face="Verdana, Arial, Helvetica, sans-serif" size="3" color="#CCCCCC"><b><font color="#FFFFFF" size="4"><i><font color="006699">GEWEX 
+                Cloud System Study - Working Group 4</font></i></font></b></font></p>
+              <p><font face="Verdana, Arial, Helvetica, sans-serif" size="3" color="#CCCCCC"><b><font color="#FFFFFF" size="4"><i><font color="006699">WG4 
+                Model Intercomparison Projects</font></i></font></b></font></p>
+            </div>
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <div align="left"> 
+              <p class="largetitle">Case 4: Daytime convective development 
+                over land: an idealized<br>
+              case based on TRMM-LBA observations.</p>
+              <p class="bodybold"><a href="case4_description.txt">Download this 
+                description and data as a text file </a><br>
+              </p>
+              <p class="body">Wojciech W. Grabowski, NCAR<br>
+                (with data provided by Steve Lang, NASA Goddard)</p>
+              <p class="body">Version 5, March 28, 2003</p>
+              <p class="body">The purpose of this case is to investigate the development of
+                the daytime
+                convective boundary layer over land and the transition from shallow
+                to
+                deep convection. Large-scale and climate models usually struggle
+                to
+                represent the observed diurnal cycle of convection over land,
+                with deep
+                convection typically developing too early when compared to observations.
+                The actual sounding and the evolution of surface fluxes as the
+                day
+                progresses come from observations on February 23, 1999, during
+                the
+                TRMM-LBA field campaign in Rondonia, Brazil.</p>
+              <p class="body">The challenging aspect of this case is the wide range of spatial
+                scales
+                involved. The case features the development of a well-mixed cloud-topped
+                boundary layer from the early morning sounding, formation of
+                shallow
+                convection as surface fluxes increase, and transition from shallow
+                to
+                deep convection. This case does not feature any &quot;large-scale&quot; forcing,
+                i.e., no advective tendencies of temperature and moisture are
+                specified
+                as the simulation progresses. We plan to extend this case to
+                cover the
+                late afternoon convection, the transition from daytime to nighttime,
+                and eventually to the entire diurnal cycle.</p>
+              <p class="body"><br>
+                The main features of model simulations as follows:</p>
+              <p class="body">- initialize the simulation from a morning sounding
+                (7:30am local time                in this case; the sounding is provided in appendix 1);</p>
+              <p class="body">- apply evolving surface temperature and moisture
+                fluxes (a simple Fortran                code to calculate surface fluxes is provided in appendix 2);</p>
+              <p class="body">- apply evolving radiative cooling (data provided in appendix
+                3);</p>
+              <p class="body">- assume free-slip surface boundary conditions
+                (i.e., no surface                friction);</p>
+              <p class="body">- assume computational domain at least 20 km deep,
+                with gravity wave                absorber (for CRMs) above 16 km (tropopause height is about 14
+                km);</p>
+              <p class="body">- maintain the mean flow as in the initial sounding;
+                use relaxation                approach with a time scale of 1
+                hr, i.e., add a term -(Ua-Ui)/tau to                the horizontal
+                momentum equations, Ua is a HORIZONTAL AVERAGE of the                model-predicted
+                velocity (u or v) at a given level, Ui is the initial                velocity at this level, and tau=3600 sec;</p>
+              <p class="body">- run the simulation for 6 hrs (i.e., 7:30am to 1:30pm local
+                time)</p>
+              <p class="body">- for CRMs, use periodic lateral boundary conditions
+                (double periodic in                3D)</p>
+              <p class="body">- to allow small-scale excitation of convective
+                instabilities in CRMs,                apply random perturbations
+                to the surface fluxes with 10% amplitude                and random
+                numbers generated every time step and random perturbations                to
+                the temperature and moisture, with amplitudes of 0.1K and 0.1
+                g/kg,                applied in the lowest 1 km every 15 minutes.</p>
+              <p class="body"><br>
+                At this stage, please use model setup you feel is appropriate
+                  to
+                investigate this problem. We need a spectrum of models, both
+                SCMs and
+                CRMs, and a range of CRM resolutions, both in horizontal and
+                vertical. For
+                CRMs, my suggestion would be to run at about 1 km horizontal
+                grid
+                increment and a few hundred meters in the vertical (perhaps,
+                using a
+                stretched vertical grid to improve representation of boundary
+                layer
+                processes). I am running a high-resolution simulation that can
+                be used
+                as a benchmark for other models. If you decide to run your CRM
+                in 2D,
+                align your model in the way you feel is &quot;appropriate&quot; for
+                this
+                problem. It would be desirable to have 2D models aligned E-W
+                and
+                N-S in separate test simulations.</p>
+              <p class="body">I ran my model with this setup using two sets of spatial resolutions
+                and domain sizes, appropriate for shallow convection (SC) and
+                  for
+                deep convective (DC), in both 2D and 3D. In the SC setup, I applied
+                a horizontal/vertical resolution of 50/25m using a grid of 200x200
+                in 2D, and 128x128x161 in 3D. The SC simulation was run for 3
+                hrs as
+                convection approached the upper lid of my domain (at 4 km in
+                3D) toward
+                the end of the 3hr period. In the DC case, I used 500/125m resolution
+                in horizontal/vertical and the same number of gridpoints as in
+                the
+                SC case (i.e., 200x200 in 2D and 128x128x161 in 3D). A small
+                writeup
+                with my 3D results (a pdf file) is available on the new WG4 web
+                page
+                http://box.mmm.ucar.edu/gcss-wg4/model/intercomp.html (look for
+                Case
+                4 results at the bottom). As you can see in the example of my
+                results
+                (cf. Fig 6 in the writeup), my model is not capable to develop
+                well-mixed
+                convective boundary layer using the DC setup. This most likely
+                impacts
+                development of deep convection. Apparently, the TKE model I am
+                using is
+                not up to the task and most likely a non-local boundary layer
+                scheme is
+                needed. This point can be supported using results from a model
+                with such
+                a scheme.</p>
+              <p class="body">I also wrote a small program that uses this setup in the context
+                of
+                convective parameterization. I applied Emanuel's scheme. I noticed
+                that the results are sensitive to the vertical resolution and
+                to the
+                parameters in the scheme. This was just to convince myself that
+                the setup
+                proposed is of interest to those that use convective parameterizations.
+                It would be interesting to show that convective parameterization
+                indeed
+                produces deep convection to early in this setup (this seems to
+                be the
+                case in my tests using the Emanuel's scheme).</p>
+              <p><span class="body">The procedures to submit model results are
+              described in a separate document.</span></p>
+            </div>
+            <div align="left">
+              <p class="body"><br>
+                Happy computing!<br>
+              </p>
+              <p class="largetitle">&nbsp;</p>
+              <p><b class="bodybold">Appendix 1.</b></p>
+              <p class="body">The sounding to be used to initiate the simulation 
+                is given below. It provides height, pressure, temperature, relative 
+                humidity, and horizontal wind components at 47 levels, from 130 
+                m to 30 km. Note that the first level of the sounding (i.e., zinkm(1), 
+                press(1), etc) provides the data at the surface. This means, in 
+                particular, that the model levels should represent height above 
+                the zinkm(1).</p>
+              <p class="body"><br>
+                parameter(npin=47)<br>
+                dimension press(npin),temp(npin),zinkm(npin),relhum(npin), 1 uu(npin),vv(npin)<br>
+                <br>
+                c zinkm - height (km)<br>
+                c press - pressure (hPa)<br>
+                c temp - temperature (deg C)<br>
+                c relhum - relative humidity (percent)<br>
+                c uu - E-W wind component (m/s)<br>
+                c vv - N-S wind component (m/s)</p>
+              <p class="body"> data zinkm / <br>
+                1 0.130, 0.464, 0.573, 1.100, 1.653, 2.216, 2.760,<br>
+                1 3.297, 3.824, 4.327, 4.787, 5.242, 5.686, 6.131,<br>
+                1 6.578, 6.996, 7.431, 7.881, 8.300, 8.718, 9.149,<br>
+                1 9.611, 10.084, 10.573, 11.008, 11.460, 11.966, 12.472,<br>
+                1 12.971, 13.478, 13.971, 14.443, 14.956, 15.458, 16.019,<br>
+                1 16.491, 16.961, 17.442, 17.934, 18.397, 18.851, 19.331,<br>
+                1 19.809, 20.321, 20.813, 21.329, 30.000/<br>
+                data press / <br>
+                1 991.3, 954.2, 942.0, 886.9, 831.5, 778.9, 729.8, 684.0,<br>
+                1 641.7, 603.2, 570.1, 538.6, 509.1, 480.4, 454.0, 429.6,<br>
+                1 405.7, 382.5, 361.1, 340.9, 321.2, 301.2, 281.8, 263.1,<br>
+                1 246.1, 230.1, 213.2, 197.0, 182.3, 167.9, 154.9, 143.0,<br>
+                1 131.1, 119.7, 108.9, 100.1, 92.1, 84.6, 77.5, 71.4,<br>
+                1 65.9, 60.7, 55.9, 51.3, 47.2, 43.3, 10.3/<br>
+                data temp / <br>
+                1 23.70, 23.30, 22.57, 19.90, 16.91, 14.09, 11.13,<br>
+                1 8.29, 5.38, 2.29, -0.66, -3.02, -5.28, -7.42,<br>
+                1 -10.34, -12.69, -15.70, -19.21, -21.81, -24.73, -27.76,<br>
+                1 -30.93, -34.62, -38.58, -42.30, -46.07, -50.03, -54.67,<br>
+                1 -59.16, -63.60, -67.68, -70.77, -74.41, -77.51, -80.64,<br>
+                1 -80.69, -80.00, -81.38, -81.17, -78.32, -74.77, -74.52,<br>
+                1 -72.62, -70.87, -69.19, -66.90, -66.90/<br>
+                data relhum / <br>
+                1 98.00, 86.00, 88.56, 87.44, 86.67, 83.67, 79.56,<br>
+                1 84.78, 84.78, 89.33, 94.33, 92.00, 85.22, 77.33,<br>
+                1 80.11, 66.11, 72.11, 72.67, 52.22, 54.67, 51.00,<br>
+                1 43.78, 40.56, 43.11, 54.78, 46.11, 42.33, 43.22,<br>
+                1 45.33, 39.78, 33.78, 28.78, 24.67, 20.67, 17.67,<br>
+                1 17.11, 16.22, 14.22, 13.00, 13.00, 12.22, 9.56,<br>
+                1 7.78, 5.89, 4.33, 3.00, 3.00/<br>
+                data uu /<br>
+                1 0.00, 0.81, 1.17, 3.44, 3.53, 3.88, 4.09,<br>
+                1 3.97, 1.22, 0.16, -1.22, -1.72, -2.77, -2.65,<br>
+                1 -0.64, -0.07, -1.90, -2.70, -2.99, -3.66, -5.05,<br>
+                1 -6.64, -4.74, -5.30, -6.07, -4.26, -7.52, -8.88,<br>
+                1 -9.00, -7.77, -5.37, -3.88, -1.15, -2.36, -9.20,<br>
+                1 -8.01, -5.68, -8.83, -14.51, -15.55, -15.36, -17.67,<br>
+                1 -17.82, -18.94, -15.92, -15.32, -15.32/<br>
+                data vv /<br>
+                1 -0.40, -3.51, -3.88, -4.77, -5.28, -5.85, -5.60,<br>
+                1 -2.67, -1.47, 0.57, 0.89, -0.08, 1.11, 2.15,<br>
+                1 3.12, 3.22, 3.34, 1.91, 1.15, 1.01, -0.57,<br>
+                1 -0.67, 0.31, 2.97, 2.32, 2.66, 4.79, 3.40,<br>
+                1 3.14, 3.93, 7.57, 2.58, 2.50, 6.44, 6.84,<br>
+                1 0.19, -2.20, -3.60, 0.56, 6.68, 9.41, 7.03,<br>
+                1 5.32, 1.14, -0.65, 5.27, 5.27/</p>
+              <p></p>
+              <p class="body"><br>
+                <span class="bodybold">Appendix 2. Evolution of surface heat fluxes.</span></p>
+              <p class="body">The code below (provided by Steve Lang from NASA 
+                Goddard) gives a simple fit to the surface latent and sensible 
+                heat fluxes for the February 23rd case. Note that you can either 
+                assume some method to distribute this flux over the lowest few 
+                model levels, or rely on the subgrid-scale model to do this.</p>
+              <p class="body">c curve fit to observed LBA sensible and latent 
+                heat fluxes<br>
+                c hrl is the local time in hours<br>
+                c NOTE: simulation starts at 7:30am (t=7.50)<br>
+                c FLXL is latent heat flux (W/m**2)<br>
+                c FLXS is sensible heat flux (W/m**2)</p>
+              <p class="body"> api=4.*atan(1.)<br>
+                cc time is model time in hrs (time=0 at model start)<br>
+                hrl=7.5 + time<br>
+                thea=api/2.*(12.75-hrl)/5.25<br>
+                xfact=cos(thea)<br>
+                if(xfact.le.0.) xfact=0.<br>
+                FLXL=554.*xfact**1.3<br>
+                FLXS=270.*xfact**1.5</p>
+              <p class="bodybold"><br>
+                Appendix 3. Evolution of the radiative cooling.</p>
+              <p class="body">The data below represent the time evolution of the 
+                radiative cooling profile every 10 min for 6 hrs (i.e., 36 time 
+                levels). The data is<br>
+                provided at 33 height levels, from 42.50m to 22699.48m above the 
+                ground. The original source of these data is the NASA Goddard 
+                simulation of the February 23rd case, but it has been considerably 
+                smoothed in the vertical and cooling rates above 18 km have been 
+                set to zero. These data should be extracted from the text and 
+                saved into a separate file. They should be read during the initialization 
+                phase of the model simulation and interpolated into the model 
+                vertical grid. Moreover, time interpolation is required at every 
+                model time step to obtain radiative cooling at a given model simulation 
+                time. Please assume that the cooling rate provided at the first 
+                level (i.e., at 42.5 m) can be used as the rate below this level 
+                (i.e., between the ground and 42.5 m). Also, if required by your 
+                model setup, the radiative heating above the last level provided 
+                (i.e., above 22.7 km) should be set to zero. Finally, please use 
+                the cooling rates at 10 min between model start and t=10 min.</p>
+              <p></p>
+              <p class="body"> 10.0 time in min<br>
+                42.50 -1.386 z(m),radt(K/day)<br>
+                200.92 -1.927 z(m),radt(K/day)<br>
+                456.28 -2.089 z(m),radt(K/day)<br>
+                743.00 -1.969 z(m),radt(K/day)<br>
+                1061.08 -1.805 z(m),radt(K/day)<br>
+                1410.52 -1.585 z(m),radt(K/day)<br>
+                1791.32 -1.406 z(m),radt(K/day)<br>
+                2203.48 -1.317 z(m),radt(K/day)<br>
+                2647.00 -1.188 z(m),radt(K/day)<br>
+                3121.88 -1.106 z(m),radt(K/day)<br>
+                3628.12 -1.103 z(m),radt(K/day)<br>
+                4165.72 -1.025 z(m),radt(K/day)<br>
+                4734.68 -0.955 z(m),radt(K/day)<br>
+                5335.00 -1.045 z(m),radt(K/day)<br>
+                5966.68 -1.144 z(m),radt(K/day)<br>
+                6629.72 -1.119 z(m),radt(K/day)<br>
+                7324.12 -1.068 z(m),radt(K/day)<br>
+                8049.88 -1.092 z(m),radt(K/day)<br>
+                8807.00 -1.196 z(m),radt(K/day)<br>
+                9595.48 -1.253 z(m),radt(K/day)<br>
+                10415.32 -1.266 z(m),radt(K/day)<br>
+                11266.52 -1.306 z(m),radt(K/day)<br>
+                12149.08 -0.950 z(m),radt(K/day)<br>
+                13063.00 0.122 z(m),radt(K/day)<br>
+                14008.28 0.255 z(m),radt(K/day)<br>
+                14984.92 0.258 z(m),radt(K/day)<br>
+                15992.92 0.322 z(m),radt(K/day)<br>
+                17032.28 0.135 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                20.0 time in min<br>
+                42.50 -1.230 z(m),radt(K/day)<br>
+                200.92 -1.824 z(m),radt(K/day)<br>
+                456.28 -2.011 z(m),radt(K/day)<br>
+                743.00 -1.895 z(m),radt(K/day)<br>
+                1061.08 -1.729 z(m),radt(K/day)<br>
+                1410.52 -1.508 z(m),radt(K/day)<br>
+                1791.32 -1.331 z(m),radt(K/day)<br>
+                2203.48 -1.241 z(m),radt(K/day)<br>
+                2647.00 -1.109 z(m),radt(K/day)<br>
+                3121.88 -1.024 z(m),radt(K/day)<br>
+                3628.12 -1.018 z(m),radt(K/day)<br>
+                4165.72 -0.940 z(m),radt(K/day)<br>
+                4734.68 -0.867 z(m),radt(K/day)<br>
+                5335.00 -0.953 z(m),radt(K/day)<br>
+                5966.68 -1.046 z(m),radt(K/day)<br>
+                6629.72 -1.018 z(m),radt(K/day)<br>
+                7324.12 -0.972 z(m),radt(K/day)<br>
+                8049.88 -1.006 z(m),radt(K/day)<br>
+                8807.00 -1.119 z(m),radt(K/day)<br>
+                9595.48 -1.187 z(m),radt(K/day)<br>
+                10415.32 -1.209 z(m),radt(K/day)<br>
+                11266.52 -1.259 z(m),radt(K/day)<br>
+                12149.08 -0.919 z(m),radt(K/day)<br>
+                13063.00 0.122 z(m),radt(K/day)<br>
+                14008.28 0.264 z(m),radt(K/day)<br>
+                14984.92 0.262 z(m),radt(K/day)<br>
+                15992.92 0.326 z(m),radt(K/day)<br>
+                17032.28 0.137 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                30.0 time in min<br>
+                42.50 -1.043 z(m),radt(K/day)<br>
+                200.92 -1.692 z(m),radt(K/day)<br>
+                456.28 -1.906 z(m),radt(K/day)<br>
+                743.00 -1.796 z(m),radt(K/day)<br>
+                1061.08 -1.630 z(m),radt(K/day)<br>
+                1410.52 -1.410 z(m),radt(K/day)<br>
+                1791.32 -1.233 z(m),radt(K/day)<br>
+                2203.48 -1.142 z(m),radt(K/day)<br>
+                2647.00 -1.010 z(m),radt(K/day)<br>
+                3121.88 -0.921 z(m),radt(K/day)<br>
+                3628.12 -0.911 z(m),radt(K/day)<br>
+                4165.72 -0.829 z(m),radt(K/day)<br>
+                4734.68 -0.754 z(m),radt(K/day)<br>
+                5335.00 -0.837 z(m),radt(K/day)<br>
+                5966.68 -0.923 z(m),radt(K/day)<br>
+                6629.72 -0.890 z(m),radt(K/day)<br>
+                7324.12 -0.847 z(m),radt(K/day)<br>
+                8049.88 -0.895 z(m),radt(K/day)<br>
+                8807.00 -1.021 z(m),radt(K/day)<br>
+                9595.48 -1.101 z(m),radt(K/day)<br>
+                10415.32 -1.138 z(m),radt(K/day)<br>
+                11266.52 -1.201 z(m),radt(K/day)<br>
+                12149.08 -0.880 z(m),radt(K/day)<br>
+                13063.00 0.131 z(m),radt(K/day)<br>
+                14008.28 0.286 z(m),radt(K/day)<br>
+                14984.92 0.259 z(m),radt(K/day)<br>
+                15992.92 0.332 z(m),radt(K/day)<br>
+                17032.28 0.140 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                40.0 time in min<br>
+                42.50 -0.944 z(m),radt(K/day)<br>
+                200.92 -1.613 z(m),radt(K/day)<br>
+                456.28 -1.832 z(m),radt(K/day)<br>
+                743.00 -1.720 z(m),radt(K/day)<br>
+                1061.08 -1.555 z(m),radt(K/day)<br>
+                1410.52 -1.339 z(m),radt(K/day)<br>
+                1791.32 -1.163 z(m),radt(K/day)<br>
+                2203.48 -1.068 z(m),radt(K/day)<br>
+                2647.00 -0.935 z(m),radt(K/day)<br>
+                3121.88 -0.846 z(m),radt(K/day)<br>
+                3628.12 -0.835 z(m),radt(K/day)<br>
+                4165.72 -0.750 z(m),radt(K/day)<br>
+                4734.68 -0.673 z(m),radt(K/day)<br>
+                5335.00 -0.751 z(m),radt(K/day)<br>
+                5966.68 -0.833 z(m),radt(K/day)<br>
+                6629.72 -0.798 z(m),radt(K/day)<br>
+                7324.12 -0.760 z(m),radt(K/day)<br>
+                8049.88 -0.817 z(m),radt(K/day)<br>
+                8807.00 -0.952 z(m),radt(K/day)<br>
+                9595.48 -1.042 z(m),radt(K/day)<br>
+                10415.32 -1.088 z(m),radt(K/day)<br>
+                11266.52 -1.159 z(m),radt(K/day)<br>
+                12149.08 -0.853 z(m),radt(K/day)<br>
+                13063.00 0.138 z(m),radt(K/day)<br>
+                14008.28 0.291 z(m),radt(K/day)<br>
+                14984.92 0.265 z(m),radt(K/day)<br>
+                15992.92 0.348 z(m),radt(K/day)<br>
+                17032.28 0.136 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                50.0 time in min<br>
+                42.50 -0.833 z(m),radt(K/day)<br>
+                200.92 -1.526 z(m),radt(K/day)<br>
+                456.28 -1.757 z(m),radt(K/day)<br>
+                743.00 -1.648 z(m),radt(K/day)<br>
+                1061.08 -1.485 z(m),radt(K/day)<br>
+                1410.52 -1.270 z(m),radt(K/day)<br>
+                1791.32 -1.093 z(m),radt(K/day)<br>
+                2203.48 -0.998 z(m),radt(K/day)<br>
+                2647.00 -0.867 z(m),radt(K/day)<br>
+                3121.88 -0.778 z(m),radt(K/day)<br>
+                3628.12 -0.761 z(m),radt(K/day)<br>
+                4165.72 -0.672 z(m),radt(K/day)<br>
+                4734.68 -0.594 z(m),radt(K/day)<br>
+                5335.00 -0.671 z(m),radt(K/day)<br>
+                5966.68 -0.748 z(m),radt(K/day)<br>
+                6629.72 -0.709 z(m),radt(K/day)<br>
+                7324.12 -0.676 z(m),radt(K/day)<br>
+                8049.88 -0.742 z(m),radt(K/day)<br>
+                8807.00 -0.887 z(m),radt(K/day)<br>
+                9595.48 -0.986 z(m),radt(K/day)<br>
+                10415.32 -1.041 z(m),radt(K/day)<br>
+                11266.52 -1.119 z(m),radt(K/day)<br>
+                12149.08 -0.825 z(m),radt(K/day)<br>
+                13063.00 0.143 z(m),radt(K/day)<br>
+                14008.28 0.296 z(m),radt(K/day)<br>
+                14984.92 0.271 z(m),radt(K/day)<br>
+                15992.92 0.351 z(m),radt(K/day)<br>
+                17032.28 0.138 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                60.0 time in min<br>
+                42.50 -0.719 z(m),radt(K/day)<br>
+                200.92 -1.425 z(m),radt(K/day)<br>
+                456.28 -1.657 z(m),radt(K/day)<br>
+                743.00 -1.550 z(m),radt(K/day)<br>
+                1061.08 -1.392 z(m),radt(K/day)<br>
+                1410.52 -1.179 z(m),radt(K/day)<br>
+                1791.32 -1.003 z(m),radt(K/day)<br>
+                2203.48 -0.909 z(m),radt(K/day)<br>
+                2647.00 -0.778 z(m),radt(K/day)<br>
+                3121.88 -0.688 z(m),radt(K/day)<br>
+                3628.12 -0.667 z(m),radt(K/day)<br>
+                4165.72 -0.573 z(m),radt(K/day)<br>
+                4734.68 -0.492 z(m),radt(K/day)<br>
+                5335.00 -0.566 z(m),radt(K/day)<br>
+                5966.68 -0.639 z(m),radt(K/day)<br>
+                6629.72 -0.596 z(m),radt(K/day)<br>
+                7324.12 -0.568 z(m),radt(K/day)<br>
+                8049.88 -0.647 z(m),radt(K/day)<br>
+                8807.00 -0.804 z(m),radt(K/day)<br>
+                9595.48 -0.914 z(m),radt(K/day)<br>
+                10415.32 -0.981 z(m),radt(K/day)<br>
+                11266.52 -1.070 z(m),radt(K/day)<br>
+                12149.08 -0.793 z(m),radt(K/day)<br>
+                13063.00 0.151 z(m),radt(K/day)<br>
+                14008.28 0.303 z(m),radt(K/day)<br>
+                14984.92 0.279 z(m),radt(K/day)<br>
+                15992.92 0.355 z(m),radt(K/day)<br>
+                17032.28 0.141 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                70.0 time in min<br>
+                42.50 -0.724 z(m),radt(K/day)<br>
+                200.92 -1.374 z(m),radt(K/day)<br>
+                456.28 -1.585 z(m),radt(K/day)<br>
+                743.00 -1.482 z(m),radt(K/day)<br>
+                1061.08 -1.328 z(m),radt(K/day)<br>
+                1410.52 -1.116 z(m),radt(K/day)<br>
+                1791.32 -0.936 z(m),radt(K/day)<br>
+                2203.48 -0.842 z(m),radt(K/day)<br>
+                2647.00 -0.715 z(m),radt(K/day)<br>
+                3121.88 -0.624 z(m),radt(K/day)<br>
+                3628.12 -0.598 z(m),radt(K/day)<br>
+                4165.72 -0.503 z(m),radt(K/day)<br>
+                4734.68 -0.421 z(m),radt(K/day)<br>
+                5335.00 -0.494 z(m),radt(K/day)<br>
+                5966.68 -0.561 z(m),radt(K/day)<br>
+                6629.72 -0.514 z(m),radt(K/day)<br>
+                7324.12 -0.490 z(m),radt(K/day)<br>
+                8049.88 -0.580 z(m),radt(K/day)<br>
+                8807.00 -0.745 z(m),radt(K/day)<br>
+                9595.48 -0.863 z(m),radt(K/day)<br>
+                10415.32 -0.938 z(m),radt(K/day)<br>
+                11266.52 -1.035 z(m),radt(K/day)<br>
+                12149.08 -0.764 z(m),radt(K/day)<br>
+                13063.00 0.171 z(m),radt(K/day)<br>
+                14008.28 0.291 z(m),radt(K/day)<br>
+                14984.92 0.284 z(m),radt(K/day)<br>
+                15992.92 0.358 z(m),radt(K/day)<br>
+                17032.28 0.144 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                80.0 time in min<br>
+                42.50 -0.587 z(m),radt(K/day)<br>
+                200.92 -1.280 z(m),radt(K/day)<br>
+                456.28 -1.513 z(m),radt(K/day)<br>
+                743.00 -1.416 z(m),radt(K/day)<br>
+                1061.08 -1.264 z(m),radt(K/day)<br>
+                1410.52 -1.052 z(m),radt(K/day)<br>
+                1791.32 -0.874 z(m),radt(K/day)<br>
+                2203.48 -0.781 z(m),radt(K/day)<br>
+                2647.00 -0.655 z(m),radt(K/day)<br>
+                3121.88 -0.561 z(m),radt(K/day)<br>
+                3628.12 -0.532 z(m),radt(K/day)<br>
+                4165.72 -0.436 z(m),radt(K/day)<br>
+                4734.68 -0.354 z(m),radt(K/day)<br>
+                5335.00 -0.424 z(m),radt(K/day)<br>
+                5966.68 -0.485 z(m),radt(K/day)<br>
+                6629.72 -0.435 z(m),radt(K/day)<br>
+                7324.12 -0.417 z(m),radt(K/day)<br>
+                8049.88 -0.517 z(m),radt(K/day)<br>
+                8807.00 -0.691 z(m),radt(K/day)<br>
+                9595.48 -0.817 z(m),radt(K/day)<br>
+                10415.32 -0.898 z(m),radt(K/day)<br>
+                11266.52 -1.000 z(m),radt(K/day)<br>
+                12149.08 -0.740 z(m),radt(K/day)<br>
+                13063.00 0.176 z(m),radt(K/day)<br>
+                14008.28 0.297 z(m),radt(K/day)<br>
+                14984.92 0.289 z(m),radt(K/day)<br>
+                15992.92 0.360 z(m),radt(K/day)<br>
+                17032.28 0.146 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                90.0 time in min<br>
+                42.50 -0.506 z(m),radt(K/day)<br>
+                200.92 -1.194 z(m),radt(K/day)<br>
+                456.28 -1.426 z(m),radt(K/day)<br>
+                743.00 -1.332 z(m),radt(K/day)<br>
+                1061.08 -1.182 z(m),radt(K/day)<br>
+                1410.52 -0.972 z(m),radt(K/day)<br>
+                1791.32 -0.795 z(m),radt(K/day)<br>
+                2203.48 -0.704 z(m),radt(K/day)<br>
+                2647.00 -0.578 z(m),radt(K/day)<br>
+                3121.88 -0.480 z(m),radt(K/day)<br>
+                3628.12 -0.445 z(m),radt(K/day)<br>
+                4165.72 -0.347 z(m),radt(K/day)<br>
+                4734.68 -0.267 z(m),radt(K/day)<br>
+                5335.00 -0.336 z(m),radt(K/day)<br>
+                5966.68 -0.391 z(m),radt(K/day)<br>
+                6629.72 -0.337 z(m),radt(K/day)<br>
+                7324.12 -0.325 z(m),radt(K/day)<br>
+                8049.88 -0.436 z(m),radt(K/day)<br>
+                8807.00 -0.620 z(m),radt(K/day)<br>
+                9595.48 -0.756 z(m),radt(K/day)<br>
+                10415.32 -0.847 z(m),radt(K/day)<br>
+                11266.52 -0.960 z(m),radt(K/day)<br>
+                12149.08 -0.714 z(m),radt(K/day)<br>
+                13063.00 0.180 z(m),radt(K/day)<br>
+                14008.28 0.305 z(m),radt(K/day)<br>
+                14984.92 0.317 z(m),radt(K/day)<br>
+                15992.92 0.348 z(m),radt(K/day)<br>
+                17032.28 0.158 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                100.0 time in min<br>
+                42.50 -0.472 z(m),radt(K/day)<br>
+                200.92 -1.140 z(m),radt(K/day)<br>
+                456.28 -1.364 z(m),radt(K/day)<br>
+                743.00 -1.271 z(m),radt(K/day)<br>
+                1061.08 -1.123 z(m),radt(K/day)<br>
+                1410.52 -0.914 z(m),radt(K/day)<br>
+                1791.32 -0.738 z(m),radt(K/day)<br>
+                2203.48 -0.649 z(m),radt(K/day)<br>
+                2647.00 -0.522 z(m),radt(K/day)<br>
+                3121.88 -0.422 z(m),radt(K/day)<br>
+                3628.12 -0.386 z(m),radt(K/day)<br>
+                4165.72 -0.287 z(m),radt(K/day)<br>
+                4734.68 -0.207 z(m),radt(K/day)<br>
+                5335.00 -0.273 z(m),radt(K/day)<br>
+                5966.68 -0.322 z(m),radt(K/day)<br>
+                6629.72 -0.267 z(m),radt(K/day)<br>
+                7324.12 -0.260 z(m),radt(K/day)<br>
+                8049.88 -0.379 z(m),radt(K/day)<br>
+                8807.00 -0.569 z(m),radt(K/day)<br>
+                9595.48 -0.712 z(m),radt(K/day)<br>
+                10415.32 -0.811 z(m),radt(K/day)<br>
+                11266.52 -0.931 z(m),radt(K/day)<br>
+                12149.08 -0.696 z(m),radt(K/day)<br>
+                13063.00 0.183 z(m),radt(K/day)<br>
+                14008.28 0.311 z(m),radt(K/day)<br>
+                14984.92 0.320 z(m),radt(K/day)<br>
+                15992.92 0.351 z(m),radt(K/day)<br>
+                17032.28 0.160 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                110.0 time in min<br>
+                42.50 -0.448 z(m),radt(K/day)<br>
+                200.92 -1.091 z(m),radt(K/day)<br>
+                456.28 -1.305 z(m),radt(K/day)<br>
+                743.00 -1.214 z(m),radt(K/day)<br>
+                1061.08 -1.068 z(m),radt(K/day)<br>
+                1410.52 -0.858 z(m),radt(K/day)<br>
+                1791.32 -0.682 z(m),radt(K/day)<br>
+                2203.48 -0.594 z(m),radt(K/day)<br>
+                2647.00 -0.469 z(m),radt(K/day)<br>
+                3121.88 -0.368 z(m),radt(K/day)<br>
+                3628.12 -0.329 z(m),radt(K/day)<br>
+                4165.72 -0.229 z(m),radt(K/day)<br>
+                4734.68 -0.149 z(m),radt(K/day)<br>
+                5335.00 -0.213 z(m),radt(K/day)<br>
+                5966.68 -0.257 z(m),radt(K/day)<br>
+                6629.72 -0.200 z(m),radt(K/day)<br>
+                7324.12 -0.199 z(m),radt(K/day)<br>
+                8049.88 -0.327 z(m),radt(K/day)<br>
+                8807.00 -0.523 z(m),radt(K/day)<br>
+                9595.48 -0.668 z(m),radt(K/day)<br>
+                10415.32 -0.774 z(m),radt(K/day)<br>
+                11266.52 -0.903 z(m),radt(K/day)<br>
+                12149.08 -0.678 z(m),radt(K/day)<br>
+                13063.00 0.186 z(m),radt(K/day)<br>
+                14008.28 0.315 z(m),radt(K/day)<br>
+                14984.92 0.323 z(m),radt(K/day)<br>
+                15992.92 0.355 z(m),radt(K/day)<br>
+                17032.28 0.162 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                120.0 time in min<br>
+                42.50 -0.405 z(m),radt(K/day)<br>
+                200.92 -1.025 z(m),radt(K/day)<br>
+                456.28 -1.228 z(m),radt(K/day)<br>
+                743.00 -1.139 z(m),radt(K/day)<br>
+                1061.08 -0.996 z(m),radt(K/day)<br>
+                1410.52 -0.789 z(m),radt(K/day)<br>
+                1791.32 -0.615 z(m),radt(K/day)<br>
+                2203.48 -0.527 z(m),radt(K/day)<br>
+                2647.00 -0.402 z(m),radt(K/day)<br>
+                3121.88 -0.300 z(m),radt(K/day)<br>
+                3628.12 -0.256 z(m),radt(K/day)<br>
+                4165.72 -0.156 z(m),radt(K/day)<br>
+                4734.68 -0.077 z(m),radt(K/day)<br>
+                5335.00 -0.136 z(m),radt(K/day)<br>
+                5966.68 -0.173 z(m),radt(K/day)<br>
+                6629.72 -0.115 z(m),radt(K/day)<br>
+                7324.12 -0.121 z(m),radt(K/day)<br>
+                8049.88 -0.259 z(m),radt(K/day)<br>
+                8807.00 -0.463 z(m),radt(K/day)<br>
+                9595.48 -0.617 z(m),radt(K/day)<br>
+                10415.32 -0.732 z(m),radt(K/day)<br>
+                11266.52 -0.869 z(m),radt(K/day)<br>
+                12149.08 -0.656 z(m),radt(K/day)<br>
+                13063.00 0.190 z(m),radt(K/day)<br>
+                14008.28 0.322 z(m),radt(K/day)<br>
+                14984.92 0.326 z(m),radt(K/day)<br>
+                15992.92 0.359 z(m),radt(K/day)<br>
+                17032.28 0.164 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                130.0 time in min<br>
+                42.50 -0.391 z(m),radt(K/day)<br>
+                200.92 -0.983 z(m),radt(K/day)<br>
+                456.28 -1.174 z(m),radt(K/day)<br>
+                743.00 -1.085 z(m),radt(K/day)<br>
+                1061.08 -0.945 z(m),radt(K/day)<br>
+                1410.52 -0.739 z(m),radt(K/day)<br>
+                1791.32 -0.566 z(m),radt(K/day)<br>
+                2203.48 -0.478 z(m),radt(K/day)<br>
+                2647.00 -0.354 z(m),radt(K/day)<br>
+                3121.88 -0.251 z(m),radt(K/day)<br>
+                3628.12 -0.205 z(m),radt(K/day)<br>
+                4165.72 -0.105 z(m),radt(K/day)<br>
+                4734.68 -0.027 z(m),radt(K/day)<br>
+                5335.00 -0.082 z(m),radt(K/day)<br>
+                5966.68 -0.114 z(m),radt(K/day)<br>
+                6629.72 -0.056 z(m),radt(K/day)<br>
+                7324.12 -0.069 z(m),radt(K/day)<br>
+                8049.88 -0.213 z(m),radt(K/day)<br>
+                8807.00 -0.420 z(m),radt(K/day)<br>
+                9595.48 -0.579 z(m),radt(K/day)<br>
+                10415.32 -0.699 z(m),radt(K/day)<br>
+                11266.52 -0.840 z(m),radt(K/day)<br>
+                12149.08 -0.642 z(m),radt(K/day)<br>
+                13063.00 0.173 z(m),radt(K/day)<br>
+                14008.28 0.327 z(m),radt(K/day)<br>
+                14984.92 0.329 z(m),radt(K/day)<br>
+                15992.92 0.362 z(m),radt(K/day)<br>
+                17032.28 0.165 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                140.0 time in min<br>
+                42.50 -0.385 z(m),radt(K/day)<br>
+                200.92 -0.946 z(m),radt(K/day)<br>
+                456.28 -1.121 z(m),radt(K/day)<br>
+                743.00 -1.032 z(m),radt(K/day)<br>
+                1061.08 -0.898 z(m),radt(K/day)<br>
+                1410.52 -0.695 z(m),radt(K/day)<br>
+                1791.32 -0.523 z(m),radt(K/day)<br>
+                2203.48 -0.434 z(m),radt(K/day)<br>
+                2647.00 -0.307 z(m),radt(K/day)<br>
+                3121.88 -0.203 z(m),radt(K/day)<br>
+                3628.12 -0.157 z(m),radt(K/day)<br>
+                4165.72 -0.057 z(m),radt(K/day)<br>
+                4734.68 0.021 z(m),radt(K/day)<br>
+                5335.00 -0.031 z(m),radt(K/day)<br>
+                5966.68 -0.059 z(m),radt(K/day)<br>
+                6629.72 -0.001 z(m),radt(K/day)<br>
+                7324.12 -0.018 z(m),radt(K/day)<br>
+                8049.88 -0.168 z(m),radt(K/day)<br>
+                8807.00 -0.381 z(m),radt(K/day)<br>
+                9595.48 -0.546 z(m),radt(K/day)<br>
+                10415.32 -0.672 z(m),radt(K/day)<br>
+                11266.52 -0.819 z(m),radt(K/day)<br>
+                12149.08 -0.629 z(m),radt(K/day)<br>
+                13063.00 0.176 z(m),radt(K/day)<br>
+                14008.28 0.332 z(m),radt(K/day)<br>
+                14984.92 0.332 z(m),radt(K/day)<br>
+                15992.92 0.364 z(m),radt(K/day)<br>
+                17032.28 0.166 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                150.0 time in min<br>
+                42.50 -0.383 z(m),radt(K/day)<br>
+                200.92 -0.904 z(m),radt(K/day)<br>
+                456.28 -1.063 z(m),radt(K/day)<br>
+                743.00 -0.972 z(m),radt(K/day)<br>
+                1061.08 -0.834 z(m),radt(K/day)<br>
+                1410.52 -0.632 z(m),radt(K/day)<br>
+                1791.32 -0.464 z(m),radt(K/day)<br>
+                2203.48 -0.378 z(m),radt(K/day)<br>
+                2647.00 -0.251 z(m),radt(K/day)<br>
+                3121.88 -0.144 z(m),radt(K/day)<br>
+                3628.12 -0.096 z(m),radt(K/day)<br>
+                4165.72 0.001 z(m),radt(K/day)<br>
+                4734.68 0.079 z(m),radt(K/day)<br>
+                5335.00 0.032 z(m),radt(K/day)<br>
+                5966.68 0.011 z(m),radt(K/day)<br>
+                6629.72 0.069 z(m),radt(K/day)<br>
+                7324.12 0.044 z(m),radt(K/day)<br>
+                8049.88 -0.113 z(m),radt(K/day)<br>
+                8807.00 -0.332 z(m),radt(K/day)<br>
+                9595.48 -0.504 z(m),radt(K/day)<br>
+                10415.32 -0.637 z(m),radt(K/day)<br>
+                11266.52 -0.791 z(m),radt(K/day)<br>
+                12149.08 -0.611 z(m),radt(K/day)<br>
+                13063.00 0.181 z(m),radt(K/day)<br>
+                14008.28 0.338 z(m),radt(K/day)<br>
+                14984.92 0.335 z(m),radt(K/day)<br>
+                15992.92 0.367 z(m),radt(K/day)<br>
+                17032.28 0.167 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                160.0 time in min<br>
+                42.50 -0.391 z(m),radt(K/day)<br>
+                200.92 -0.873 z(m),radt(K/day)<br>
+                456.28 -1.016 z(m),radt(K/day)<br>
+                743.00 -0.929 z(m),radt(K/day)<br>
+                1061.08 -0.794 z(m),radt(K/day)<br>
+                1410.52 -0.591 z(m),radt(K/day)<br>
+                1791.32 -0.423 z(m),radt(K/day)<br>
+                2203.48 -0.337 z(m),radt(K/day)<br>
+                2647.00 -0.212 z(m),radt(K/day)<br>
+                3121.88 -0.104 z(m),radt(K/day)<br>
+                3628.12 -0.056 z(m),radt(K/day)<br>
+                4165.72 0.043 z(m),radt(K/day)<br>
+                4734.68 0.121 z(m),radt(K/day)<br>
+                5335.00 0.077 z(m),radt(K/day)<br>
+                5966.68 0.058 z(m),radt(K/day)<br>
+                6629.72 0.117 z(m),radt(K/day)<br>
+                7324.12 0.088 z(m),radt(K/day)<br>
+                8049.88 -0.075 z(m),radt(K/day)<br>
+                8807.00 -0.298 z(m),radt(K/day)<br>
+                9595.48 -0.475 z(m),radt(K/day)<br>
+                10415.32 -0.613 z(m),radt(K/day)<br>
+                11266.52 -0.772 z(m),radt(K/day)<br>
+                12149.08 -0.599 z(m),radt(K/day)<br>
+                13063.00 0.183 z(m),radt(K/day)<br>
+                14008.28 0.342 z(m),radt(K/day)<br>
+                14984.92 0.337 z(m),radt(K/day)<br>
+                15992.92 0.370 z(m),radt(K/day)<br>
+                17032.28 0.168 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                170.0 time in min<br>
+                42.50 -0.359 z(m),radt(K/day)<br>
+                200.92 -0.836 z(m),radt(K/day)<br>
+                456.28 -0.976 z(m),radt(K/day)<br>
+                743.00 -0.888 z(m),radt(K/day)<br>
+                1061.08 -0.755 z(m),radt(K/day)<br>
+                1410.52 -0.554 z(m),radt(K/day)<br>
+                1791.32 -0.386 z(m),radt(K/day)<br>
+                2203.48 -0.300 z(m),radt(K/day)<br>
+                2647.00 -0.175 z(m),radt(K/day)<br>
+                3121.88 -0.067 z(m),radt(K/day)<br>
+                3628.12 -0.018 z(m),radt(K/day)<br>
+                4165.72 0.081 z(m),radt(K/day)<br>
+                4734.68 0.160 z(m),radt(K/day)<br>
+                5335.00 0.119 z(m),radt(K/day)<br>
+                5966.68 0.103 z(m),radt(K/day)<br>
+                6629.72 0.161 z(m),radt(K/day)<br>
+                7324.12 0.129 z(m),radt(K/day)<br>
+                8049.88 -0.039 z(m),radt(K/day)<br>
+                8807.00 -0.266 z(m),radt(K/day)<br>
+                9595.48 -0.448 z(m),radt(K/day)<br>
+                10415.32 -0.591 z(m),radt(K/day)<br>
+                11266.52 -0.755 z(m),radt(K/day)<br>
+                12149.08 -0.587 z(m),radt(K/day)<br>
+                13063.00 0.187 z(m),radt(K/day)<br>
+                14008.28 0.345 z(m),radt(K/day)<br>
+                14984.92 0.339 z(m),radt(K/day)<br>
+                15992.92 0.372 z(m),radt(K/day)<br>
+                17032.28 0.169 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                180.0 time in min<br>
+                42.50 -0.328 z(m),radt(K/day)<br>
+                200.92 -0.792 z(m),radt(K/day)<br>
+                456.28 -0.928 z(m),radt(K/day)<br>
+                743.00 -0.842 z(m),radt(K/day)<br>
+                1061.08 -0.709 z(m),radt(K/day)<br>
+                1410.52 -0.508 z(m),radt(K/day)<br>
+                1791.32 -0.341 z(m),radt(K/day)<br>
+                2203.48 -0.256 z(m),radt(K/day)<br>
+                2647.00 -0.131 z(m),radt(K/day)<br>
+                3121.88 -0.022 z(m),radt(K/day)<br>
+                3628.12 0.029 z(m),radt(K/day)<br>
+                4165.72 0.128 z(m),radt(K/day)<br>
+                4734.68 0.208 z(m),radt(K/day)<br>
+                5335.00 0.170 z(m),radt(K/day)<br>
+                5966.68 0.158 z(m),radt(K/day)<br>
+                6629.72 0.216 z(m),radt(K/day)<br>
+                7324.12 0.179 z(m),radt(K/day)<br>
+                8049.88 0.005 z(m),radt(K/day)<br>
+                8807.00 -0.228 z(m),radt(K/day)<br>
+                9595.48 -0.415 z(m),radt(K/day)<br>
+                10415.32 -0.564 z(m),radt(K/day)<br>
+                11266.52 -0.733 z(m),radt(K/day)<br>
+                12149.08 -0.573 z(m),radt(K/day)<br>
+                13063.00 0.190 z(m),radt(K/day)<br>
+                14008.28 0.384 z(m),radt(K/day)<br>
+                14984.92 0.313 z(m),radt(K/day)<br>
+                15992.92 0.375 z(m),radt(K/day)<br>
+                17032.28 0.170 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                190.0 time in min<br>
+                42.50 -0.324 z(m),radt(K/day)<br>
+                200.92 -0.767 z(m),radt(K/day)<br>
+                456.28 -0.893 z(m),radt(K/day)<br>
+                743.00 -0.807 z(m),radt(K/day)<br>
+                1061.08 -0.676 z(m),radt(K/day)<br>
+                1410.52 -0.476 z(m),radt(K/day)<br>
+                1791.32 -0.310 z(m),radt(K/day)<br>
+                2203.48 -0.225 z(m),radt(K/day)<br>
+                2647.00 -0.101 z(m),radt(K/day)<br>
+                3121.88 0.008 z(m),radt(K/day)<br>
+                3628.12 0.060 z(m),radt(K/day)<br>
+                4165.72 0.159 z(m),radt(K/day)<br>
+                4734.68 0.239 z(m),radt(K/day)<br>
+                5335.00 0.204 z(m),radt(K/day)<br>
+                5966.68 0.195 z(m),radt(K/day)<br>
+                6629.72 0.252 z(m),radt(K/day)<br>
+                7324.12 0.212 z(m),radt(K/day)<br>
+                8049.88 0.034 z(m),radt(K/day)<br>
+                8807.00 -0.203 z(m),radt(K/day)<br>
+                9595.48 -0.394 z(m),radt(K/day)<br>
+                10415.32 -0.546 z(m),radt(K/day)<br>
+                11266.52 -0.719 z(m),radt(K/day)<br>
+                12149.08 -0.564 z(m),radt(K/day)<br>
+                13063.00 0.192 z(m),radt(K/day)<br>
+                14008.28 0.386 z(m),radt(K/day)<br>
+                14984.92 0.315 z(m),radt(K/day)<br>
+                15992.92 0.377 z(m),radt(K/day)<br>
+                17032.28 0.171 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                200.0 time in min<br>
+                42.50 -0.310 z(m),radt(K/day)<br>
+                200.92 -0.740 z(m),radt(K/day)<br>
+                456.28 -0.860 z(m),radt(K/day)<br>
+                743.00 -0.775 z(m),radt(K/day)<br>
+                1061.08 -0.647 z(m),radt(K/day)<br>
+                1410.52 -0.449 z(m),radt(K/day)<br>
+                1791.32 -0.283 z(m),radt(K/day)<br>
+                2203.48 -0.197 z(m),radt(K/day)<br>
+                2647.00 -0.073 z(m),radt(K/day)<br>
+                3121.88 0.036 z(m),radt(K/day)<br>
+                3628.12 0.089 z(m),radt(K/day)<br>
+                4165.72 0.188 z(m),radt(K/day)<br>
+                4734.68 0.269 z(m),radt(K/day)<br>
+                5335.00 0.235 z(m),radt(K/day)<br>
+                5966.68 0.229 z(m),radt(K/day)<br>
+                6629.72 0.285 z(m),radt(K/day)<br>
+                7324.12 0.242 z(m),radt(K/day)<br>
+                8049.88 0.061 z(m),radt(K/day)<br>
+                8807.00 -0.179 z(m),radt(K/day)<br>
+                9595.48 -0.374 z(m),radt(K/day)<br>
+                10415.32 -0.530 z(m),radt(K/day)<br>
+                11266.52 -0.706 z(m),radt(K/day)<br>
+                12149.08 -0.556 z(m),radt(K/day)<br>
+                13063.00 0.194 z(m),radt(K/day)<br>
+                14008.28 0.388 z(m),radt(K/day)<br>
+                14984.92 0.317 z(m),radt(K/day)<br>
+                15992.92 0.402 z(m),radt(K/day)<br>
+                17032.28 0.158 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                210.0 time in min<br>
+                42.50 -0.244 z(m),radt(K/day)<br>
+                200.92 -0.694 z(m),radt(K/day)<br>
+                456.28 -0.818 z(m),radt(K/day)<br>
+                743.00 -0.730 z(m),radt(K/day)<br>
+                1061.08 -0.605 z(m),radt(K/day)<br>
+                1410.52 -0.415 z(m),radt(K/day)<br>
+                1791.32 -0.252 z(m),radt(K/day)<br>
+                2203.48 -0.163 z(m),radt(K/day)<br>
+                2647.00 -0.037 z(m),radt(K/day)<br>
+                3121.88 0.072 z(m),radt(K/day)<br>
+                3628.12 0.122 z(m),radt(K/day)<br>
+                4165.72 0.220 z(m),radt(K/day)<br>
+                4734.68 0.303 z(m),radt(K/day)<br>
+                5335.00 0.273 z(m),radt(K/day)<br>
+                5966.68 0.269 z(m),radt(K/day)<br>
+                6629.72 0.324 z(m),radt(K/day)<br>
+                7324.12 0.277 z(m),radt(K/day)<br>
+                8049.88 0.093 z(m),radt(K/day)<br>
+                8807.00 -0.152 z(m),radt(K/day)<br>
+                9595.48 -0.350 z(m),radt(K/day)<br>
+                10415.32 -0.510 z(m),radt(K/day)<br>
+                11266.52 -0.691 z(m),radt(K/day)<br>
+                12149.08 -0.546 z(m),radt(K/day)<br>
+                13063.00 0.196 z(m),radt(K/day)<br>
+                14008.28 0.390 z(m),radt(K/day)<br>
+                14984.92 0.320 z(m),radt(K/day)<br>
+                15992.92 0.403 z(m),radt(K/day)<br>
+                17032.28 0.159 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                220.0 time in min<br>
+                42.50 -0.284 z(m),radt(K/day)<br>
+                200.92 -0.701 z(m),radt(K/day)<br>
+                456.28 -0.803 z(m),radt(K/day)<br>
+                743.00 -0.701 z(m),radt(K/day)<br>
+                1061.08 -0.568 z(m),radt(K/day)<br>
+                1410.52 -0.381 z(m),radt(K/day)<br>
+                1791.32 -0.225 z(m),radt(K/day)<br>
+                2203.48 -0.142 z(m),radt(K/day)<br>
+                2647.00 -0.017 z(m),radt(K/day)<br>
+                3121.88 0.092 z(m),radt(K/day)<br>
+                3628.12 0.143 z(m),radt(K/day)<br>
+                4165.72 0.242 z(m),radt(K/day)<br>
+                4734.68 0.325 z(m),radt(K/day)<br>
+                5335.00 0.298 z(m),radt(K/day)<br>
+                5966.68 0.295 z(m),radt(K/day)<br>
+                6629.72 0.350 z(m),radt(K/day)<br>
+                7324.12 0.300 z(m),radt(K/day)<br>
+                8049.88 0.112 z(m),radt(K/day)<br>
+                8807.00 -0.134 z(m),radt(K/day)<br>
+                9595.48 -0.334 z(m),radt(K/day)<br>
+                10415.32 -0.497 z(m),radt(K/day)<br>
+                11266.52 -0.680 z(m),radt(K/day)<br>
+                12149.08 -0.540 z(m),radt(K/day)<br>
+                13063.00 0.198 z(m),radt(K/day)<br>
+                14008.28 0.392 z(m),radt(K/day)<br>
+                14984.92 0.321 z(m),radt(K/day)<br>
+                15992.92 0.404 z(m),radt(K/day)<br>
+                17032.28 0.160 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                230.0 time in min<br>
+                42.50 -0.281 z(m),radt(K/day)<br>
+                200.92 -0.686 z(m),radt(K/day)<br>
+                456.28 -0.783 z(m),radt(K/day)<br>
+                743.00 -0.680 z(m),radt(K/day)<br>
+                1061.08 -0.547 z(m),radt(K/day)<br>
+                1410.52 -0.359 z(m),radt(K/day)<br>
+                1791.32 -0.202 z(m),radt(K/day)<br>
+                2203.48 -0.119 z(m),radt(K/day)<br>
+                2647.00 0.005 z(m),radt(K/day)<br>
+                3121.88 0.112 z(m),radt(K/day)<br>
+                3628.12 0.163 z(m),radt(K/day)<br>
+                4165.72 0.261 z(m),radt(K/day)<br>
+                4734.68 0.345 z(m),radt(K/day)<br>
+                5335.00 0.321 z(m),radt(K/day)<br>
+                5966.68 0.319 z(m),radt(K/day)<br>
+                6629.72 0.371 z(m),radt(K/day)<br>
+                7324.12 0.319 z(m),radt(K/day)<br>
+                8049.88 0.130 z(m),radt(K/day)<br>
+                8807.00 -0.118 z(m),radt(K/day)<br>
+                9595.48 -0.321 z(m),radt(K/day)<br>
+                10415.32 -0.486 z(m),radt(K/day)<br>
+                11266.52 -0.671 z(m),radt(K/day)<br>
+                12149.08 -0.534 z(m),radt(K/day)<br>
+                13063.00 0.199 z(m),radt(K/day)<br>
+                14008.28 0.393 z(m),radt(K/day)<br>
+                14984.92 0.323 z(m),radt(K/day)<br>
+                15992.92 0.405 z(m),radt(K/day)<br>
+                17032.28 0.161 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                240.0 time in min<br>
+                42.50 -0.269 z(m),radt(K/day)<br>
+                200.92 -0.667 z(m),radt(K/day)<br>
+                456.28 -0.760 z(m),radt(K/day)<br>
+                743.00 -0.655 z(m),radt(K/day)<br>
+                1061.08 -0.522 z(m),radt(K/day)<br>
+                1410.52 -0.336 z(m),radt(K/day)<br>
+                1791.32 -0.181 z(m),radt(K/day)<br>
+                2203.48 -0.096 z(m),radt(K/day)<br>
+                2647.00 0.029 z(m),radt(K/day)<br>
+                3121.88 0.136 z(m),radt(K/day)<br>
+                3628.12 0.188 z(m),radt(K/day)<br>
+                4165.72 0.286 z(m),radt(K/day)<br>
+                4734.68 0.370 z(m),radt(K/day)<br>
+                5335.00 0.346 z(m),radt(K/day)<br>
+                5966.68 0.345 z(m),radt(K/day)<br>
+                6629.72 0.396 z(m),radt(K/day)<br>
+                7324.12 0.342 z(m),radt(K/day)<br>
+                8049.88 0.150 z(m),radt(K/day)<br>
+                8807.00 -0.102 z(m),radt(K/day)<br>
+                9595.48 -0.307 z(m),radt(K/day)<br>
+                10415.32 -0.473 z(m),radt(K/day)<br>
+                11266.52 -0.661 z(m),radt(K/day)<br>
+                12149.08 -0.528 z(m),radt(K/day)<br>
+                13063.00 0.200 z(m),radt(K/day)<br>
+                14008.28 0.393 z(m),radt(K/day)<br>
+                14984.92 0.324 z(m),radt(K/day)<br>
+                15992.92 0.405 z(m),radt(K/day)<br>
+                17032.28 0.162 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                250.0 time in min<br>
+                42.50 -0.255 z(m),radt(K/day)<br>
+                200.92 -0.653 z(m),radt(K/day)<br>
+                456.28 -0.747 z(m),radt(K/day)<br>
+                743.00 -0.643 z(m),radt(K/day)<br>
+                1061.08 -0.511 z(m),radt(K/day)<br>
+                1410.52 -0.325 z(m),radt(K/day)<br>
+                1791.32 -0.169 z(m),radt(K/day)<br>
+                2203.48 -0.082 z(m),radt(K/day)<br>
+                2647.00 0.042 z(m),radt(K/day)<br>
+                3121.88 0.149 z(m),radt(K/day)<br>
+                3628.12 0.204 z(m),radt(K/day)<br>
+                4165.72 0.304 z(m),radt(K/day)<br>
+                4734.68 0.388 z(m),radt(K/day)<br>
+                5335.00 0.363 z(m),radt(K/day)<br>
+                5966.68 0.360 z(m),radt(K/day)<br>
+                6629.72 0.409 z(m),radt(K/day)<br>
+                7324.12 0.354 z(m),radt(K/day)<br>
+                8049.88 0.164 z(m),radt(K/day)<br>
+                8807.00 -0.085 z(m),radt(K/day)<br>
+                9595.48 -0.289 z(m),radt(K/day)<br>
+                10415.32 -0.457 z(m),radt(K/day)<br>
+                11266.52 -0.649 z(m),radt(K/day)<br>
+                12149.08 -0.523 z(m),radt(K/day)<br>
+                13063.00 0.193 z(m),radt(K/day)<br>
+                14008.28 0.394 z(m),radt(K/day)<br>
+                14984.92 0.326 z(m),radt(K/day)<br>
+                15992.92 0.406 z(m),radt(K/day)<br>
+                17032.28 0.162 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                260.0 time in min<br>
+                42.50 -0.265 z(m),radt(K/day)<br>
+                200.92 -0.650 z(m),radt(K/day)<br>
+                456.28 -0.739 z(m),radt(K/day)<br>
+                743.00 -0.634 z(m),radt(K/day)<br>
+                1061.08 -0.500 z(m),radt(K/day)<br>
+                1410.52 -0.314 z(m),radt(K/day)<br>
+                1791.32 -0.159 z(m),radt(K/day)<br>
+                2203.48 -0.072 z(m),radt(K/day)<br>
+                2647.00 0.052 z(m),radt(K/day)<br>
+                3121.88 0.159 z(m),radt(K/day)<br>
+                3628.12 0.215 z(m),radt(K/day)<br>
+                4165.72 0.316 z(m),radt(K/day)<br>
+                4734.68 0.398 z(m),radt(K/day)<br>
+                5335.00 0.374 z(m),radt(K/day)<br>
+                5966.68 0.374 z(m),radt(K/day)<br>
+                6629.72 0.424 z(m),radt(K/day)<br>
+                7324.12 0.370 z(m),radt(K/day)<br>
+                8049.88 0.181 z(m),radt(K/day)<br>
+                8807.00 -0.065 z(m),radt(K/day)<br>
+                9595.48 -0.265 z(m),radt(K/day)<br>
+                10415.32 -0.429 z(m),radt(K/day)<br>
+                11266.52 -0.627 z(m),radt(K/day)<br>
+                12149.08 -0.519 z(m),radt(K/day)<br>
+                13063.00 0.180 z(m),radt(K/day)<br>
+                14008.28 0.394 z(m),radt(K/day)<br>
+                14984.92 0.326 z(m),radt(K/day)<br>
+                15992.92 0.406 z(m),radt(K/day)<br>
+                17032.28 0.162 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                270.0 time in min<br>
+                42.50 -0.276 z(m),radt(K/day)<br>
+                200.92 -0.647 z(m),radt(K/day)<br>
+                456.28 -0.731 z(m),radt(K/day)<br>
+                743.00 -0.626 z(m),radt(K/day)<br>
+                1061.08 -0.492 z(m),radt(K/day)<br>
+                1410.52 -0.307 z(m),radt(K/day)<br>
+                1791.32 -0.152 z(m),radt(K/day)<br>
+                2203.48 -0.064 z(m),radt(K/day)<br>
+                2647.00 0.058 z(m),radt(K/day)<br>
+                3121.88 0.166 z(m),radt(K/day)<br>
+                3628.12 0.227 z(m),radt(K/day)<br>
+                4165.72 0.329 z(m),radt(K/day)<br>
+                4734.68 0.411 z(m),radt(K/day)<br>
+                5335.00 0.389 z(m),radt(K/day)<br>
+                5966.68 0.390 z(m),radt(K/day)<br>
+                6629.72 0.441 z(m),radt(K/day)<br>
+                7324.12 0.389 z(m),radt(K/day)<br>
+                8049.88 0.207 z(m),radt(K/day)<br>
+                8807.00 -0.032 z(m),radt(K/day)<br>
+                9595.48 -0.228 z(m),radt(K/day)<br>
+                10415.32 -0.394 z(m),radt(K/day)<br>
+                11266.52 -0.596 z(m),radt(K/day)<br>
+                12149.08 -0.494 z(m),radt(K/day)<br>
+                13063.00 0.194 z(m),radt(K/day)<br>
+                14008.28 0.376 z(m),radt(K/day)<br>
+                14984.92 0.326 z(m),radt(K/day)<br>
+                15992.92 0.406 z(m),radt(K/day)<br>
+                17032.28 0.162 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                280.0 time in min<br>
+                42.50 -0.271 z(m),radt(K/day)<br>
+                200.92 -0.646 z(m),radt(K/day)<br>
+                456.28 -0.730 z(m),radt(K/day)<br>
+                743.00 -0.625 z(m),radt(K/day)<br>
+                1061.08 -0.489 z(m),radt(K/day)<br>
+                1410.52 -0.303 z(m),radt(K/day)<br>
+                1791.32 -0.149 z(m),radt(K/day)<br>
+                2203.48 -0.061 z(m),radt(K/day)<br>
+                2647.00 0.062 z(m),radt(K/day)<br>
+                3121.88 0.169 z(m),radt(K/day)<br>
+                3628.12 0.229 z(m),radt(K/day)<br>
+                4165.72 0.332 z(m),radt(K/day)<br>
+                4734.68 0.412 z(m),radt(K/day)<br>
+                5335.00 0.388 z(m),radt(K/day)<br>
+                5966.68 0.389 z(m),radt(K/day)<br>
+                6629.72 0.439 z(m),radt(K/day)<br>
+                7324.12 0.387 z(m),radt(K/day)<br>
+                8049.88 0.206 z(m),radt(K/day)<br>
+                8807.00 -0.028 z(m),radt(K/day)<br>
+                9595.48 -0.209 z(m),radt(K/day)<br>
+                10415.32 -0.347 z(m),radt(K/day)<br>
+                11266.52 -0.524 z(m),radt(K/day)<br>
+                12149.08 -0.435 z(m),radt(K/day)<br>
+                13063.00 0.195 z(m),radt(K/day)<br>
+                14008.28 0.381 z(m),radt(K/day)<br>
+                14984.92 0.313 z(m),radt(K/day)<br>
+                15992.92 0.405 z(m),radt(K/day)<br>
+                17032.28 0.162 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                290.0 time in min<br>
+                42.50 -0.267 z(m),radt(K/day)<br>
+                200.92 -0.647 z(m),radt(K/day)<br>
+                456.28 -0.734 z(m),radt(K/day)<br>
+                743.00 -0.628 z(m),radt(K/day)<br>
+                1061.08 -0.490 z(m),radt(K/day)<br>
+                1410.52 -0.304 z(m),radt(K/day)<br>
+                1791.32 -0.151 z(m),radt(K/day)<br>
+                2203.48 -0.062 z(m),radt(K/day)<br>
+                2647.00 0.061 z(m),radt(K/day)<br>
+                3121.88 0.168 z(m),radt(K/day)<br>
+                3628.12 0.229 z(m),radt(K/day)<br>
+                4165.72 0.329 z(m),radt(K/day)<br>
+                4734.68 0.408 z(m),radt(K/day)<br>
+                5335.00 0.385 z(m),radt(K/day)<br>
+                5966.68 0.388 z(m),radt(K/day)<br>
+                6629.72 0.438 z(m),radt(K/day)<br>
+                7324.12 0.386 z(m),radt(K/day)<br>
+                8049.88 0.206 z(m),radt(K/day)<br>
+                8807.00 -0.024 z(m),radt(K/day)<br>
+                9595.48 -0.194 z(m),radt(K/day)<br>
+                10415.32 -0.319 z(m),radt(K/day)<br>
+                11266.52 -0.480 z(m),radt(K/day)<br>
+                12149.08 -0.360 z(m),radt(K/day)<br>
+                13063.00 0.318 z(m),radt(K/day)<br>
+                14008.28 0.405 z(m),radt(K/day)<br>
+                14984.92 0.335 z(m),radt(K/day)<br>
+                15992.92 0.394 z(m),radt(K/day)<br>
+                17032.28 0.162 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                300.0 time in min<br>
+                42.50 -0.274 z(m),radt(K/day)<br>
+                200.92 -0.656 z(m),radt(K/day)<br>
+                456.28 -0.745 z(m),radt(K/day)<br>
+                743.00 -0.640 z(m),radt(K/day)<br>
+                1061.08 -0.500 z(m),radt(K/day)<br>
+                1410.52 -0.313 z(m),radt(K/day)<br>
+                1791.32 -0.158 z(m),radt(K/day)<br>
+                2203.48 -0.068 z(m),radt(K/day)<br>
+                2647.00 0.054 z(m),radt(K/day)<br>
+                3121.88 0.161 z(m),radt(K/day)<br>
+                3628.12 0.223 z(m),radt(K/day)<br>
+                4165.72 0.325 z(m),radt(K/day)<br>
+                4734.68 0.402 z(m),radt(K/day)<br>
+                5335.00 0.379 z(m),radt(K/day)<br>
+                5966.68 0.384 z(m),radt(K/day)<br>
+                6629.72 0.438 z(m),radt(K/day)<br>
+                7324.12 0.392 z(m),radt(K/day)<br>
+                8049.88 0.221 z(m),radt(K/day)<br>
+                8807.00 0.001 z(m),radt(K/day)<br>
+                9595.48 -0.164 z(m),radt(K/day)<br>
+                10415.32 -0.278 z(m),radt(K/day)<br>
+                11266.52 -0.415 z(m),radt(K/day)<br>
+                12149.08 -0.264 z(m),radt(K/day)<br>
+                13063.00 0.445 z(m),radt(K/day)<br>
+                14008.28 0.402 z(m),radt(K/day)<br>
+                14984.92 0.304 z(m),radt(K/day)<br>
+                15992.92 0.389 z(m),radt(K/day)<br>
+                17032.28 0.157 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                310.0 time in min<br>
+                42.50 -0.289 z(m),radt(K/day)<br>
+                200.92 -0.666 z(m),radt(K/day)<br>
+                456.28 -0.753 z(m),radt(K/day)<br>
+                743.00 -0.648 z(m),radt(K/day)<br>
+                1061.08 -0.508 z(m),radt(K/day)<br>
+                1410.52 -0.320 z(m),radt(K/day)<br>
+                1791.32 -0.164 z(m),radt(K/day)<br>
+                2203.48 -0.073 z(m),radt(K/day)<br>
+                2647.00 0.049 z(m),radt(K/day)<br>
+                3121.88 0.156 z(m),radt(K/day)<br>
+                3628.12 0.220 z(m),radt(K/day)<br>
+                4165.72 0.321 z(m),radt(K/day)<br>
+                4734.68 0.397 z(m),radt(K/day)<br>
+                5335.00 0.374 z(m),radt(K/day)<br>
+                5966.68 0.377 z(m),radt(K/day)<br>
+                6629.72 0.430 z(m),radt(K/day)<br>
+                7324.12 0.387 z(m),radt(K/day)<br>
+                8049.88 0.224 z(m),radt(K/day)<br>
+                8807.00 0.014 z(m),radt(K/day)<br>
+                9595.48 -0.139 z(m),radt(K/day)<br>
+                10415.32 -0.236 z(m),radt(K/day)<br>
+                11266.52 -0.359 z(m),radt(K/day)<br>
+                12149.08 -0.211 z(m),radt(K/day)<br>
+                13063.00 0.475 z(m),radt(K/day)<br>
+                14008.28 0.400 z(m),radt(K/day)<br>
+                14984.92 0.308 z(m),radt(K/day)<br>
+                15992.92 0.375 z(m),radt(K/day)<br>
+                17032.28 0.155 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                320.0 time in min<br>
+                42.50 -0.302 z(m),radt(K/day)<br>
+                200.92 -0.678 z(m),radt(K/day)<br>
+                456.28 -0.765 z(m),radt(K/day)<br>
+                743.00 -0.659 z(m),radt(K/day)<br>
+                1061.08 -0.517 z(m),radt(K/day)<br>
+                1410.52 -0.329 z(m),radt(K/day)<br>
+                1791.32 -0.176 z(m),radt(K/day)<br>
+                2203.48 -0.085 z(m),radt(K/day)<br>
+                2647.00 0.038 z(m),radt(K/day)<br>
+                3121.88 0.145 z(m),radt(K/day)<br>
+                3628.12 0.208 z(m),radt(K/day)<br>
+                4165.72 0.310 z(m),radt(K/day)<br>
+                4734.68 0.386 z(m),radt(K/day)<br>
+                5335.00 0.362 z(m),radt(K/day)<br>
+                5966.68 0.366 z(m),radt(K/day)<br>
+                6629.72 0.421 z(m),radt(K/day)<br>
+                7324.12 0.381 z(m),radt(K/day)<br>
+                8049.88 0.224 z(m),radt(K/day)<br>
+                8807.00 0.022 z(m),radt(K/day)<br>
+                9595.48 -0.119 z(m),radt(K/day)<br>
+                10415.32 -0.201 z(m),radt(K/day)<br>
+                11266.52 -0.300 z(m),radt(K/day)<br>
+                12149.08 -0.129 z(m),radt(K/day)<br>
+                13063.00 0.572 z(m),radt(K/day)<br>
+                14008.28 0.419 z(m),radt(K/day)<br>
+                14984.92 0.265 z(m),radt(K/day)<br>
+                15992.92 0.364 z(m),radt(K/day)<br>
+                17032.28 0.154 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                330.0 time in min<br>
+                42.50 -0.314 z(m),radt(K/day)<br>
+                200.92 -0.696 z(m),radt(K/day)<br>
+                456.28 -0.786 z(m),radt(K/day)<br>
+                743.00 -0.681 z(m),radt(K/day)<br>
+                1061.08 -0.539 z(m),radt(K/day)<br>
+                1410.52 -0.349 z(m),radt(K/day)<br>
+                1791.32 -0.196 z(m),radt(K/day)<br>
+                2203.48 -0.105 z(m),radt(K/day)<br>
+                2647.00 0.019 z(m),radt(K/day)<br>
+                3121.88 0.127 z(m),radt(K/day)<br>
+                3628.12 0.189 z(m),radt(K/day)<br>
+                4165.72 0.289 z(m),radt(K/day)<br>
+                4734.68 0.364 z(m),radt(K/day)<br>
+                5335.00 0.340 z(m),radt(K/day)<br>
+                5966.68 0.346 z(m),radt(K/day)<br>
+                6629.72 0.403 z(m),radt(K/day)<br>
+                7324.12 0.370 z(m),radt(K/day)<br>
+                8049.88 0.222 z(m),radt(K/day)<br>
+                8807.00 0.036 z(m),radt(K/day)<br>
+                9595.48 -0.081 z(m),radt(K/day)<br>
+                10415.32 -0.133 z(m),radt(K/day)<br>
+                11266.52 -0.205 z(m),radt(K/day)<br>
+                12149.08 -0.021 z(m),radt(K/day)<br>
+                13063.00 0.674 z(m),radt(K/day)<br>
+                14008.28 0.383 z(m),radt(K/day)<br>
+                14984.92 0.237 z(m),radt(K/day)<br>
+                15992.92 0.359 z(m),radt(K/day)<br>
+                17032.28 0.151 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                340.0 time in min<br>
+                42.50 -0.341 z(m),radt(K/day)<br>
+                200.92 -0.719 z(m),radt(K/day)<br>
+                456.28 -0.807 z(m),radt(K/day)<br>
+                743.00 -0.702 z(m),radt(K/day)<br>
+                1061.08 -0.558 z(m),radt(K/day)<br>
+                1410.52 -0.367 z(m),radt(K/day)<br>
+                1791.32 -0.211 z(m),radt(K/day)<br>
+                2203.48 -0.120 z(m),radt(K/day)<br>
+                2647.00 0.003 z(m),radt(K/day)<br>
+                3121.88 0.111 z(m),radt(K/day)<br>
+                3628.12 0.175 z(m),radt(K/day)<br>
+                4165.72 0.277 z(m),radt(K/day)<br>
+                4734.68 0.351 z(m),radt(K/day)<br>
+                5335.00 0.325 z(m),radt(K/day)<br>
+                5966.68 0.331 z(m),radt(K/day)<br>
+                6629.72 0.390 z(m),radt(K/day)<br>
+                7324.12 0.360 z(m),radt(K/day)<br>
+                8049.88 0.221 z(m),radt(K/day)<br>
+                8807.00 0.048 z(m),radt(K/day)<br>
+                9595.48 -0.046 z(m),radt(K/day)<br>
+                10415.32 -0.074 z(m),radt(K/day)<br>
+                11266.52 -0.139 z(m),radt(K/day)<br>
+                12149.08 0.038 z(m),radt(K/day)<br>
+                13063.00 0.726 z(m),radt(K/day)<br>
+                14008.28 0.429 z(m),radt(K/day)<br>
+                14984.92 0.215 z(m),radt(K/day)<br>
+                15992.92 0.347 z(m),radt(K/day)<br>
+                17032.28 0.151 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                350.0 time in min<br>
+                42.50 -0.350 z(m),radt(K/day)<br>
+                200.92 -0.737 z(m),radt(K/day)<br>
+                456.28 -0.829 z(m),radt(K/day)<br>
+                743.00 -0.724 z(m),radt(K/day)<br>
+                1061.08 -0.577 z(m),radt(K/day)<br>
+                1410.52 -0.385 z(m),radt(K/day)<br>
+                1791.32 -0.229 z(m),radt(K/day)<br>
+                2203.48 -0.136 z(m),radt(K/day)<br>
+                2647.00 -0.011 z(m),radt(K/day)<br>
+                3121.88 0.098 z(m),radt(K/day)<br>
+                3628.12 0.163 z(m),radt(K/day)<br>
+                4165.72 0.266 z(m),radt(K/day)<br>
+                4734.68 0.338 z(m),radt(K/day)<br>
+                5335.00 0.310 z(m),radt(K/day)<br>
+                5966.68 0.316 z(m),radt(K/day)<br>
+                6629.72 0.378 z(m),radt(K/day)<br>
+                7324.12 0.354 z(m),radt(K/day)<br>
+                8049.88 0.221 z(m),radt(K/day)<br>
+                8807.00 0.062 z(m),radt(K/day)<br>
+                9595.48 -0.009 z(m),radt(K/day)<br>
+                10415.32 -0.012 z(m),radt(K/day)<br>
+                11266.52 -0.063 z(m),radt(K/day)<br>
+                12149.08 0.119 z(m),radt(K/day)<br>
+                13063.00 0.811 z(m),radt(K/day)<br>
+                14008.28 0.319 z(m),radt(K/day)<br>
+                14984.92 0.201 z(m),radt(K/day)<br>
+                15992.92 0.343 z(m),radt(K/day)<br>
+                17032.28 0.148 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)<br>
+                360.0 time in min<br>
+                42.50 -0.344 z(m),radt(K/day)<br>
+                200.92 -0.750 z(m),radt(K/day)<br>
+                456.28 -0.856 z(m),radt(K/day)<br>
+                743.00 -0.757 z(m),radt(K/day)<br>
+                1061.08 -0.607 z(m),radt(K/day)<br>
+                1410.52 -0.409 z(m),radt(K/day)<br>
+                1791.32 -0.250 z(m),radt(K/day)<br>
+                2203.48 -0.156 z(m),radt(K/day)<br>
+                2647.00 -0.033 z(m),radt(K/day)<br>
+                3121.88 0.076 z(m),radt(K/day)<br>
+                3628.12 0.143 z(m),radt(K/day)<br>
+                4165.72 0.246 z(m),radt(K/day)<br>
+                4734.68 0.316 z(m),radt(K/day)<br>
+                5335.00 0.287 z(m),radt(K/day)<br>
+                5966.68 0.293 z(m),radt(K/day)<br>
+                6629.72 0.361 z(m),radt(K/day)<br>
+                7324.12 0.345 z(m),radt(K/day)<br>
+                8049.88 0.225 z(m),radt(K/day)<br>
+                8807.00 0.082 z(m),radt(K/day)<br>
+                9595.48 0.035 z(m),radt(K/day)<br>
+                10415.32 0.071 z(m),radt(K/day)<br>
+                11266.52 0.046 z(m),radt(K/day)<br>
+                12149.08 0.172 z(m),radt(K/day)<br>
+                13063.00 0.708 z(m),radt(K/day)<br>
+                14008.28 0.255 z(m),radt(K/day)<br>
+                14984.92 0.210 z(m),radt(K/day)<br>
+                15992.92 0.325 z(m),radt(K/day)<br>
+                17032.28 0.146 z(m),radt(K/day)<br>
+                18103.00 0.000 z(m),radt(K/day)<br>
+                19205.08 0.000 z(m),radt(K/day)<br>
+                20338.52 0.000 z(m),radt(K/day)<br>
+                21503.32 0.000 z(m),radt(K/day)<br>
+                22699.48 0.000 z(m),radt(K/day)</p>
+              <p><span class="largetitle"><br>
+                </span><a href="../model/intercomp.html" class="bodylink">Back 
+                to the Models Intercomparison Page</a></p>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      
+    </td>
+    <td bgcolor="dddddd" valign="top" height="542" width="130"> 
+      <table width="130" border="0" cellspacing="0" cellpadding="7">
+        <tr> 
+          <td class="leftnavtitles" bgcolor="#CCCCCC">Related Links</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="22">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td colspan="3" height="13"><img src="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/assets/transparent.gif" width="1" height="1"></td>
+  </tr>
+  <tr bgcolor="#CCCCCC"> 
+    <td colspan="3" height="30"> 
+      <div align="right"><span class="body">Updated 28 January 2003 by Webmaster 
+        * mmmweb@ucar.edu *</span> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><span class="body"><a href="http://www.ucar.edu/legal/privacy_policy.html" class="bodylink">UCAR 
+        Privacy Policy</a> - <a href="http://www.ucar.edu/legal/terms_of_use.html" class="bodylink">Terms 
+        of Use</a> - </span><a href="http://www.ucar.edu/legal/terms_of_use.html#copyright"><span class="bodylink">&copy;</span></a><a href="http://www.ucar.edu/legal/terms_of_use.html#copyright" class="bodylink">2002UCAR</a></font></div>
+    </td>
+  </tr>
+  <tr bgcolor="#000033"> 
+    <td colspan="3" height="38"> 
+      <div align="center"> 
+        <p><img src="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/assets/transparent.gif" width="1" height="1"></p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p class="link">&nbsp;</p>
+<map name="Map"> 
+  <area shape="rect" coords="16,15,64,45" href="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/index.html">
+  <area shape="rect" coords="68,15,114,45" href="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/science.html">
+  <area shape="rect" coords="119,14,165,46" href="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/service.html">
+  <area shape="rect" coords="166,15,223,46" href="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/computing.html">
+  <area shape="rect" coords="225,14,274,46" href="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/general.html">
+  <area shape="rect" coords="275,15,324,45" href="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/staff.html">
+  <area shape="rect" coords="498,14,557,45" href="file:///C|/MMM%20Design%202003/WEB03/MMMwebsite/about.html">
+  <area shape="rect" coords="616,18,649,46" href="http://www.ucar.edu/ncar/" target="_blank">
+  <area shape="rect" coords="561,16,610,45" href="http://www.mmm.ucar.edu/mmm/navbar_search.html">
+  <area shape="rect" coords="655,13,693,46" href="http://www.ucar.edu/ucar/" target="_blank">
+</map>
+</body>
+</html>
