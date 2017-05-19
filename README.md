@@ -29,3 +29,7 @@ tropics
 - [TRMM_LBA_deep_convection_transition](cases/TRMM_LBA_deep_convection_transition/)
 development of daytime convective boundary layer and the transition from
 shallow to deep convection (*GCSS Working Group 4, Case 4*)
+
+- [TOGA_COARE_deep_convection_transition](cases/TOGA_COARE_deep_convection_transition/)
+transition from suppressed to deep convection over land (*GCSS Working Group 4,
+Case 5*)
