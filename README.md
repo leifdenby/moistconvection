@@ -26,6 +26,9 @@ tropics
 
 - [BOMEX](cases/BOMEX/) non-precipitating shallow cumulus
 
+- [ARM_SGP_forced_shallow_convection](cases/ARM_SGP_forced_shallow_convection)
+diurnal cycle of forced shallow convection at ARM-SGP site
+
 - [TOGA_COARE_tropical_squall_line](cases/TOGA_COARE_tropical_squall_line/)
 oceanic tropical squall line (*GCSS Working Group 4,
 Case 5*)
