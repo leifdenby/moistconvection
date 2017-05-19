@@ -1,7 +1,7 @@
 # Daytime convective development over land: an idealized case based on TRMM-LBA observations
 
 *From GEWEX Cloud System Study - Working Group 4 Model Intercomparison
-Projects*
+Projects, Case 4*
 
 > The purpose of this case is to investigate the development of the daytime
 convective boundary layer over land and the transition from shallow to deep
