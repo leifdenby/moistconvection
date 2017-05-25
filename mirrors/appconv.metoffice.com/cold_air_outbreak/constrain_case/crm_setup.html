@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<link rel=stylesheet type="text/css" HREF="basic_style.css" />
+<link rel=stylesheet type="text/css" HREF="case_setup.css" />
+
+<div id="nav-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="home.html" >Case overview</a></font></li> 
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a style="background:#000000;color:#FFFFFF; text-decoration:none" href="crm_setup.html" >
+	  LES case</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="lam_setup.html" >LAM case</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="global_setup.html" >Global case</a></font></li>    
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="contact_us.html" >
+	  Contact us</a></font></li>
+  </ul>
+</div>	
+
+<div id="crm-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a style="background:#000000;color:#FFFFFF; text-decoration:none" href="crm_setup.html" >
+	  LES setup</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="crm_output.html" >LES output</a></font></li>
+  </ul> 
+</div>
+
+<div id="crm-text">
+  <h1>LES cold-air outbreak Case </h1>
+  
+  <h2> Introduction </h2>
+
+  <p> The proposed cold-air outbreak case is a  quasi-lagrangian large 
+    eddy simulation (LES), in which domain is advected 
+    south-south east from 66 lat -11 lon to 60 lat -8.7 lon over the 
+    warmer seas to simulate the Sc to Cu transition.
+  </p>
+  <br />
+  <p>
+    Initial conditions for the case are based on high resolution 
+    limited area model (LAM) simulations performed with the 
+    Met Office Unified Model (UM). These simulations have been 
+    undertaken by Paul Field and are described in  
+    <a href="ppt/constrain_case2.pdf"> Pan-GASS constrain presentation </a>. 
+  </p>
+  <br />
+  <p> 
+    The case is run for 14.5 hours, in which the first 1.5 hours represents a 
+    spin-up using a fixed surface condition. Following "spin-up", 
+    the surface is forced using prescribed time varying sea surface 
+    temperature (SST). The start time and date for all simulations is 0Z on January 
+    31st 2010. 
+  </p>
+  <br />
+  <p>  
+    The change in SST represents the advection of the domain 
+    over warmer water. This is used as the main set-up as this 
+    permits a feedback depending on the atmospheric thermodynamics. 
+    (See end of page for other options)
+  </p>  
+  <br />
+  <p> 
+    The case includes interactive radiation, forcing of large scale vertical 
+    velocity to simulate subsidence and geostrophic forcing of horizontal winds. 
+    It is recommended that the simulation be performed with no ice microphysics 
+    and where possible ice microphysics. 
+  </p> 
+  
+  <h2> CONTROL set-up </h2> 
+  
+  <h3> Grid </h3>
+  
+  <p> The grid set-up for the CONTROL case is as follows: </p>
+  <ul>
+    <li> x,y domain = 96.0 x 96.0 km</li> 
+    <ul><li>dx, dy = 250 m </li></ul>
+    <li> z domain = 5 km </li>
+    <ul><li> dz = 25 m between surface and 3000 m </li></ul>
+    <ul><li> dz is then stretched between 3000 and 5000 m using the following code (based on <a href="http://www.mpimet.mpg.de/fileadmin/staff/sanduirina/zgrid.composite.f"> ASTEX setup </a> ): </li></ul>	
+  </ul>
+  <p class="tab1">********Example code for vertical grid stretching******</p>
+  <p class="tab1"> dz_stretched = dz ! dz at 3000 m</p>
+  <p class="tab1"> alpha = 1.02 </p> 
+  <p class="tab1"> while z_les(k-1) lt z(Nz-1) do begin </p>
+  <p class="tab2"> dz_stretched = dz_stretched * alpha </p>
+  <p class="tab2"> z_les(k) = z_les (k-1) + dz_stretched </p>
+  <p class="tab2"> k=k+1 </p>
+  <p class="tab1">endwhile </p>
+  <p class="tab1" >*******************************************************</p>
+  <br />
+  <p class="tab1"> As alpha = 1.02 this results in 47 extra levels above 
+    3000 m, so a total of 167 levels.
+  </p>
+  <br />
+  <p> 
+    Both the horizontal resolution and vertical resolution are quite coarse,
+    which is a trade off to permit the large domain.
+  </p>
+ 
+  <h3> Initial conditions </h3>
+  <p> 
+    The initial conditions for the case are the mean profiles for 
+    66 lat -11 lon derived from high resolution UM LAM simulation 
+    "u_66_11" (see Field et al, 2012, for description of LAM simulation). 
+  </p>
+  <br />
+  <p>
+    Initial thermodynamic profiles are the adjusted liquid water potential 
+    temperature (&theta<sub>l</sub>_adj) and total water (qt_adj). &theta<sub>l</sub> is 
+    derived using the potential temperature and the cloud and ice water from the 
+    u_66_11 results, i.e. the beginning of a lagrangian track from that simulation. 
+    qt_adj is calculated by summing the vapour (qv_adj), cloud and ice water. The 
+    moisture variables are also from u_66_11 at the beginning of the lagrangian track, 
+    however, qv_adj is qv that is  modified so that relative humidity is 100 % in the cloud 
+    region (the cloud region from the LAM simulations were close to 100 %, 
+    i.e. around 95 to 97 % RH w.r.t water). Thus, the initial profile is 
+    supersaturated, so cloud forms on the first time step of the simulation.   
+  </p>
+  <br />
+  <p> 
+    The initial horizontal wind components are also based mean wind fields 
+    derived from u_66_11 at the beginning of the lagrangian track. The wind fields
+    are characterised by a strong N-S component (12 to 17 m s<sup>-1</sup> in 
+    the boundary layer) and a substantially weaker E-W component (3 to 4 
+    m s<sup>-1</sup>).
+  </p>
+  <br />
+  <p>   
+    The thermodynamic and wind profile data (text format) can be downloaded from:
+  </p>
+  <ul>
+    <li><a href="text_files/initial_profiles_thl.txt"> Initial profiles </a> </li>
+  </ul>
+  <p>
+    The initial thermodynamic and wind profile data is also available in 
+    netcdf format in the following file:
+  </p>
+  <ul>
+    <li><a href="netcdf_setup/constrain_setup_forcing.nc"> 
+	netcdf setup file </a> </li>
+  </ul>
+  <p>
+    In constrain_setup_forcing.nc initial profiles are the first timestep of 
+    U, V, qt and theta_l. Also, note that these profiles contain 70 levels (up to 
+    200 mbar). The first 37 levels represent the recommended vertical domain for 
+    this case. Finally, note that U, V, qt and theta_l contain 14.5 hours of 
+    direct data from the LAM simulation and so does not include
+    constant conditions for the first 1.5 hours as in with the forcing (see 
+    later). Thus, this data is just provided to give a basic idea of the 
+    results from the LAM simulation. 
+  </p>
+  <br />
+  <p> The simulations are also all initialised with the following standard 
+    settings:  
+    <ul> 
+      <li> Roughness length for momentum (Z<sub>0</sub>) = 6.6E-4 </li>
+      <li> Roughness length for scalars (Z<sub>&#952</sub>) = 3.7E-6 </li>
+      <li> Surface pressure = 1009 mbar </li>
+   </ul>
+  </p>
+ 
+  <h3> Forcing </h3>
+  <p> 
+    In order for the simulation to represent the advection of the air over warmer
+    water, the surface is forced to simulate the warming sea surface temperature 
+    (or the increasing surface fluxes). Below is the SST forcing (text format):
+  </p>
+  <ul>
+    <li><a href="text_files/sst_force.txt"> Time varying SST </a> </li>
+  </ul>
+  <p>
+    The case is also forced with large scale vertical velocity forcing derived 
+    from the u_66_11 LAM simulation:
+  </p>
+  <ul>
+    <li><a href="text_files/large_scale_w_force.txt"> Large scale w forcing </a> </li>
+  </ul>     
+  <p>
+    For convenience the time varying sensible and latent surface heat fluxes (SHF 
+    and LHF, respectively), time-varying sea surface temperatures (SST) and 
+    vertical velocity forcing (wsubs) are also supplied in netcdf format:
+  </p>
+  <ul>
+    <li><a href="netcdf_setup/constrain_setup_forcing.nc"> 
+	netcdf setup file </a> </li>
+  </ul>
+  <p>
+    Note that the SHF, LHF, SST and wsubs in the netcdf file include the 
+    constant conditions for the first 1.5 hours for spin-up. 
+  <p>
+    Finally, the N-S horizontal velocity (v) is forced using a geostrophic 
+    wind with the following values:
+  </p>
+  <ul> 
+    <li> geostrophic wind (V<sub>G</sub>) = -15 ms<sup>-1</sup> </li>
+    <li> dV<sub>G</sub>/dz = -0.0024 s<sup>-1</sup> </li>
+  </ul>
+   
+  <h3> Ozone and Radiation profiles </h3>   
+  <p> Below is a file that contains the vapour and temperature field upto 37 km  
+    (derived from the the UM LAM simulation). This file also contains a standard 
+    McClatchy ozone profile which has been interpolated onto the LAM vertical 
+    grid. Note that the profile is set-up so that the first value is 
+    top-of-atmosphere. </p>
+  <ul>
+    <li><a href="text_files/rad_o3_profs.txt"> Ozone profiles </a> </li>
+  </ul>
+
+  <h3> Microphysics settings </h3>
+  <p> One of the main areas for this case to understand is the role of 
+    ice microphysics in the evolution of the boundary layer during the 
+    cold air outbreak. In order to start to understand this we propose 
+    running at least two simulations of this case: </p>
+  <ul> 
+    <li> 1. No-ice case - only use warm microphysics </li>
+    <li> 2. Ice case - include ice microphysics </li>
+  </ul>
+  <p> 
+    In both cases the cloud drop number concentration is set to 
+    50 cm<sup>-3</sup>. 
+  </p>
+  <br /> 
+  <p> If institutions are not able to run their LES with ice microphysics, then
+    just perform the simulation with warm micropphysics. </p>
+  
+
+  <h1> Sensitivity simulations </h1>
+
+  <h2> Resolution Testing - "Grey zone" experiments</h2>
+  <p> 
+    To compare LES with the LAM output and understand the "grey zone", it is 
+    proposed that a series of horizontal resolution tests are undertaken with the 
+    LES, in which the horizontal domain of the CONTROL case the same as above is 
+    reduced. In addition to the CONTROL we ask participants to re-run the 
+    CONTROL at 4 coarser resolutions, i.e. </p> 
+    <ul>
+      <li> dx,dy = 500 m </li>
+      <li> dx,dy = 1000 m </li>
+      <li> dx,dy = 2000 m </li>
+      <li> dx,dy = 4000 m </li>
+    </ul>
+  <p> For all these extra simulations the vertical resolution kept 
+    the same as that in the standard simulation. As a minimum, in all 
+    these simulations microphysics should be set to warm. If participants 
+    have the time, could they also perform the simulations with ice microphysics 
+    switched on.
+  </p>
+  <br />
+  <p> 
+    Finally, for institutions that have the computing power, it is proposed that 
+    they run extra simulations in which the horizontal resolution is increased. 
+    If provided these extra simulations will investigate whether 250m
+    resolution is resolving the processes and therefore resolving the "grey zone". 
+    If necessary these tests can be performed on a domain (50 km by 50 km). 
+  </p> 
+
+  
+  <h2> Surface forcing </h2>
+  <p> In addition to the providing the prescribed SST, the prescribed surface fluxes
+    are also provided. These are also derived from the high resolution LAM and 
+    they may be used to remove the uncertainty in the behaviour of the surface 
+    model, particularly when the horizontal resolution is reduced. If the 
+    participants have the computational resources and the time it would be 
+    very useful to receive results from the CONTROL with prescribed 
+    surface fluxes, in addition to the above simulations. The prescribed surface 
+    fluxes can either be downloaded from the link below or they are available in 
+    in the netcdf file.
+  </p>
+  <ul>
+    <li><a href="text_files/srf_flux_force.txt"> Time varying surface fluxes </a> </li>
+  </ul>
+  
+  <h2> Microphysics sensitivity </h2>
+  <p> In addition to this standard simulation it would be 
+    interesting redo these simulations with initial 
+    cloud drop number concentration is set to 30 and/or 100 cm<sup>-3</sup>. 
+    At present, there are no observations of the cloud drop 
+    number concentrations in the Sc stage of the case, hence it would be useful to 
+    understand how sensitive the simulations are to this
+  </p>
+    
+</div>
+
+
+  

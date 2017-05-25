@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<link rel=stylesheet type="text/css" HREF="basic_style.css" />
+<link rel=stylesheet type="text/css" HREF="case_setup.css" />
+
+<div id="nav-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="home.html" >Case overview</a></font></li> 
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a href="crm_setup.html" >LES case</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a style="background:#000000;color:#FFFFFF; text-decoration:none"href="lam_setup.html" >LAM case</a></font></li>
+     <li ><font face="Arial, Helvetica, sans-serif"><a href="global_setup.html" >Global case</a></font></li>    
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="contact_us.html" >Contact us</a></font></li>
+  </ul> 
+</div>
+
+<div id="crm-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a style="background:#000000;color:#FFFFFF; text-decoration:none" href="lam_setup.html" >
+	  LAM setup</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="lam_output.html" >LAM output</a></font></li>
+   </ul> 
+</div>	
+
+<div id="crm-text">
+  <h1>Specification for LAM cold-air outbreak Case </h1>
+  
+  <p>
+    We are trying to be as inclusive as possible so we will suggest 
+    two methods. The first is a forecast approach where a participant uses a global
+    model forecast to derive LBCs. The second method is a 'nudging'
+    approach that makes use of updated analyses at 6h intervals.
+    Below we describe the setup for the LAM intercomparison, including the
+    forcing for both methods and the required output
+  </p>  
+  
+  <h2> Time period </h2>
+  <ul>
+     <li>Cold air outbreak 12Z 30th January 2010 - 00Z 1st February 2010 </li>
+  </ul>
+
+  <h2> Model domain and resolution of inner domain </h2>
+  <ul>
+    <li> centre of domain - 62N, 8.5W (suggested rotated pole (lat,lon): 28N,171.5E) </li> 
+    <li> minimum x,y domain = 752 km (E-W) x 1504 km (N-S). Larger domains can be used 
+         and provided to us - we will linearly interpolate onto a common grid with these dimensions. </li>
+    <li> standard resolution - dx, dy = 1 km </li>
+    <li> resolution tests - 2 km, 4 km, 8 km, 16 km </li> 
+  </ul>
+
+  <p> Outer domain - the outer nest(s) used to drive the inner domain described 
+      above will be left to the participants.</p>
+  <br/>
+  <p> The vertical resolution and model timestep is not prescribed as part as the intercomparison set-up. 
+      The Met Office UM is using 70 Levels up to 40km and a 50 second timestep. We recommend that 
+      participants run at least one simulation with an operational level set and timestep, but if 
+      you have the option to experiment with different resolutions that will be welcome.
+      We will interpolate onto a common vertical coordinate</p>
+
+  <h2> Parametrization switches </h2>
+
+     <p> For each of the LAM grid resolutions (1, 2, 4, 8, 16km) we would 
+       like to receive results from the two permutations of the convection off 
+       and on. One of these permutations may be the control setting for your 
+       model at that resolution. If so, please identify that for us. There might 
+       be other parameterizations that should be switched on or off. For 
+       instance your LAM might have a seperate shallow and deep cumulus 
+       convection scheme. Please feel free to experiment with different 
+       combinations of these parameterisations switched on and/or off
+     </p>
+
+  <h2> Forcing Data </h2>
+
+  <p> Please contact Paul Field (<script
+      lang="javascript"> a="pa"; b="ul.field"; c=a+b+"@metoffice.gov.uk"; document.write('<a href="mailto:'+c+'">'+c+'</a>');</script> 
+      <noscript>[You need
+      javascript enabled to see this email address]</noscript>) to obtain the ECMWF analysis data for the LAM set-up </p>
+  <br />
+  <ul>
+    <li> <strong>Method 1</strong>: Initialise your global model with 12Z 30th January 2010 
+      ECMWF analysis. Run for 36h to produce LBCs for your nested domains. </li>
+    <li> <strong>Method 2</strong>: Use ECMWF analyses every 6h to generate LBCs for your coarsest nested domain </li>
+  </ul>
+
+</div>
+
+
+  

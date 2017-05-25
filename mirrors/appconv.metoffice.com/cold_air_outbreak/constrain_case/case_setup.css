@@ -1,0 +1,102 @@
+/* basic_style.css contains the general style for the Main and sub 
+navigation bar for all pages. Each sub menu uses a different colour 
+for the hover. All of these styles are set in this css */
+
+#crm-menu
+{
+	width:750px;
+	position: absolute;
+	left: 425px;
+	top: 140px;
+}
+
+#crm-menu li {
+	float: left;
+	margin: 0 0.15em;
+  }
+
+#crm-menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+#crm-menu li a {
+	height: 30px;
+	line-height: 20px;
+	float: left;
+	width: 150px;
+	display: block;
+	border: 1px solid #333333;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	font-size: 16px;
+	padding-top: 10px;
+	background-color: #BABABA;
+  }
+  
+#crm-menu li a:hover {
+	font-weight:bold;
+	color:#FFFFFF;
+	} 
+
+	
+#crm-text
+{
+	height:500px;
+	position: absolute;
+	left: 200px;
+	top: 175px;
+	width: 750px;
+	padding: 10px;
+	margin: 0;
+	}
+	
+#crm-text h1 {
+	text-align:left;
+	font: normal 20pt "Arial";
+	color: black;
+	}
+#crm-text h2 {
+	text-align:left;
+	font: normal 18pt "Arial";
+	color: black;
+	}
+
+#crm-text h3 {
+	text-align:left;
+	font: normal 14pt "Arial";
+	color: black;
+	}
+	
+#crm-text p {
+	 	margin:0;
+		text-align:justify;
+		font: normal 12pt "Arial";
+		color: #606060 ;
+	}	
+	
+
+#crm-text ul {
+	        list-style-image: disc;
+	  	position:relative;	
+   		overflow:hidden;
+	 	margin-top:0;
+		text-align:justify;
+		font: normal 12pt "Arial";
+		color: #606060 ;
+		text-indent: 0.5em;
+		width: 750px;
+	}
+	
+
+#crm-text li {
+	/*float: left;*/
+	margin-top: 0.25em;
+  	}
+
+.tab1 { text-indent: 80px; }
+.tab2 { text-indent: 120px; }
+
+	

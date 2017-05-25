@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<link rel=stylesheet type="text/css" HREF="basic_style.css" />
+<link rel=stylesheet type="text/css" HREF="case_setup.css" />
+
+<div id="nav-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="home.html" >Case overview</a></font></li> 
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a href="crm_setup.html" >LES case</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="lam_setup.html" >LAM case</a></font></li>
+     <li ><font face="Arial, Helvetica, sans-serif"><a style="background:#000000;color:#FFFFFF; text-decoration:none"href="global_setup.html" >Global case</a></font></li>    
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="contact_us.html" >Contact us</a></font></li>
+  </ul> 
+</div>
+
+<div id="crm-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a style="background:#000000;color:#FFFFFF; text-decoration:none" 
+	   href="global_setup.html" >Global setup</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="global_output.html" >Global output</a></font></li>
+   </ul> 
+</div>	
+
+<div id="crm-text">
+  <h1>Specification for GCM cold-air outbreak Case </h1>
+  
+  <p>
+    Below we describe the setup for the global model intercomparison, and
+    suggest different sensitivity experiments. We are trying to be as
+    inclusive as possible and will accept contributions also in case they
+    deviate in some aspects from the provided requirements.  
+  </p>
+
+  <h2> Time period </h2>  
+  <p>
+    Start date of the forecast: 12Z 30th January 2010. The simulation should
+    be run for 36 hours (i.e. until 00Z 1st February 2010).
+  </p>
+
+  <h2> Resolutions </h2>
+  <p>
+    We encourage the groups to run their global models at the highest
+    possible resolutions. In order to be able to investigate the
+    scale-dependency of the parameterizations, the models should be run at
+    at least two different resolutions. Global resolutions of 10 km and 5 km
+    are recommended, but higher resolutions are welcome.
+    In case the global model allows for grid refinement (one-way nesting or
+    two-way nesting) or grid stretching, we encourage the groups to also
+    perform 1km and 2km resolution simulations for the region of interest.
+    In case you use grid refinement by one-way nesting and submit the output
+    of the refined grid to the LAM intercomparison, you do not need to
+    submit the same data to the global model intercomparison.
+  </p>
+
+  <h2> Forcing Data </h2>
+  <p> 
+    To be consistent with the LAM intercomparison it is recommended that the 
+    GCM is initialised using ECMWF analysis. 
+  </p>
+
+  <h2> Parametrization switches </h2>
+  <p>
+    For each of the global model grid resolutions we would like to receive
+    results from the two permutations of the convection off and on. There
+    might be other parameterizations that should be switched on or off. For
+    instance your global model might have a separate shallow and deep
+    cumulus convection scheme. Please feel free to experiment with different
+    combinations of these parameterisations switched on and/or off.
+    In case you have different convection or boundary layer
+    parameterizations implemented in your model, it is very welcome if you
+    produce separate experiments with different parameterizations. Could
+    participants please provide details regarding the used
+    parameterisations, and references.
+  </p>
+
+  <h2> Contact </h2>
+  <p>
+    In case of questions please contact Lorenzo Tomassini
+    (lorenzo.tomassini@mpimet.mpg.de) or Axel Seifert (axel.seifert@dwd.de).
+  </p>
+
+</div>
+
+
+  

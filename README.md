@@ -41,6 +41,9 @@ shallow to deep convection (*GCSS Working Group 4, Case 4*)
 transition from suppressed to deep convection over land (*GCSS Working Group 4,
 Case 5*)
 
+- [CONSTRAIN](cases/CONSTRAIN) cold air outbreak, old air from the polar cap
+sweeps off the ice edge over open water, leading to convection
+
 ## List of acronyms
 
 - *GCSS* GEWEX Cloud System Study

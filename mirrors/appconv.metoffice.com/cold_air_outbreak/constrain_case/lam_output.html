@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<link rel=stylesheet type="text/css" HREF="basic_style.css" />
+<link rel=stylesheet type="text/css" HREF="case_setup.css" />
+
+<div id="nav-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="home.html" >Case overview</a></font></li> 
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a href="crm_setup.html" >LES case</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a style="background:#000000;color:#FFFFFF; text-decoration:none"href="lam_setup.html" >LAM case</a></font></li>
+     <li ><font face="Arial, Helvetica, sans-serif"><a href="global_setup.html" >Global case</a></font></li>      
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="contact_us.html" >Contact us</a></font></li>
+  </ul> 
+</div>
+
+<div id="crm-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="lam_setup.html" >
+	  LAM setup</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a style="background:#000000;color:#FFFFFF; text-decoration:none" href="lam_output.html" >LAM output</a></font></li>
+   </ul> 
+</div>	
+
+<div id="crm-text">
+  
+  <h1> Model output (following TWP-ICE format) </h1>
+<p><strong>Output
+        (following TWP-ICE format)<br>
+      </strong></p>
+    <span style="font-family: Helvetica,Arial,sans-serif;"> Output in
+      NETCDF format. We recognize that due to differences in
+      microphysics not all fields can be populated by all participants.</span>
+    <br>
+    <br style="font-family: Helvetica,Arial,sans-serif;">
+    <span style="font-family: Helvetica,Arial,sans-serif;">In addition
+      to this output we would like to know:</span><br style="font-family: Helvetica,Arial,sans-serif;">
+    <span style="font-family: Helvetica,Arial,sans-serif;">a) method 1
+      or method 2 used for driving forecast</span><br style="font-family: Helvetica,Arial,sans-serif;">
+    <span style="font-family: Helvetica,Arial,sans-serif;">b) nest
+      configurations including vertical and horizontal resolutions</span><br
+      style="font-family: Helvetica,Arial,sans-serif;">
+    <span style="font-family: Helvetica,Arial,sans-serif;">c) paragraph
+      describing the model with relevant publications. [please include
+      reference to dynamical core, microphysics, boundary layer,
+      convective parametrization, cloud scheme]</span><br style="font-family: Helvetica,Arial,sans-serif;">
+    <br style="font-family: Helvetica,Arial,sans-serif;">
+    <br style="font-family: Helvetica,Arial,sans-serif;">
+    <span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;</span><br
+      style="font-family: Helvetica,Arial,sans-serif;">
+    <table style="font-family: Helvetica,Arial,sans-serif;" bgcolor="#99CCFF"
+       border="1" cellpadding="5">
+      <caption align="TOP"><strong>Table 1. 3-D fields (grid box mean
+          values) for times 0, 6, 12 and 18Z. (Note: Only these times are
+	requested in order to minimise the file size. These will be used 
+	for the initial analysis, from which higher temporal resolution may be 
+	required. Thus, could participants output the diagnostics every 30 minutes
+	but initially only submit the above times &nbsp;</strong></caption>
+      <tbody>
+        <tr>
+          <th align="LEFT" bgcolor="#6699CC">Name</th>
+          <th bgcolor="#6699CC">Units</th>
+          <th align="LEFT" bgcolor="#6699CC">Description</th>
+        </tr>
+        <tr>
+          <th colspan="2">dimensions x,y,z<br>
+          </th>
+          <td style="vertical-align: top;">30 minute intervals. 1 file per interval. 
+            If using staggered grid please interpolate fields onto regular grid. 
+            Also, could you please state whether the fields provided are resolved or 
+            the sum of the resolved and subgrid. <br>
+          </td>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td>hPa</td>
+          <td>Pressure</td>
+        </tr>
+        <tr>
+          <td>Z</td>
+          <td>m</td>
+          <td>Height</td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>K</td>
+          <td>Air temperature</td>
+        </tr>
+        <tr>
+          <td>u</td>
+          <td>m s<sup>-1</sup></td>
+          <td>Eastward wind</td>
+        </tr>
+        <tr>
+          <td>v</td>
+          <td>m s<sup>-1</sup></td>
+          <td>Northward wind</td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>m s<sup>-1</sup></td>
+          <td>Vertical wind(positive upward)</td>
+        </tr>
+        <tr>
+          <td>qv</td>
+          <td>kg kg<sup>-1</sup></td>
+          <td>Water vapor mass mixing ratio</td>
+        </tr>
+        <tr>
+          <td>qc</td>
+          <td>kg kg<sup>-1</sup></td>
+          <td>Cloud water mass mixing ratio</td>
+        </tr>
+        <tr>
+          <td>qr</td>
+          <td>kg kg<sup>-1</sup></td>
+          <td>Rain water mass mixing ratio</td>
+        </tr>
+        <tr>
+          <td>qi</td>
+          <td>kg kg<sup>-1</sup></td>
+          <td>Ice mass mixing ratio</td>
+        </tr>
+        <tr>
+          <td>qs</td>
+          <td>kg kg<sup>-1</sup></td>
+          <td>Snow mass mixing ratio<br>
+          </td>
+        </tr>
+        <tr>
+          <td>qg</td>
+          <td>kg kg<sup>-1</sup></td>
+          <td>Graupel mixing ratio<br>
+          </td>
+        </tr>
+        <tr>
+          <td>Nc</td>
+          <td>L<sup>-1</sup></td>
+          <td>Number concentration of cloud drops where rain water mass
+            mixing ratio &gt; 10<sup>-6</sup> kg kg<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td>Nr</td>
+          <td>L<sup>-1</sup></td>
+          <td>Number concentration of rain drops where rain water mass
+            mixing ratio &gt; 10<sup>-6</sup> kg kg<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Ni<br>
+          </td>
+          <td style="vertical-align: top;">L<sup>-1</sup></td>
+          <td style="vertical-align: top;">Number concentration of ice
+            where cloud ice water mass mixing ratio &gt; 10<sup>-6</sup>
+            kg kg<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Ns<br>
+          </td>
+          <td style="vertical-align: top;">L<sup>-1</sup></td>
+          <td style="vertical-align: top;">Number concentration of snow
+            where snow mass mixing ratio &gt; 10<sup>-6</sup> kg kg<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Ng<br>
+          </td>
+          <td style="vertical-align: top;">L<sup>-1</sup></td>
+          <td style="vertical-align: top;">Number concentration of
+            graupel where graupel water mass mixing ratio &gt; 10<sup>-6</sup>
+            kg kg<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td>N_cr100<br>
+          </td>
+          <td>L<sup>-1</sup></td>
+          <td>Total number concentration of cloud droplets and rain with
+            maximum dimension exceeding 100 &#956m where total condensate
+            mass mixing ratio &gt; 10<sup>-6</sup> kg kg<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">N_is100</td>
+          <td style="vertical-align: top;">L<sup>-1</sup></td>
+          <td style="vertical-align: top;">Total number concentration of
+            cloud ice and snow with maximum dimension exceeding 100 &#956m
+            where total condensate mass mixing ratio &gt; 10<sup>-6</sup>
+            kg kg<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">N_g100</td>
+          <td style="vertical-align: top;">L<sup>-1</sup></td>
+          <td style="vertical-align: top;">Total number concentration of
+            graupel with maximum dimension exceeding 100 &#956m where total
+            condensate mass mixing ratio &gt; 10<sup>-6</sup> kg kg<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Ci<br>
+          </td>
+          <td style="vertical-align: top;">-<br>
+          </td>
+          <td style="vertical-align: top;">Cloud fraction ice phase<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Cl<br>
+          </td>
+          <td style="vertical-align: top;">-<br>
+          </td>
+          <td style="vertical-align: top;">Cloud fraction liquid phase<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Cm<br>
+          </td>
+          <td style="vertical-align: top;">-<br>
+          </td>
+          <td style="vertical-align: top;">mixed-phase cloud fraction<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Refl</td>
+          <td style="vertical-align: top;">dBZ</td>
+          <td style="vertical-align: top;">Simulated radar reflectivity</td>
+        </tr>
+	 <tr>
+          <td style="vertical-align: top;">dT_dt_conv_bl</td>
+          <td style="vertical-align: top;">K s<sup>-1</sup> </td>
+          <td style="vertical-align: top;">parameterized temperature tendency due to convection 
+	    and BL-turbulence</td>
+         </tr>
+	 <tr>
+          <td style="vertical-align: top;">dQv_dt_conv_bl</td>
+          <td style="vertical-align: top;">kg kg<sup>-1</sup> s<sup>-1</sup> </td>
+          <td style="vertical-align: top;">parameterized water vapour tendency due to convection 
+	    and BL-turbulence</td>
+         </tr>
+	 <tr>
+          <td style="vertical-align: top;">dQc_dt_conv</td>
+          <td style="vertical-align: top;">kg kg<sup>-1</sup> s<sup>-1</sup> </td>
+          <td style="vertical-align: top;">parameterized cloud water tendency due to convection</td>
+        </tr>
+	  <tr>
+          <td style="vertical-align: top;">dQi_dt_conv</td>
+          <td style="vertical-align: top;">kg kg<sup>-1</sup> s<sup>-1</sup> </td>
+          <td style="vertical-align: top;">parameterized ice water tendency due to convection</td>
+        </tr>
+      </tbody>
+    </table>
+    <br style="font-family: Helvetica,Arial,sans-serif;">
+    <span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;</span><br
+      style="font-family: Helvetica,Arial,sans-serif;">
+    <table style="font-family: Helvetica,Arial,sans-serif;" bgcolor="#99CCFF"
+      border="1" cellpadding="5">
+      <caption align="TOP"><strong>Table 2. 2-D fields at 10 minute
+          intervals</strong></caption>
+      <tbody>
+        <tr>
+          <th align="LEFT" bgcolor="#6699CC">Name</th>
+          <th bgcolor="#6699CC">Units</th>
+          <th align="LEFT" bgcolor="#6699CC">Description</th>
+        </tr>
+        <tr>
+          <th colspan="2">dimensions x,y,time<br>
+          </th>
+        </tr>
+        <tr>
+          <td>Lon</td>
+          <td>degree</td>
+          <td>Longitude</td>
+        </tr>
+        <tr>
+          <td>Lat</td>
+          <td>degree</td>
+          <td>Latitude</td>
+        </tr>
+        <tr>
+          <td>Psf</td>
+          <td>hPa</td>
+          <td>Surface pressure</td>
+        </tr>
+        <tr>
+          <td>Hgt</td>
+          <td>m</td>
+          <td>Terrain height</td>
+        </tr>
+        <tr>
+          <td>U10</td>
+          <td>m s<sup>-1</sup></td>
+          <td>10m Eastward wind</td>
+        </tr>
+        <tr>
+          <td>V10</td>
+          <td>m s<sup>-1</sup></td>
+          <td>10m Northward wind</td>
+        </tr>
+        <tr>
+          <td>T2</td>
+          <td>K</td>
+          <td>2m temperature</td>
+        </tr>
+        <tr>
+          <td>Q2</td>
+          <td>kg kg<sup>-1</sup></td>
+          <td>2m moisture</td>
+        </tr>
+        <tr>
+          <td>SWdn</td>
+          <td>W m<sup>-2</sup></td>
+          <td>Shortwave downwelling radiative flux at the surface</td>
+        </tr>
+        <tr>
+          <td>SWup</td>
+          <td>W m<sup>-2</sup></td>
+          <td>shortwave upwelling radiative flux at the TOA</td>
+        </tr>
+        <tr>
+          <td>LWdn</td>
+          <td>W m<sup>-2</sup></td>
+          <td>Longwave downwelling radiative flux at the surface</td>
+        </tr>
+        <tr>
+          <td>LWup</td>
+          <td>W m<sup>-2</sup></td>
+          <td>Longwave upwelling radiative flux at the TOA</td>
+        </tr>
+        <tr>
+          <td>Rain</td>
+          <td>mm</td>
+          <td>Accumulated precipitation (liq)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Snow<br>
+          </td>
+          <td style="vertical-align: top;">mm<br>
+          </td>
+          <td style="vertical-align: top;">Accumulated precipitation
+            (ice)<br>
+          </td>
+        </tr>
+        <tr>
+          <td>OLR</td>
+          <td>W m<sup>-2</sup></td>
+          <td>TOA outgoing longwave radiation</td>
+        </tr>
+        <tr>
+          <td>LWP</td>
+          <td>g m<sup>-2</sup></td>
+          <td>liquid water path (cloud water + rain)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">IWP<br>
+          </td>
+          <td style="vertical-align: top;">g m<sup>-2</sup></td>
+          <td style="vertical-align: top;">ice water path (cloud ice +
+            snow)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">GWP<br>
+          </td>
+          <td style="vertical-align: top;">g m<sup>-2</sup></td>
+          <td style="vertical-align: top;">graupel water path<br>
+          </td>
+        </tr>
+        <tr>
+          <td>SHF</td>
+          <td>W m<sup>-2</sup></td>
+          <td>Surface sensible heat flux</td>
+        </tr>
+        <tr>
+          <td>LHF</td>
+          <td>W m<sup>-2</sup></td>
+          <td>Surface latent heat flux</td>
+        </tr>
+      </tbody>
+    </table>
+    <br style="font-family: Helvetica,Arial,sans-serif;">
+    <span style="font-family: Helvetica,Arial,sans-serif;"></span><br style="font-family: Helvetica,Arial,sans-serif;">
+    <br style="font-family: Helvetica,Arial,sans-serif;">
+   <p><strong>Deadline</strong></p>
+    <span style="font-family: Helvetica,Arial,sans-serif;"> Results to be submitted by end of July 2013. 
+      Once the your results are ready please email Paul Field for instructions about how to submit the data.
+    </span><br style="font-family: Helvetica,Arial,sans-serif;">
+   <p><strong>Publications</strong></p>
+   <p>All participants
+      will be included as co-authors on a paper that we will produce
+      from this LAM intercomparison.<br>
+      <strong></strong></p>
+    <p class="navlink" align="center"><span style="font-family: Helvetica,Arial,sans-serif;">
+      </span><br>
+    </p>
+  
+</div>
+
+
+  

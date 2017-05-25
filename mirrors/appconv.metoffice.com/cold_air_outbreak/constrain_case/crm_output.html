@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<link rel=stylesheet type="text/css" HREF="basic_style.css" />
+<link rel=stylesheet type="text/css" HREF="case_setup.css" />
+
+<div id="nav-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="home.html" >Case overview</a></font></li> 
+    <li ><font face="Arial, Helvetica, sans-serif"><a style="background:#000000;color:#FFFFFF; text-decoration:none" href="crm_setup.html" >
+	  LES case</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="lam_setup.html" >LAM case</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="global_setup.html" >Global case</a></font></li> 
+    <li ><font face="Arial, Helvetica, sans-serif"><a href="contact_us.html" >Contact us</a></font></li>
+  </ul> 
+</div>
+	
+<div id="crm-menu"> 
+  <ul> 
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a  href="crm_setup.html" >LES setup</a></font></li>
+    <li ><font face="Arial, Helvetica, sans-serif">
+	<a style="background:#000000;color:#FFFFFF; text-decoration:none" href="crm_output.html" >LES output</a></font></li>
+  </ul> 
+</div>
+
+<div id="crm-text">
+  <h2>General remarks</h2>
+  <p>
+    The output required is essentially the same as that required for the recent 
+    ASTEX intercomparion <a href="http://www.euclipse.nl/wp3/ASTEX_Lagrangian/LES_output.shtml"> ASTEX ouput</a>. 
+    As with the ASTEX intercomparison, we prefer to receive the files in 
+    NetCDF format. For the definitions of specific quantities, please refer to 
+    the <a href="http://www.knmi.nl/samenw/rico/output3d.html">data description of 
+      the RICO case</a> for the LES fields and 
+    <a href="http://atmgcm.msrc.sunysb.edu/cfmip_figs/Case_specification.html#output_scm">CGILS</a> for the SCM data.
+  </p>
+  <br />
+  <p>The set below gives the minimum LES data set to be submitted. Please feel 
+    free to add any other variable like mass flux statistics as requested 
+    for previous LES intercomparison cases.</p>
+  <br />
+  <h2>General definitions of requested diagnostics</h2>
+  <p> thetali =  theta - Lv/(cp Pi) ql - Li/(cp Pi) qi_tot </p> 
+  <p> where, ql in liquid water mixing ration, qi_tot is the total ice water mixing ratio, Lv is the the
+    latent heat of water and Li is the latent heat of ice, Pi the exner function using p_ref = 1000 hPa</p>
+  <p> ql = liquid water specific humidity (cloud water)</p>
+  <p> qi = ice water specific humidity</p>
+  <p> qv = water vapor specific humidity</p>
+  <p> qr = rain water specific humidity</p>
+  <p> qt = total water specific humidity (ql + qr + qi + qs + qg)</p>
+  <p> LWP = liquid water path (on the basis of ql)</p>
+  <p> RWP = rain wate path based on qr </p>
+  <p> IWP = ice water path based on qi </p> 
+  <p> SWP = snow water path based on qs </p> 
+  <p> GWP = graupel water path based on qg </p>
+  <br />
+  <p> The above are general definitions and we accept that some models do not consist of 
+    all these prognostics, so if you can provide what you can and explicitly state what 
+    you are submitting, e.g. If your model only has one ice prognostic, please provide that
+    as qi and state that qs and qg are "n/a"</p>
+  <br />
+  <h2>How and where should you submit your data to?</h2>
+  <br />
+  <p>We will arrange an anonymous ftp site where you can submit your output 
+  but for now once data is ready could participants email Stephan de Roode for 
+  details of the site.</p>
+  <br />
+  <p>Requested files fall into the four general categories,i.e. 3-D instantaneous, 
+    Initial profiles, Scalar timeseries and profile timeseries (table 1)</p>
+  <br /> 
+  <span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;</span>
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+    <table style="font-family: Helvetica,Arial,sans-serif;" bgcolor="#99CCFF"
+	   border="1" cellpadding="5">
+      <caption align="TOP"><strong>Table 1. Summary of outputs, files, and 
+	  naming conventions&nbsp;</strong></caption>
+      <tbody>
+        <tr>
+          <th align="LEFT" bgcolor="#6699CC">Type</th>
+          <th bgcolor="#6699CC">Interval</th>
+          <th align="LEFT" bgcolor="#6699CC">File naming convention</th>
+        </tr>
+        <tr>
+          <td>3-D fields</td>
+          <td>30 minutes</td>
+          <td>MODEL.VARIABLE.Lx_Dx_Nc_liquid/ice.nc</td>
+        </tr>
+	<tr>
+          <td>Initial profiles</td>
+          <td> - </td>
+          <td>MODEL.profiles_ini.nc</td>
+        </tr>
+	<tr>
+          <td>Scalar timeseries</td>
+          <td> 60 seconds </td>
+          <td>MODEL.scalars.Lx_Dx_Nc_liquid/ice.nc</td>
+        </tr>
+	<tr>
+          <td>Profile timeseries</td>
+          <td> 600 seconds </td>
+          <td>MODEL.profiles.Lx_Dx_Nc_liquid/ice.nc</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <p>
+      When submitting data, if possible, could you use the following file 
+      naming convention, institution_filekind_Lx_Dx_Nc_liquid/ice.nc, where</p>
+    <ul>
+      <li>{MODEL} is a unique character string describing your model, e.g. DALES or UKMOLEM for the Met Office LES </li>
+      <li>{VARIABLE} is the variable in each file</li>
+      <li>{Lx} is a 3 letter code for horizontal domain size, e.g. 96 km = 096 </li>
+      <li>{Dx} is a 4 character code for the horizontal resolution, e.g. 0.5 km = 0.50 </li>
+      <li>{Nc} is a 3 letter code for the cloud drop number, e.g. 50 /cm^3 = 050 </li>
+      <li>{liquid/ice} is a 1 letter character to describe whether the simulation is liquid only or ice e.g. L = liquid, I = ice </li>
+    </ul> 
+    
+    <br />
+    <h2>Instantaneous 3D data fields</h2>
+    <p>
+      To facilitate a detailed analysis of the model data, we ask the participants 
+      to save instantaneous 3D fields of the prognostic variables for the cold-air outbreak 
+      intercomparison study. In particular, air temperature T [K}, 
+      the liquid water potential 
+      temperature Tl [K], water vapour mixing ratio qv[g/kg], 
+      the total water content qt [g/kg], 
+      the cloud liquid water content qc [g/kg], the rain water content qr [g/kg], 
+      the rain droplet concentration N<sub>r</sub> [cm^-3], the three components of the 
+    wind velocity u,v, and w [m/s],  and the sub-grid TKE, e [m^2/s^2]. In this way 
+    the data can be conditionally sampled offline with arbitrary sampling criteria, 
+    e.g. cloud core, cloud, updrafts, strongest thermals etc. In addition, 
+    energy spectra can be calculated which will provide insight to the spatial 
+    structure of the vertical turbulent transport and the spatial 
+    distribution of cloud liquid water, temperature etc.
+  </p>
+  <br />
+  <p> 
+    In addition, to the fields above, if participants run with ice microphysics 
+    on could they provide 3-D fields of total ice and the individual ice species, 
+    i.e. ice mass (qi [g/kg]), snow mass (qs [g/kg]), 
+    graupel mass (qg [g/kg]), ice number conc. (Ni [cm^-3]), 
+    snow number conc. (Ns [cm^-3]), graupel number (Ng [cm^-3]),
+    We recognize that due to differences in microphysics not all fields can be 
+    populated by all participants. However, if you are providing ice fields could 
+    you also provide details of (or a reference) your  microphysics schemes 
+    e.g. number of moments, particle size distribution and sedimentation 
+    parametrisations and finally ice nucleation parameterisations (and forms of 
+    ice nucleation included).
+  </p>
+  <br />
+  <p>
+    We would like these 3-D fields to be provided every 30 mins with all variables 
+    provided in one data file. Please also provide the heights, i.e. full (zf) or half (zh)
+    and the mean pressure value at any height.
+  </p>
+  <br /> 
+  <p> 
+    As well as the 30 minute output, could participants provide 3-D output every 5 
+    minutes for the penultimate hour of the simulation in another file. Once again
+    please provide the heights for the diagnostic fields.
+  <p>  
+  <br />
+  <h2>Instantaneous profiles of the initial state</h2>
+  <p><strong>Dimensions:</strong></p>
+  <ul>
+    <li>{zf}   Number of layers (full level) </li>
+    <li>{zh}   Number of layers (half level)</li>
+  </ul>
+  <p><br /> <strong>Dependent variables</strong>, indexed (zf):</p>
+  
+  <ul>
+    <li>{zf}     Altitude of layer mid-points    (full level)       [m] </li>
+    <li>{u}      Zonal wind                                         [m/s] </li>
+    <li>{v}      Meridional wind                                    [m/s] </li>
+    <li>{thetali} Liquid and ice water potential temperature        [K] </li>
+    <li>{qt}     Total water (vapor+liquid+ice)                     [g/kg] </li>
+    <li>{rho}    density                                            [kg/m^3] </li>
+    <li>{pres}   pressure                                           [Pa] </li>
+  </ul>
+  <p><strong>Please give the absolute values for the shortwave and longwave radiative fluxes based on the initial profiles but calculated at 12 UTC (to obtain solar radiative fluxes)</strong>, indexed (zh):</p>
+
+  <ul>
+    <li>{SW_up} Upward shortwave radiation [W/m^2] </li>
+    <li>{SW_dn} Downward shortwave radiation [W/m^2] </li>
+    <li>{LW_up} Upward longwave radiation [W/m^2] </li>
+    <li>{LW_dn} Downward longwave radiation [W/m^2] </li>
+  </ul>
+  <br />
+  <hr />
+  <h2>Time series of scalars</h2>
+  <p>Instantaneous values are to be provided  at an interval of 60 s for the duration of each simulation</p>
+  
+  <p>Dimensions:</p>
+  <ul>
+    <li>{time} Number of output times </li>
+  </ul>
+  <p>Variables:</p>
+  <ul>
+    <li>{time} - Time [s] </li>
+    <li>{zi} - Mean height of grid cells with largest potential temperature gradient [m] </li>
+    <li>{zcb} - Height of bottom of lowermost cloudy grid cell [m] </li>
+    <li>{zct} - Height of top of highest cloudy grid cell [m] </li>
+    
+    <li>{zcbmn} - Mean height of bottom of lowermost cloudy grid cells [m] </li>
+    <li>{zctmn} - Mean height of top of lowermost cloudy grid cells [m] </li>
+    <li>{LWP} - Mean liquid water path [g/m^2] </li>
+    <li>{LWP_var} - Liquid water path variance [g^2/m^4] </li>
+    <li>{RWP} - Mean rain water path [g/m^2] </li>
+    <li>{IWP_tot} - Mean total ice water path [g/m^2] </li>
+    <li>{IWP_only} - Mean ice crystal water path [g/m^2] if available </li>
+    <li>{SWP} - Mean snow water path [g/m^2] if available </li>
+    <li>{GWP} - Mean graupel water path [g/m^2] if available </li>
+    <li>{cc} - Fraction of columns with number of cloudy grid cells  &gt; 0  [-] </li>
+    <li>{we} - Entrainment rate [m/s], to be computed from the maximum thl or qt gradient in each column </li>
+    <li>{SST} - Sea Surface Temperature [<sup>0</sup>C] </li>
+    
+    <li>{SSA} - Sea Surface Albedo [0-1] </li>
+    <li>{shf} - Mean upward surface sensible heat flux [K m/s] </li>
+    <li>{lhf} - Mean upward surface latent heat flux [kg/kg m/s] </li>
+    <li>{Nc} - Mean cloud droplet concentration [cm^-3] </li>
+    <li>{Nr} - Mean rain drop concentration [cm^-3] </li>
+    <li>{tke} - Vertically integrated TKE (sgs plus resolved), not density weighted [m^3/s^2]</li>
+    <li>{SW_alb_TOA} - Ratio downwelling/upwelling shortwave radiation at TOA [0-1]</li>
+    <li>{prec_srf} - Mean (downward) precipitation flux at the surface [kg/kg m/s], (or [W/m^2] or [mm/day])</li>
+    <li>{prec_fracsrf} - Fraction of surface grid cells with a surface precipitation flux of 3.65e-5 kg/kg m/s or higher[-] </li>
+    
+  </ul>
+  <br />
+
+  <h2>Time series of 10 minute averaged profiles</h2>
+  
+  <p>Profiles are to be averaged over 600 s intervals for the duration of each simulation. The average over the first hour (1-600 s) is given at t = 600 s etc.<br />  Dimensions:</p>
+  
+  <ul>
+    <li>{time} Number of output times (24) </li>
+    <li>{zf} Number of layers (full level) </li>
+  </ul>
+  <p><br /> Independent variables:</p>
+  <ul>
+    <li>{time} Time [s] </li>
+    <li>{zf} Altitude of layer mid-points (full level) [m] </li>
+  </ul>
+  <p><br /> Dependent variables, indexed (time, zf):</p>
+  
+  <ul>
+    <li>{u} Zonal wind [m/s] </li>
+    <li>{v} Meridional wind [m/s] </li>
+    <li>{pres} Pressure [Pa] </li>
+    <li>{thetal} Liquid water potential temperature [K] </li>
+    <li>{qt} Total water (vapor+liquid+ice+snow+graupel) [g/kg] </li>
+    <li>{ql} cloud water [g/kg] (no rain) </li>
+    <li>{qr} Rain water[g/kg] </li>
+    <li>{Nr} Rain number[cm^-3] </li>
+    <li>{qi} ice water[g/kg] </li>
+    <li>{Ni} ice number[cm^-3] </li>
+    <li>{qs} snow water[g/kg] </li>
+    <li>{Ns} snow number[cm^-3] </li>
+    <li>{qg} graupel water[g/kg] </li>
+    <li>{Ng} graupel number[cm^-3] </li>
+
+    <li>{u_var} Resolved variance of zonal wind [m^2/s^2] </li>
+    
+    <li>{v_var} Resolved variance of meridional wind [m^2/s^2] </li>
+    <li>{w_var} Resolved variance of vertical wind [m^2/s^2] </li>
+    <li>{w_skw} Resolved (w'<sup>3</sup>)/(w'<sup>2</sup>)<sup>3/2</sup> [-] </li>
+    <li>{thetal_var} Resolved variance of <em><sub>l</sub></em> [K^2] </li>
+    
+    <li>{qt_var} Resolved variance of <em>q<sub>t</sub></em> [kg^2/kg^2]
+      <br />
+    </li>
+    <li>{tot_wthl} Total <em><sub>l</sub></em> flux, including subgrid-scale [K m/s] </li>
+    <li>{sgs_wthl} Subgrid-scale <em><sub>l</sub></em> flux [K m/s] </li>
+    
+    <li>{tot_wqt} Total <em>q<sub>t</sub></em> flux, including subgrid-scale[kg/kg m/s] </li>
+    <li>{sgs_wqt} Subgrid-scale <em>q<sub>t</sub></em> flux [kg/kg m/s] </li>
+    <li>{tot_wthv} Total <sub>v</sub> flux [K m/s] , <sub>v</sub>=  (1 + <sub>I</sub> q<sub>vap</sub> - q<sub>liq</sub>), with <sub>I</sub> = R<sub>v</sub>/R<sub>d</sub>-1 = 0.608, and Rd=287.04  J kg<sup>-1</sup> K<sup>-1</sup>, Rv = 461.5  J kg<sup>-1</sup> K<sup>-1</sup>, the gas constants for dry air and water vapor, respectively. </li>
+    
+    <li>{tot_uw} Total (sgs plus resolved) zonal momentum flux [m^2/s^2] </li>
+    <li>{tot_vw} Total (sgs plus resolved) meridional momentum flux [m^2/s^2]
+      <br />
+    </li>
+    <li>{res_tke} Resolved TKE [m^2/s^2] </li>
+    <li>{sgs_tke} Subgrid TKE [m^2/s^2] </li>
+    <li>{res_buoy} Resolved buoyancy TKE production [m^2/s^3] </li>
+    <li>{res_shr} Resolved shear TKE production [m^2/s^3] </li>
+    <li>{res_tke_transport} Resolved TKE transport [m^2/s^3] </li>
+    <li>{res_pres_transport} Resolved pressure transport  [m^2/s^3] </li>
+    
+    <li>{res_diss} (absolute value of the) TKE dissipation (explicit plus numerical) [m^2/s^3]
+      <br />
+    </li>
+    <li>{cfrac} Fraction of cloudy grid cells [-] </li>
+    <li>{prec} Precipitation flux (positive downward) [kg/kg m/s] </li>
+    <li>{prec_prc} Precipitation flux (positive downward), averaged over precipitating grid cells only [kg/kg m/s] </li>
+    <li>{frac_prc} Fraction of precipitating grid cells with a precipitation flux of 3.65e-5 kg/kg m/s or higher[-] </li>
+    <li>{Nr} Mean rain drop concentration (see <a href="http://www.knmi.nl/samenw/rico/output3d.html">notes</a> RICO  intercomparison case) [cm^-3] </li>
+    
+    <li>{Nc} Mean cloud droplet concentration (see <a href="http://www.knmi.nl/samenw/rico/output3d.html">notes</a> RICO intercomparison case) [cm^-3]</li>
+  </ul>
+  <ul>
+    <li>Please give the absolute values for the shortwave and longwave radiative fluxes:</li>
+    <li>{SW_up} Upward shortwave radiation [W/m^2] </li>
+    <li>{SW_dn} Downward shortwave radiation [W/m^2] </li>
+    <li>{LW_up} Upward longwave radiation [W/m^2] </li>
+    <li>{LW_dn} Downward longwave radiation [W/m^2] </li>
+    
+  </ul>
+  <p>
+    If you happen to have coded a conditionally sampling routine as frequently requested for previous intercomparison studies, we are happy to receive these data as well.</p>
+  <hr />
+ 
+  <p><strong>Deadline</strong></p>
+  <span style="font-family: Helvetica,Arial,sans-serif;"> Results to be submitted by end of July 2013. 
+    Once your results are ready please email Stephan de Roode for instructions about how to submit the data.
+  </span><br style="font-family: Helvetica,Arial,sans-serif;">
+    
+</div>
+
+
+  
