@@ -30,7 +30,8 @@ tropics
 diurnal cycle of forced shallow convection at ARM-SGP site
 
 - [ARM_SGP_deep_convection](cases/ARM_SGP_deep_convection) continential deep
-convection at ARM-SGP site
+convection at ARM-SGP site (*GCSS Working Group 4, Case 3*)
+
 
 - [TOGA_COARE_tropical_squall_line](cases/TOGA_COARE_tropical_squall_line/)
 oceanic tropical squall line (*GCSS Working Group 4,
