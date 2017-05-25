@@ -1,0 +1,26 @@
+<html>
+<head>
+ <title>Clarifiaction of timeseries diagnostics</title>
+</head>
+<body margin="20" bgcolor="white" text="black" link="#0000FF"
+ vlink="#FF0000" alink="#0000FF">
+<font face="helvetica">
+<h3>Clarification for the timeseries diagnostics.</h3>
+
+Thanks to Tomoe Nasuno for highlighting some slightly confusing
+instructions for the timeseries diagnostics. I will try and claify
+this below. They have arisen from a case of "cut and paste" from
+previous documens.
+
+<UL TYPE=DISC >
+<LI> Please send in the timeseries at the freqency at which you do the sampling for the profiles and the budgets. i.e. instantaneous.<BR>
+  <U>except</U><BR>
+    If you calculate your time averaged diagnostics by accumulating at
+very high frequency in the model (e.g. a few seconds) then please use
+a more reasonable frequency (every minute or so) and make it clear
+that this is what you have done in a file ctdesc.modeller
+
+<LI> Contrary to the instructions in the document. The time value
+should be the time at which the data is output (not the mid-point as there is no averaging).
+
+</UL>

@@ -1,0 +1,66 @@
+Scientist Details
+
+                       Name:
+
+                Affiliation:
+
+                    Address:
+
+             E-mail address:
+
+
+Model Details
+
+                 Model Name:
+
+                Model type : (CRM/SCM/LAM)
+
+               Equation Set:
+
+ Domain size in x direction:
+                y direction:
+                z direction:
+
+ Number of      x direction:
+ points in      y direction:
+                z direction:
+
+                  Time Step:
+  
+        Numerical Technique: 
+(Please describe briefly the 
+type of numerial schemes 
+used and their order of 
+accuracy, including any 
+numerical diffusion)
+
+                Lateral BCs:
+
+                  Upper BC :
+(e.g. Sponge layer details)
+
+Physical Parametrizations
+
+             Surface fluxes:
+
+               LW radiation:
+
+               SW radiation:
+
+  Microphysics Scheme (CRM):
+
+Convection Scheme (SCM/LAM):
+       
+     Cloud Scheme (SCM/LAM):
+
+    Turbulence closure/ 
+    Boundary Layer Scheme  :
+
+      Other parametrization 
+                information:   
+
+
+               Documentaion:
+  Please provide references
+  for the model
+

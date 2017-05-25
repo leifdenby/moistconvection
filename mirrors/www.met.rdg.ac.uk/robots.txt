@@ -1,0 +1,9 @@
+# reject all robots from uploads directory 19/10/03
+User-agent: *
+Disallow: /~ross/cgi-bin/
+Disallow: /sws05jmd/data/
+Disallow: /Data/fieldsite/cgi-bin/
+Disallow: /webcalendar/
+Disallow: /uploads/
+Disallow: /Data/
+Disallow: /~sws09a/cgi-bin/
