@@ -1,0 +1,46 @@
+div#header {display: none}
+div#menubar {display: none}
+div#menu {display: none}
+div#footer {display: none}
+div#h1box {display: none}
+
+div#container {
+  width:100%; 
+  color: black; background: white; font-family: sans-serif;
+  position:static;
+  overflow: visible;
+  top:90px;
+  left:0;
+  bottom:30px; 
+  background:#fff;
+  padding-top:30px;
+  border-bottom:1px solid black;
+  }
+
+div#h1 {   font-family: sans-serif; font-weight: bold; font-size: 110%;
+  margin-left: 0%; margin-right: 6%;
+  text-align: left; color: #660000;
+  padding: 0.5em;
+  }
+
+div#h2 {   font-family: sans-serif; font-weight: bold; font-size: 90%; margin-left: 1%; margin-right: 0%;
+  text-align: left; color: #000066;
+  padding: 0.1em;
+  }
+
+div#h3 {   font-family: sans-serif; font-weight: bold; font-size: 80%; margin-left: 2%; margin-right: 0%;
+  text-align: left;
+  padding: 0.1em;  
+  }
+
+div#h4 {   font-family: sans-serif; font-weight: bold; font-size: 85%; margin-left: 2%; margin-right: 0%;
+  text-align: left;
+  padding: 0.1em;
+  }
+
+div#h5 {   font-family: sans-serif; font-weight: bold; font-size: 80%; margin-left: 2%; margin-right: 0%;
+  text-align: left;
+  padding: 0em;  
+  }
+
+div#p { margin-left: 2%; ; margin-right: 0%; color: black; font-size: 90%;}

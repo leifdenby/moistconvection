@@ -1,0 +1,16 @@
+/* style.css - style sheet for references */
+
+
+
+table.ref { margin-left: 10%; ; margin-right: 10%; color: black;}
+th.ref {   font-family: sans-serif;  text-align: center;  padding:10px; font-size: 80%}
+
+td.ref  {   font-family: sans-serif;  text-align: left;  padding:10px; font-size: 80% ; background: rgb(240,240,235); }
+
+td.refsub  {   font-family: sans-serif;  text-align: left;  padding:10px; font-size: 80% ; background: rgb(240,248,235); }
+
+td.refprep  {   font-family: sans-serif;  text-align: left;  padding:10px; font-size: 80% ; background: rgb(235,240,250); }
+
+td.jobl  {   font-family: sans-serif; font-weight: bold;   text-align: right;  padding:10px; font-size: 90% ; background: rgb(240,240,235); }
+
+td.jobr  {   font-family: sans-serif;   text-align: left;  padding:10px; font-size: 90% ; background: rgb(240,240,235); }
