@@ -7,4 +7,11 @@ LES described in Brown et al. (2002)
 
 ## Characteristics
 
-- diurnal cycle with forced (not reaching LFC) shallow convection
+- strong diurnal cycle first forced (not reaching LFC) and later free shallow
+convection, maximum surface fluxes "far in excess" of BOMEX and ATEX cases
+(which were over ocean).
+
+- surface fluxes dominate, large-scale forcings are weak in comparison
+
+- significant change in Bowen ratio ($\approx 0.3$) from BOMEX ($\approx
+0.06$), more transport through sensible heat compared to latent heat.
