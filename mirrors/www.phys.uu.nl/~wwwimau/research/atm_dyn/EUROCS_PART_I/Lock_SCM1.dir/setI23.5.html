@@ -1,0 +1,35 @@
+<b>Set I compares the hourly average (2-3) vertical profiles of Q1, Q2,
+Q3_u and Q3_v, <br> which are the net effects of convective motions upon
+the large scale fields. <br>
+These profiles are calculated from the domain averaged profiles of Teta,
+qv, u and v <br> at hour 2 and 3 and the sum of the hourly averaged (2-3)
+large scale forcings (subsidence) <br> and radiation
+(TetaFor, qvFor, uFor and vFor).</b>
+<P>
+<ol>
+<li> height (in meters) where the following variables locate
+<li> Q1 = (&lt;Teta(hour+1)&gt; - &lt;Teta(hour)&gt;)/3600 - TetaFor  (K/s)
+<li> Q2 = (&lt;qv(hour+1)&gt; - &lt;qv(hour)&gt;)/3600 - qvFor  (g/kg/s)
+<li> Q3_u = (&lt;u(hour+1)&gt; - &lt;u(hour)&gt;)/3600 - uFor  (m/s2)
+<li> Q3_v = (&lt;v(hour+1)&gt; - &lt;v(hour)&gt;)/3600 - vFor  (m/s2)
+</ol>
+<PRE>
+
+  (1)         (2)           (3)           (4)           (5)    
+I 2330 A_Lock SCM_1
+   10.2  0.0000297377 -0.0000262069 -0.0001046644  0.0000181872
+   40.3  0.0000282796 -0.0000261086 -0.0000808055  0.0000416728
+  100.3  0.0000263977 -0.0000259166 -0.0000663045  0.0000551212
+  190.3  0.0000212775 -0.0000259379 -0.0000578127  0.0000619078
+  300.6 -0.0000781080  0.0000029450 -0.0000529100  0.0000651179
+  440.3 -0.0000735643  0.0000117579  0.0000118579  0.0000033122
+  605.7 -0.0000441488  0.0000000000  0.0000000000  0.0000000000
+  785.3 -0.0000382148  0.0000000000  0.0000000000  0.0000000000
+  978.9 -0.0000302294  0.0000000000  0.0000000000  0.0000000000
+ 1186.0 -0.0000273810  0.0000000000  0.0000000000  0.0000000000
+ 1407.1 -0.0000261095  0.0000000000  0.0000000000  0.0000000000
+ 1648.4 -0.0000253805  0.0000000000  0.0000000000  0.0000000000
+ 1932.2 -0.0000252279  0.0000000000  0.0000000000  0.0000000000
+ 2278.3 -0.0000226678  0.0000000000  0.0000000000  0.0000000000
+</PRE>
+<A HREF="Lock_SCM1.html"> back to LockSCM1 A_Lock, GCM standard resoln </A>

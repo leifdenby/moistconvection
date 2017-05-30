@@ -1,0 +1,47 @@
+<b> Set F compares the hourly average (23-24 and 36-37) vertical profiles
+of the resolved turbulent <br> kinetic energy (in m^2/s^2) and its budget
+terms, each multiplied by 10^4 (in m^2/s^3): </b>
+<ol>
+<li> height (in meters), where the following variables locate,
+<li> resolved turbulent kinetic energy &lt;q'&gt; =
+     &lt;0.5*(u'^2 + v'^2 +w'^2)&gt; where u' = u - &lt;u&gt; etc.
+<li> resolved shear production
+     - (&lt;u'w'&gt;d&lt;u&gt;/dz + &lt;v'w'&gt;d&lt;v&gt;/dz)
+<li> resolved buoyancy production &lt;w'b'&gt;
+<li> resolved transport (turbulent plus pressure transport) <br>
+      -d/dz&lt;w'(q'+p'/rho(z)) -u'*tau_13 - v'*tau_23 - w'*tau_33&gt;
+<li> dissipation &lt;tau_ij*du_i/dx_j&gt; summed over i, j = 1,2,3. <br>
+    Here u_i are the velocity components and tau_ij are the components of
+    the subgridscale stress tensor.
+<li> storage (i. e. (&lt;resolved TKE&gt;hour)- &lt;resolved TKE&gt;hour-1))/3600s)
+<li> residual  (3) + (4) + (5) - (6) - (7)
+<li> subgrid buoyancy production
+</ol>
+<PRE>
+
+   (1)    (2)      (3)      (4)      (5)      (6)      (7)      (8)      (9)
+1 F36.5 H_Grenier SCM CNRM-standart 
+   33.0   4.433  222.4080 -220.7500    0.0000 1472.3214    0.0000 -1915.4794    0.0000
+  149.4   0.551    0.2555   -8.0475    0.0000   35.7561    0.0000  -43.5481    0.0000
+  359.5   0.619    0.1195   -9.3675    0.0000   41.4674    0.0000  -50.7154    0.0000
+  648.9   0.391    0.0091   -4.6675    0.0000   20.8039    0.0000  -25.4623    0.0000
+ 1004.9   0.250    0.0031   -2.4600    0.0000   10.6318    0.0000  -13.0887    0.0000
+ 1416.2   0.067    0.0002   -0.3842    0.0000    1.4864    0.0000   -1.8704    0.0000
+ 1870.9   0.093    0.0001    1.2475    0.0000    2.4362    0.0000   -1.1886    0.0000
+ 2360.4   0.006    0.0000   -0.1555    0.0000    0.0406    0.0000   -0.1961    0.0000
+ 2883.7   0.000    0.0000   -0.0264    0.0000    0.0001    0.0000   -0.0265    0.0000
+ 3438.9   0.000    0.0000   -0.0002    0.0000    0.0000    0.0000   -0.0002    0.0000
+ 4022.4   0.000    0.0000   -0.0002    0.0000    0.0000    0.0000   -0.0002    0.0000
+ 4632.6   0.000    0.0000   -0.0002    0.0000    0.0000    0.0000   -0.0002    0.0000
+ 5268.8   0.000    0.0000   -0.0001    0.0000    0.0000    0.0000   -0.0001    0.0000
+ 5930.9   0.000    0.0000   -0.0001    0.0000    0.0000    0.0000   -0.0001    0.0000
+ 6618.2   0.000    0.0000   -0.0001    0.0000    0.0000    0.0000   -0.0001    0.0000
+ 7329.5   0.000    0.0000   -0.0001    0.0000    0.0000    0.0000   -0.0001    0.0000
+ 8065.9   0.000    0.0000   -0.0001    0.0000    0.0000    0.0000   -0.0001    0.0000
+ 8829.3   0.000    0.0000   -0.0001    0.0000    0.0000    0.0000   -0.0001    0.0000
+ 9620.7   0.000    0.0000   -0.0001    0.0000    0.0000    0.0000   -0.0001    0.0000
+10441.5   0.000    0.0000   -0.0002    0.0000    0.0000    0.0000   -0.0002    0.0000
+11293.8   0.000    0.0000   -0.0001    0.0000    0.0000    0.0000   -0.0001    0.0000
+12175.5   0.000    0.0000   -0.0002    0.0000    0.0000    0.0000   -0.0002    0.0000
+</PRE>
+<A HREF="Grenier3.html"> back to Grenier3</A>

@@ -1,0 +1,153 @@
+<HTML>
+<body bgcolor="#FFFFFF" link="#660000" vlink="#996600" alink="#660066">
+<A NAME="top"></A>
+
+<PRE>
+****************************    MODEL DESCRIPTION    ************************
+
+Scientist name : Cara-Lyn Lappen
+Istitute: Colorado State University
+Address: Dept of Atmos. Sciences,
+               Colorado State University
+                Fort Collins CO 80523
+Email: lappen@atmos.colostate.edu
+Model Type: 1D combined mass flux higher order closure
+
+
+(1) Computation
+
+Computer used for simulation: SGI Octane
+
+
+(2) Numerical Domain
+
+Dimensions: 1
+Domain size in z direction: 1200 m
+Number of gridpoints in z direction: 60
+Grid size in z direction: 20 m
+Timestep for Dynamics: 1 sec
+
+
+(3) Numerical Technique
+
+Numerical Method: Finite difference
+Advection scheme: Upstream
+Time scheme: mixed (3rd order AB, implicit, semi-implicit)
+Dynamical equations: anelastic
+Lateral boundary conditions: N/A
+Upper boundary conditions: all turbulent quantities are zero.
+
+
+(4) Turbulence Closure Scheme
+
+Turbulence closure        : ensemble mean plus subplume scale scheme
+Turbulence closure type:  special closure:
+                                          fluxes, ww, www are predicted-
+
+                                          all other higher moments diagnosed
+                                          with the parameters of the tophat PDF
+Variables predicted by closure:
+                                          liquid water static energy
+                                          total water mixing ratio
+                                          ubar, vbar
+                                          all fluxes, ww, www
+Closure for dissipation rate: New closure based on a modified
+                                           Bougeault length scale
+Closure for length scale: Bougealt length scale
+Subgrid-scale condensation scheme: all or nothing
+
+
+(5) Documentation
+
+Lappen, C.-L. and D. A. Randall, 2001a: Toward a unified
+parameterization of  the boundary layer and moist convection.
+Part I: A new type of mass-flux model. J. Atmos Sci. (in press)
+
+Lappen, C.-L. and D. A. Randall, 2001b: Toward a unified
+parameterization of the boundary layer and moist convection.
+Part II: Lateral mass exchanges and subplume-scale fluxes.
+J. Atmos Sci. (in press)
+
+Lappen, C.-L. and D. A. Randall, 2001c: Toward a unified
+parameterization of the boundary layer and moistconvection.
+Part III: Simulations of clear and cloudy convection. J. Atmos Sci.
+(in press)
+
+Lappen, C.-L., 1999: The Unification of Mass Flux and Higher-
+Order Closure in the Simulation of Boundary Layer Turbulence.
+Ph.D. thesis, Colorado State University, Fort Collins, CO, 330pp.
+
+--
+Cara-Lyn
+
+***********************************************************
+Cara-Lyn Lappen
+Dept. of Atmos. Sciences            ,__o
+Colorado State University         _ -\ _<;
+Fort Collins, CO. 80523-1371     (*)/'(*)
+Phone: (970) 491-5237
+Fax  : (970) 491-8693
+Email: lappen@atmos.colorado.edu
+***********************************************************
+
+
+</PRE>
+
+<H3>Datasets: </H3>
+<UL align=right>
+<LI> <A HREF="setA.html"> setA </A> Initial conditions
+<LI> <A HREF="setB.html"> setB </A> Relevant parameters for entrainment
+<LI> <A HREF="setC.html"> setC </A> Hourly averaged (0-1 LT, 1-2 LT, etc)
+	values of turbulent fluxes (resolved plus subgrid), radiative
+	fluxes and cloud properties
+<LI> <A HREF="setD23.5.html"> setD23.5 </A> Horizontal mean profiles averaged
+        over the "midnight" period of the simulation
+<LI> <A HREF="setD36.5.html"> setD36.5 </A> Horizontal mean profiles averaged
+        over the "noon" period of the simulation
+<LI> <A HREF="setE23.5.html"> setE23.5</A>
+        Turbulent velocity variances, skewness and fluxes
+	(23-24) average
+<LI> <A HREF="setE36.5.html"> setE36.5</A>
+        Turbulent velocity variances, skewness and fluxes
+	(36-37) average
+<LI> <A HREF="setF23.5.html"> setF23.5</A>
+        Resolved turbulent kinetic energy and its budget terms 
+	(23-24) average
+<LI> <A HREF="setF36.5.html"> setF36.5</A>
+        Resolved turbulent kinetic energy and its budget terms 
+	(36-37) average
+
+<LI> <A HREF="setHa1.23.5.html"> setHa1.23.5</A>
+        Hourly average (23-24) vertical profiles of conditionally
+	sampled fields. Updraft Decomposition.
+<LI> <A HREF="setHa1.36.5.html"> setHa1.36.5</A>
+        Hourly average (36-37) vertical profiles of conditionally
+	sampled fields. Updraft Decomposition.
+
+<LI> <A HREF="setHa2.23.5.html"> setHa2.23.5</A>
+        Hourly average (23-24) vertical profiles of conditionally
+	sampled fields. Downdraft Decomposition.
+<LI> <A HREF="setHa2.36.5.html"> setHa2.36.5</A>
+        Hourly average (36-37) vertical profiles of conditionally
+	sampled fields. Downdraft Decomposition.
+
+</UL>
+
+<H3>Plots:</H3>
+<UL>
+   <LI> <A HREF="aset.jpg"> setA </A>
+   <LI> <A HREF="cset.jpg"> setC </A>
+   <LI> <A HREF="dset.0.jpg"> setD23.5 </A>
+   <LI> <A HREF="dset.1.jpg"> setD36.5 </A>
+   <LI> <A HREF="eset.0.jpg"> setE23.5 </A>
+   <LI> <A HREF="eset.1.jpg"> setE36.5 </A>
+   <LI> <A HREF="fset.0.jpg"> setF23.5 </A>
+   <LI> <A HREF="fset.1.jpg"> setF36.5 </A>
+   <LI> <A HREF="haset.0.jpg"> setHa1.23.5 </A>
+   <LI> <A HREF="haset.1.jpg"> setHa1.36.5 </A>
+   <LI> <A HREF="haset.2.jpg"> setHa2.23.5 </A>
+   <LI> <A HREF="haset.3.jpg"> setHa2.36.5 </A>
+</UL>
+
+</BODY></HTML>
+

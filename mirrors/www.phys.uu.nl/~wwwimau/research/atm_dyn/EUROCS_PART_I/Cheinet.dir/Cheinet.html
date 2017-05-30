@@ -1,0 +1,109 @@
+<HTML>
+<body bgcolor="#FFFFFF" link="#660000" vlink="#996600" alink="#660066">
+<A NAME="top"></A>
+
+<h1>Model description</h1>
+<PRE>
+
+-----------------------------------------------------
+Scientist Name: Sylvain CHEINET
+Institute: Laboratoire de Meteorologie Dynamique
+Address: barre 15/25, 5eme etage, universite Paris 6,
+	4 place Jussieu, 75 255 Paris, France
+E-mail: cheinet@lmd.jussieu.fr
+Model Type: Single Column version of the LMD GCM
+		with some modifications
+-----------------------------------------------------
+
+(1) Computation:
+realized on the local network
+computer used: Sun
+
+(2)Numerical Domain:
+
+Dimension:
+x-dim: -
+y-dim: -
+z-dim: [0,8000] meters
+grid-x: -
+grid-y: -
+grid-z: 60 levels, with 30 levels from 25. m to 1475 m
+	with vertical resolution of 50 m, and 30 levels
+	above.
+timestep for dynamics: -
+timestep for physics : 120 s
+
+(3)Numerical Technique:
+
+Numerical method: finite difference
+Advection scheme: upwind scheme
+Dynamical equations: -
+Lateral Boundary Conditions: -
+Upper Boundary Conditions: no flux
+translation velocity: -
+
+(4)Turbulence Closure Scheme:
+
+Turbulence Closure: ensemble mean
+Turbulence Closure Type: 1st order 
+	K-diffusion with Richardson number. The K coefficients are linked
+	to Ri with a Louis-type formulation. Two Ri and two K coefficients are
+	computed: one in the clear region, the other in the cloudy region.
+	K is then taken as K = f*K_cloudy + (1-f)*K_clear
+	where f is the cloud fraction
+	where K_cloudy relates to Ri_cloudy
+	where K_clear relates to Ri_clear.
+	For both cases,
+	Ri = g/theta0 * buoyancy/(shear^2)
+	buoyancy_clear = vertical gradient of thetav
+	buoyancy_cloudy=(vert. grad. of thetav)-(theta moist adiabat)
+	with shear = vert. grad. of u and v
+Variables predicted by the turbulence closure:
+	Eddy diffusitivies (cf. above)
+Closure for dissipation rate: implicitly represented in the 
+	Louis-type formulation
+Closure for turbulent diffusion length scale:
+	mix. length = 35. * MAX(0, (h2-z)/(h2-h1) )
+	where h2 is the highest level altitude of the model
+	where h1 is the lowest level altitude of the model
+	where z is the local altitude
+Subgrid Condensation scheme:
+	Subgrid Distribution assumed, equi-repartition of water
+	around the mean value, variance imposed 
+	(Le Treut & Li cloud scheme)
+	
+
+(5) Documentation:
+
+http://www.lmd.jussieu.fr/~chourdin/doc/terre/main/main.html
+for the LMD GCM physics part.
+
+</PRE>
+
+<H3>Datasets: </H3>
+<UL align=right>
+<LI> <A HREF="setA.html"> setA </A> Initial conditions
+<LI> <A HREF="setB.html"> setB </A> Relevant parameters for entrainment
+<LI> <A HREF="setC.html"> setC </A> Hourly averaged (0-1 LT, 1-2 LT, etc)
+	values of turbulent fluxes (resolved plus subgrid), radiative
+	fluxes and cloud properties
+<LI> <A HREF="setD23.5.html"> setD23.5 </A> Horizontal mean profiles averaged
+        over the "midnight" period of the simulation
+<LI> <A HREF="setD36.5.html"> setD36.5 </A> Horizontal mean profiles averaged
+        over the "noon" period of the simulation
+
+<LI> <A HREF="setX.html"> setX</A> Diurnal cycle of the vertical profiles of
+        sensible heat, latent heat and buoyancy fluxes. 
+</UL>
+
+<H3>Plots:</H3>
+<UL>
+   <LI> <A HREF="aset.jpg"> setA </A>
+   <LI> <A HREF="cset.jpg"> setC </A>
+   <LI> <A HREF="dset.0.jpg"> setD23.5 </A>
+   <LI> <A HREF="dset.1.jpg"> setD36.5 </A>
+   <LI> <A HREF="xset.jpg"> setX </A>
+</UL>
+
+</BODY></HTML>
+

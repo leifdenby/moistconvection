@@ -1,0 +1,174 @@
+<HTML>
+<body bgcolor="#FFFFFF" link="#660000" vlink="#996600" alink="#660066">
+<A NAME="top"></A>
+
+<h1>Model description</h1>
+<PRE>
+****************************    MODEL DESCRIPTION    ************************
+
+ Description of the model (Meso-NH)
+
+|Scientist Name: Enrique Sanchez and Joan Cuxart
+|Model Type : 1D SCM
+|(1) Computation
+|
+|Computer used for simulation: CRAY C98
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+|(3) Numerical Technique
+|
+|Numerical method: finite-difference
+|Advection scheme and its order of accuracy: 2nd order centered for U,V,W
+| + 2nd order centered + flux correction for Theta + TKE + Water species 
+|Time scheme and its order of accuracy: Leap-frog; 2nd order centered
+|Dynamical equations : anelastic
+|Lateral boundary conditions: Periodic
+|Upper boundary condition: Rigid lid with an absorbing layer
+|How was translation velocity of the reference frame chosen?: no translation
+----------------------------------------------------------------------------
+|(4) Physical Parameterizations
+|
+|Condensation Scheme: all-nothing / SCS
+|Microphysical parameterizations: None 
+|Drizzle/Rain parameterization: None
+|Other comments on physical parameterizations:
+----------------------------------------------------------------------------
+|(5) Turbulence Closure Scheme (if applicable)
+|
+|Turbulence closure : SGS  
+|Specific turbulence closure type (Mellor-Yamada, etc.): TKE closure, 2 1/2
+| level of Mellor-Yamada, diagnostic mixing length of Bougeault-Lacarrere type
+|Variables predicted by the turbulence closure : TKE predicted, L diagnosed
+|Closure for dissipation rate: Kolmogorov: eps=0.7 *  e^(3/2)/L
+|Closure for turbulent dissipation length: L
+|Closure for turbulent diffusion length scale: the same 
+|Closure for diffusivities:   K_m = C_m * L * e^(1/2)
+                              K_h = C_h * L * e^(1/2) * psi_3
+                              K_q = C_q * L * e^(1/2) * phi_3 
+| with psi_3,phi_3 stability funtions related to Prandtl and Schmidt numbers
+----------------------------------------------------------------------------
+|(6) Documentation
+|
+1) Cuxart, J., Bougeault,P., and J.L. Redelsperger (2000): A turbulence
+scheme allowing for mesoscale and large-eddy simulations. Q.J.R. Meteorol.
+Soc.,126,1-30
+
+2) J.P. Lafore, J. Stein, N. Asencio, P. Bougeault, V. Ducrocq, J. Duron,
+   C. Fischer, P. Hereil, P. Mascart, J.P. Pinty, J.L. Redelsperger,
+   E. Richard and J. Vila-Guerau de Arellano, The Meso-NH atmospheric 
+   simulation system. Part I: adiabatic formulation and control simulation,
+   Annales Geophysicae,1998
+-----------------------------------------------------------------------------
+
+
+
+ Description of the model (HIRLAM-1D)
+
+|Scientist Name: Enrique Sanchez and Joan Cuxart
+|Model Type : 1D SCM
+|(1) Computation
+|
+|Computer used for simulation: CRAY C98
+---------------------------------------------------N-------------------------
+|(2) Numerical Domain
+|
+|Dimensions (fill in if different than specified in problem description):
+|Domain size in x-direction:
+|Domain size in y-direction:
+|Domain size in z-direction: up to 1hPa
+|Number of grid points in x-direction:
+|Number of grid points in y-direction:
+|Number of grid points in z-direction: 31 or 40 levels 
+|Grid size in x-direction:
+|Grid size in y-direction:
+|Grid size in z-direction: hybrid
+|Time step for dynamics: 
+----------------------------------------------------------------------------
+|(3) Numerical Technique
+|
+|Numerical method: finite-difference
+|Advection scheme and its order of accuracy:Semi-lagrangian 
+|Time scheme and its order of accuracy: Leap-frog; 2nd order centered
+|Dynamical equations : Hydrostatic
+|Lateral boundary conditions: Periodic
+|Upper boundary condition: Fixed upper BC
+|How was translation velocity of the reference frame chosen?: no translation
+----------------------------------------------------------------------------
+|(4) Physical Parameterizations
+|
+|Convection sheme: Kain-Fritsch (optional)
+|Condensation Scheme: all-nothing / SCS
+|Microphysical parameterizations: Rasch-Kristjanson
+|Drizzle/Rain parameterization: None
+|Other comments on physical parameterizations:
+----------------------------------------------------------------------------
+|(5) Turbulence Closure Scheme (if applicable)
+|
+|Turbulence closure : SGS  
+|Specific turbulence closure type (Mellor-Yamada, etc.): TKE closure, 2 1/2
+| level of Mellor-Yamada, diagnostic mixing length of Bougeault-Lacarrere type
+|Variables predicted by the turbulence closure : TKE predicted, L diagnosed
+|Closure for dissipation rate: Kolmogorov: eps=0.7 *  e^(3/2)/L
+|Closure for turbulent dissipation length: the same
+|Closure for turbulent diffusion length scale: the same 
+|Closure for diffusivities:   K_m = C_m * L * e^(1/2)
+                              K_h = C_h * L * e^(1/2) * psi_3
+                              K_q = C_q * L * e^(1/2) * phi_3 
+| with psi_3,phi_3 stability funtions related to Prandtl and Schmidt numbers
+----------------------------------------------------------------------------
+|(6) Documentation
+|
+HIRLAM Documentation Manual, system 2.5, June 1996, Edited by E. Kallen
+-----------------------------------------------------------------------------
+
+</PRE>
+
+<H3>Datasets: </H3>
+<UL align=right>
+<LI> <A HREF="setA.html"> setA </A> Initial conditions
+<LI> <A HREF="setB.html"> setB </A> Relevant parameters for entrainment
+<LI> <A HREF="setC.html"> setC </A> Hourly averaged (0-1 LT, 1-2 LT, etc)
+	values of turbulent fluxes (resolved plus subgrid), radiative
+	fluxes and cloud properties
+<LI> <A HREF="setD23.5.html"> setD23.5 </A> Horizontal mean profiles averaged
+        over the "midnight" period of the simulation
+<LI> <A HREF="setD36.5.html"> setD36.5 </A> Horizontal mean profiles averaged
+        over the "noon" period of the simulation
+<LI> <A HREF="setE23.5.html"> setE23.5</A>
+        Turbulent velocity variances, skewness and fluxes
+	(23-24) average
+<LI> <A HREF="setE36.5.html"> setE36.5</A>
+        Turbulent velocity variances, skewness and fluxes
+	(36-37) average
+<LI> <A HREF="setF23.5.html"> setF23.5</A>
+        Resolved turbulent kinetic energy and its budget terms 
+	(23-24) average
+<LI> <A HREF="setF36.5.html"> setF36.5</A>
+        Resolved turbulent kinetic energy and its budget terms 
+	(36-37) average
+
+<LI> <A HREF="setI23.5.html"> setI23.5</A>
+        Hourly average (23-24) vertical profiles of
+	Q1, Q2, Q3_u and Q3_v.
+<LI> <A HREF="setI36.5.html"> setI36.5</A>
+        Hourly average (36-37) vertical profiles of
+	Q1, Q2, Q3_u and Q3_v.
+</UL>
+
+<H3>Plots:</H3>
+<UL>
+   <LI> <A HREF="aset.jpg"> setA </A>
+   <LI> <A HREF="cset.jpg"> setC </A>
+   <LI> <A HREF="dset.0.jpg"> setD23.5 </A>
+   <LI> <A HREF="dset.1.jpg"> setD36.5 </A>
+   <LI> <A HREF="eset.0.jpg"> setE23.5 </A>
+   <LI> <A HREF="eset.1.jpg"> setE36.5 </A>
+   <LI> <A HREF="fset.0.jpg"> setF23.5 </A>
+   <LI> <A HREF="fset.1.jpg"> setF36.5 </A>
+   <LI> <A HREF="iset.0.jpg"> setI.23.5 </A>
+   <LI> <A HREF="iset.1.jpg"> setI.36.5 </A>
+</UL>
+
+</BODY></HTML>
+

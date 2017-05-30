@@ -1,0 +1,89 @@
+<HTML>
+<body bgcolor="#FFFFFF" link="#660000" vlink="#996600" alink="#660066">
+<A NAME="top"></A>
+
+<PRE>
+****************************    MODEL DESCRIPTION    ************************
+
+ ??????????? appropiate ?????????????
+
+-------------------------------------------------------
+Scientist : Herve Grenier, CNRM
+Model : CNRM Climate Model in 1D mode
+Modifications to the standart climate model : minimal but
+     1. vertical resolution increased
+     2. Time step increased to 2 minutes (instead of 30' in climate 3D mode)
+     3. Model top : 4200 m.
+     4. SW radiation scheme different from the climate model scheme
+          (for practical purposes in order to avoid the need to use a full tropsopheric-
+            stratospheric column model)
+     5. LW radiation prescribed as required
+
+ Model Description :
+ . Ricard and Royer (1993) coupled statistical cloud - turbulence scheme :
+    assumes a production-dissipation balance for TKE and uses level
+    2.5 Mellor Yamada model (modified by Galperin et al 1988) to compute
+    TKE.
+  Second order moments are computed after Mellor and Yamada (1974)
+ . Non prognostic liquid water
+ . Eulerian vertical advection scheme (Simmons and Burridge, 1981)
+ . SW radiation scheme of Geleyn (1989)
+ . Convection scheme of Bougeault (1985)
+
+
+ Some refs :
+ Ricard and Royer (1993) , Ann. Geophys., 1095-1115.
+ Simmons and Burridge (1981), Month. Wea Rev, 758-766
+ Bougeault (1985), Month. Wea. Rev., 2108-2121
+
+
+Hint on model behaviour :
+ you will see that there are some inconsistencies in the TKE budget
+ (non zero residus and obviously pathologic terms near the surface)
+ These problems are corrected in a new version of the scheme.
+
+ I believe there may be an underestimation of the downward SW radiative
+ flux at noon.   If it is really pathologic, I may be able to use another scheme.
+
+</PRE>
+
+<H3>Datasets: </H3>
+<UL align=right>
+<LI> <A HREF="setA.html"> setA </A> Initial conditions
+<LI> <A HREF="setB.html"> setB </A> Relevant parameters for entrainment
+<LI> <A HREF="setC.html"> setC </A> Hourly averaged (0-1 LT, 1-2 LT, etc)
+	values of turbulent fluxes (resolved plus subgrid), radiative
+	fluxes and cloud properties
+<LI> <A HREF="setD23.5.html"> setD23.5 </A> Horizontal mean profiles averaged
+        over the "midnight" period of the simulation
+<LI> <A HREF="setD36.5.html"> setD36.5 </A> Horizontal mean profiles averaged
+        over the "noon" period of the simulation
+<LI> <A HREF="setE23.5.html"> setE23.5</A>
+        Turbulent velocity variances, skewness and fluxes
+	(23-24) average
+<LI> <A HREF="setE36.5.html"> setE36.5</A>
+        Turbulent velocity variances, skewness and fluxes
+	(36-37) average
+<LI> <A HREF="setF23.5.html"> setF23.5</A>
+        Resolved turbulent kinetic energy and its budget terms 
+	(23-24) average
+<LI> <A HREF="setF36.5.html"> setF36.5</A>
+        Resolved turbulent kinetic energy and its budget terms 
+	(36-37) average
+
+</UL>
+
+<H3>Plots:</H3>
+<UL>
+   <LI> <A HREF="aset.jpg"> setA </A>
+   <LI> <A HREF="cset.jpg"> setC </A>
+   <LI> <A HREF="dset.0.jpg"> setD23.5 </A>
+   <LI> <A HREF="dset.1.jpg"> setD36.5 </A>
+   <LI> <A HREF="eset.0.jpg"> setE23.5 </A>
+   <LI> <A HREF="eset.1.jpg"> setE36.5 </A>
+   <LI> <A HREF="fset.0.jpg"> setF23.5 </A>
+   <LI> <A HREF="fset.1.jpg"> setF36.5 </A>
+</UL>
+
+</BODY></HTML>
+

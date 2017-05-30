@@ -1,0 +1,185 @@
+<HTML>
+<body bgcolor="#FFFFFF" link="#660000" vlink="#996600" alink="#660066">
+<A NAME="top"></A>
+
+<h1>Model description</h1>
+<PRE>
+
+!!!!!!!!!!!!!  Old ... Model description
+
+-----------------------------------------------------------------------
+|
+|Scientist Name: Adrian Lock
+|Institute: Met Office
+|Address: Rm 172, Met Office, London Road, Bracknell, RG12 2SZ, UK
+|Email: aplock@meto.gov.uk
+|Model Type (1D ensemble mean, 2D cloud resolving, or 3D LES): 3D LES
+-----------------------------------------------------------------------
+|(1) Computation
+|
+|Computer used for simulation: CRAY T3E
+|CPU time: 650 CPU hours (on 10 processors = 65 hours elapsed)
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+|(2) Numerical Domain
+|
+|Dimensions (fill in if different than specified in problem description):
+|Domain size in x-direction:             
+|Domain size in y-direction:
+|Domain size in z-direction:                   AS SPECIFIED
+|Number of grid points in x-direction:
+|Number of grid points in y-direction:
+|Number of grid points in z-direction:
+|Grid size in x-direction:
+|Grid size in y-direction:
+|Grid size in z-direction:
+|Time step for dynamics: variable, typically ~0.3s
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+|(3) Numerical Technique
+|
+|Numerical method (finite-difference, spectral, etc.): finite-diffenrence
+|Advection scheme and its order of accuracy: TVD on scalars, centred on
+|                                                              momentum
+|Time scheme and its order of accuracy: leapfrog (forward for diffusive
+|                                                                 terms)
+|Dynamical equations (elastic, anelastic, etc.): Boussinesq
+|Lateral boundary conditions: periodic
+|Upper boundary condition: zero flux
+|How was translation velocity of the reference frame chosen? : not used
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+|(4) Physical Parameterizations
+|
+|Microphysical parameterizations: all-or-nothing saturation
+|Drizzle/Rain parameterization: nil
+|Other comments on physical parameterizations:
+|etc.
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+|(5) Turbulence Closure Scheme (if applicable)
+|
+|Turbulence closure (SGS or ensemble mean): SGS
+|Specific turbulence closure type (Mellor-Yamada, etc.): Smagorinsky
+|Variables predicted by the turbulence closure (eddy diffusivities,
+turbulent kinetic |energy, etc.): eddy diffusivities
+|Closure for dissipation rate: -
+|Closure for turbulent dissipation length scale: -
+|Closure for turbulent diffusion length scale: -
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+|(6) Documentation
+|
+|Please provide references that more fully describe your model, if
+available.
+
+general
+  Lock, A.P. (1998): The parametrization of entrainment in cloudy boundary
+  layers. Quarterly Journal {124}{2729}{2753}
+
+moisture
+  Shutts, G.J. and Gray, M.E.B. (1994): A numerical modelling
+  study of the geostrophic adjustment process following deep convection.
+  Quarterly Journal {120}{1145}{1178}
+
+subgrid closure
+  Brown, A.R., Derbyshire, S.H. and Mason, P.J. (1994):
+  Large-eddy simulation of stable atmospheric boundary layers with a
+  revised stochastic subgrid model.
+  Quarterly Journal {120}{1485}{1512}
+
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+</PRE>
+
+<H3>Datasets: </H3>
+<UL align=right>
+<LI> <A HREF="setA.html"> setA </A> Initial conditions
+<LI> <A HREF="setB.html"> setB </A> Relevant parameters for entrainment
+<LI> <A HREF="setC.html"> setC </A> Hourly averaged (0-1 LT, 1-2 LT, etc)
+	values of turbulent fluxes (resolved plus subgrid), radiative
+	fluxes and cloud properties
+<LI> <A HREF="setD23.5.html"> setD23.5 </A> Horizontal mean profiles averaged
+        over the "midnight" period of the simulation
+<LI> <A HREF="setD36.5.html"> setD36.5 </A> Horizontal mean profiles averaged
+        over the "noon" period of the simulation
+<LI> <A HREF="setE23.5.html"> setE23.5</A>
+        Turbulent velocity variances, skewness and fluxes
+	(23-24) average
+<LI> <A HREF="setE36.5.html"> setE36.5</A>
+        Turbulent velocity variances, skewness and fluxes
+	(36-37) average
+<LI> <A HREF="setF23.5.html"> setF23.5</A>
+        Resolved turbulent kinetic energy and its budget terms 
+	(23-24) average
+<LI> <A HREF="setF36.5.html"> setF36.5</A>
+        Resolved turbulent kinetic energy and its budget terms 
+	(36-37) average
+
+<LI> <A HREF="setG23.5.html"> setG23.5</A>
+        (co-)spectral energy at the 24 LT of vertical velocity 
+	and total water content at three heights 
+<LI> <A HREF="setG36.5.html"> setG36.5</A>
+        (co-)spectral energy at the 37 LT of vertical velocity 
+	and total water content at three heights 
+
+<LI> <A HREF="setHa1.23.5.html"> setHa1.23.5</A>
+        Hourly average (23-24) vertical profiles of conditionally
+	sampled fields. Updraft Decomposition.
+<LI> <A HREF="setHa1.36.5.html"> setHa1.36.5</A>
+        Hourly average (36-37) vertical profiles of conditionally
+	sampled fields. Updraft Decomposition.
+
+<LI> <A HREF="setHb1.23.5.html"> setHb1.23.5</A>
+        Hourly average {wx}_dd for w and x=(theta_I,theta_v,q_tot,q_l,u,v).
+	Updraft gridpoints.
+<LI> <A HREF="setHb1.36.5.html"> setHb1.36.5</A>
+        Hourly average {wx}_dd for w and x=(theta_I,theta_v,q_tot,q_l,u,v).
+	Updraft gridpoints.
+
+<LI> <A HREF="setHa2.23.5.html"> setHa2.23.5</A>
+        Hourly average (23-24) vertical profiles of conditionally
+	sampled fields. Downdraft Decomposition.
+<LI> <A HREF="setHa2.36.5.html"> setHa2.36.5</A>
+        Hourly average (36-37) vertical profiles of conditionally
+	sampled fields. Downdraft Decomposition.
+
+<LI> <A HREF="setHb2.23.5.html"> setHb2.23.5</A>
+        Hourly average {wx}_dd for w and x=(theta_I,theta_v,q_tot,q_l,u,v).
+	Downdraft gridpoints.
+<LI> <A HREF="setHb2.36.5.html"> setHb2.36.5</A>
+        Hourly average {wx}_dd for w and x=(theta_I,theta_v,q_tot,q_l,u,v).
+	Downdraft gridpoints.
+
+<LI> <A HREF="setH3.23.5.html"> setH3.23.5</A>
+	Up/Downdraft Decompositions for w-momentum equations.
+<LI> <A HREF="setH3.36.5.html"> setH3.36.5</A>
+	Up/Downdraft Decompositions for w-momentum equations.
+</UL>
+
+<H3>Plots:</H3>
+<UL>
+   <LI> <A HREF="aset.jpg"> setA </A>
+   <LI> <A HREF="cset.jpg"> setC </A>
+   <LI> <A HREF="dset.0.jpg"> setD23.5 </A>
+   <LI> <A HREF="dset.1.jpg"> setD36.5 </A>
+   <LI> <A HREF="eset.0.jpg"> setE23.5 </A>
+   <LI> <A HREF="eset.1.jpg"> setE36.5 </A>
+   <LI> <A HREF="fset.0.jpg"> setF23.5 </A>
+   <LI> <A HREF="fset.1.jpg"> setF36.5 </A>
+   <LI> <A HREF="gset.0.jpg"> setG24 </A>
+   <LI> <A HREF="gset.1.jpg"> setG37 </A>
+   <LI> <A HREF="h3set.0.jpg"> setH3.23.5 </A>
+   <LI> <A HREF="h3set.1.jpg"> setH3.36.5 </A>
+   <LI> <A HREF="haset.0.jpg"> setHa1.23.5 </A>
+   <LI> <A HREF="haset.1.jpg"> setHa1.36.5 </A>
+   <LI> <A HREF="haset.2.jpg"> setHa2.23.5 </A>
+   <LI> <A HREF="haset.3.jpg"> setHa2.36.5 </A>
+   <LI> <A HREF="hbset.0.jpg"> setHb1.23.5 </A>
+   <LI> <A HREF="hbset.1.jpg"> setHb1.36.5 </A>
+   <LI> <A HREF="hbset.2.jpg"> setHb2.23.5 </A>
+   <LI> <A HREF="hbset.3.jpg"> setHb2.36.5 </A>
+</UL>
+
+</BODY></HTML>
+

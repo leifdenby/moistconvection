@@ -48,6 +48,12 @@ Case 5*)
 - [CONSTRAIN](cases/CONSTRAIN) cold air outbreak, old air from the polar cap
 sweeps off the ice edge over open water, leading to convection
 
+_although not convection the following test-cases are frequency referenced in
+the literature too so were included in the repo_:
+
+- [EUROCS_FIRE-I](cases/EUROCS_FIRE-I) diurnal formation of stratocumulus over
+off the coast of California from FIRE I campaign.
+
 ## List of acronyms
 
 - *GCSS* GEWEX Cloud System Study
