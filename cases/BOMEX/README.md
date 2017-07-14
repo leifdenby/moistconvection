@@ -1,5 +1,7 @@
 # BOMEX non-precipitating shallow cumulus
 
+Observational campaign EOL link: https://www.eol.ucar.edu/field_projects/bomex
+
 Field experiment published in Holland and Rasmusson (1973) and Nitta and
 Esbensen (1974).
 

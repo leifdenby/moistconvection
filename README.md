@@ -74,3 +74,9 @@ Project](http://www.gewex.org/about/)
 - GCSS BLCWG (Boundary Layer Cloud Working Group)
 
 - GCSS PCS (Precipitating Cloud Systems) Working Group
+
+## External sites (including mirrors)
+
+### Observational data
+
+- NCAR/UCAR Earth Observing Laboratory: https://data.eol.ucar.edu/
