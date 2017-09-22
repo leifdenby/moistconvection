@@ -10,3 +10,5 @@ observed diurnal cycle of convection over land, with deep convection typically
 developing too early when compared to observations. The actual sounding and the
 evolution of surface fluxes as the day progresses come from observations on
 February 23, 1999, during the TRMM-LBA field campaign in Rondonia, Brazil.
+
+Setup published in Gabrowski et al 2006
