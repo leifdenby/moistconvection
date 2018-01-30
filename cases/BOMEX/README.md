@@ -1,5 +1,8 @@
 # BOMEX non-precipitating shallow cumulus
 
+*Still WIP, github issue:
+https://github.com/leifdenby/moistconvection/issues/3*
+
 Observational campaign EOL link: https://www.eol.ucar.edu/field_projects/bomex
 
 Field experiment published in Holland and Rasmusson (1973) and Nitta and
