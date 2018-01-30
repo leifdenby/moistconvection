@@ -80,3 +80,5 @@ Project](http://www.gewex.org/about/)
 ### Observational data
 
 - NCAR/UCAR Earth Observing Laboratory: https://data.eol.ucar.edu/
+
+- GCSS Field Studies: https://gcss-dime.giss.nasa.gov/
