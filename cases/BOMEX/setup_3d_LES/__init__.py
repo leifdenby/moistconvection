@@ -23,6 +23,8 @@ class BOMEX:
     temperature, etc., can be easily deduced assuming hydrostatic equilibrium."
 
     """
+    SCITATION_REF = "Siebesma et al 2003"
+
     def __init__(self, include_wind=True):
         self.include_wind = include_wind
         if include_wind:

@@ -9,6 +9,8 @@ class RICO:
     OBS: The sea surface temperature is different from the temperature at z=0m,
     which is necessary to have surface fluxes.
     """
+    SCITATION_REF = "vanZanten et al 2011"
+
     def __init__(self, include_wind=True):
         self.include_wind = include_wind
         if include_wind:
