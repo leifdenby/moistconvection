@@ -1,5 +1,6 @@
 #  Continental deep convection
 
+
 Details of setup in Cerderwall et all 2000
 
 > A continental case based on intensive measurements taken at the ARM
@@ -17,6 +18,9 @@ A: 2330 UTC 26 June 1997 - 2330 UTC 30 June 1997    4 days    precip
 B: 2330 UTC  7 July 1997 - 2330 UTC 12 July 1997    5 days    precip
 C: 2330 UTC 12 July 1997 - 2330 UTC 17 July 1997    5 days    precip
 ```
+
+LES setup and intercomparison described in Xu. et al 2002
+
 
 ## Characteristics
 
