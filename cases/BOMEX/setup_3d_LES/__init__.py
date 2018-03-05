@@ -35,8 +35,8 @@ class BOMEX:
             self.v_wind = lambda z: np.zeros_like(z)
 
         # surface conditions
-        self.ps = 100000. # [Pa], surface pressure
-        self.p0 = 101500. # [Pa], reference pressure
+        self.ps = 101500. # [Pa], surface pressure
+        self.p0 = 100000. # [Pa], reference pressure, XXX: I'm not certain about this, not in the paper
         self.Ts = 300.375 # [K], sea surface temperature
 
         # constants
@@ -222,10 +222,6 @@ class BOMEX:
         z = 0.0
         p = self.ps
 
-        # Cathy suggested using the liquid water potential temperature as the
-        # temperature in the first model level
-        T = self.theta_l(0.0)
-
         profile = []
 
         n = 0
@@ -244,7 +240,10 @@ class BOMEX:
             c_l = cp_d*qd + cp_v*qv
 
             T = theta_l/((self.p0/p)**(R_l/c_l))
-            # T = self.iteratively_find_temp(theta_l=theta_l, p=p, q_t=qt, q_l=ql, T_initial=T)
+
+
+            qv_sat = parameterisation.qv_sat(T=T, p=p)
+            assert qt < qv_sat
 
             rho = 1.0/((qd*R_d + qv*R_v)*T/p) # + 1.0/(ql/rho_l), ql = 0.0
 
@@ -258,38 +257,11 @@ class BOMEX:
 
         self._profile = np.array(profile)
 
-    def iteratively_find_temp(self, theta_l, p, q_t, q_l, T_initial):
-        R_v = self.R_v
-        R_d = self.R_d
-        cp_d = self.c_p
-        cp_v = self.cp_v
-
-        p0 = self.p0
-        omega_l = 1.0
-        L_v = self.Lv
-
-        R_l = R_d*(1.0 - q_t) + R_v*q_t
-        c_l = cp_d*(1.0 - q_t) + cp_v*q_t
-
-        C = R_l/c_l*np.log(p0/p) + np.log(omega_l) - np.log(theta_l)
-
-        theta_l_f = lambda T: T*(p0/p)**(R_l/c_l)*omega_l*np.exp(- L_v * q_l /( c_l * T))
-
-        f = lambda T: C + np.log(T) - L_v*q_l/(c_l*T)
-        T = scipy.optimize.brentq(f, 1., 410.)
-
-        if np.isnan(T):
-            raise Exception("Integration failed")
-
-        if not np.abs(theta_l_f(T) - theta_l) < 1.0e-10:
-            print theta_l_f(T), theta_l, np.abs(theta_l_f(T) - theta_l) 
-
-        return T
 
     def _get_value_from_precomputed_profile(self, pos, var_indx):
         z = self._profile[:,0]
         if np.any(z > self.z_max):
-            raise Exception("RICO test case is only defined for z < 7km")
+            raise Exception("{} test case is only defined for z < {}km".format(str(self), self.z_max/1000.))
         T = self._profile[:,var_indx]
         return np.interp(pos, z, T)
 
