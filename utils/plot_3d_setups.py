@@ -7,14 +7,6 @@ import matplotlib.pyplot as plot
 from matplotlib.gridspec import GridSpec
 import seaborn as sns
 
-from cases.BOMEX.setup_3d_LES import BOMEX
-from cases.RICO.setup_3d_LES import RICO
-
-
-test_cases = [
-    BOMEX(),
-    RICO(),
-]
 
 sns.set_style("ticks")
 
@@ -108,6 +100,15 @@ def plot_LS_forcing(profile):
 
 
 if __name__ == "__main__":
+
+    from cases.BOMEX.setup_3d_LES import BOMEX
+    from cases.RICO.setup_3d_LES import RICO
+
+    test_cases = [
+        BOMEX(),
+        RICO(),
+    ]
+
     for case in test_cases:
         case_name = case.__class__.__name__
         case_directory = os.path.dirname(inspect.getfile(case.__class__))
