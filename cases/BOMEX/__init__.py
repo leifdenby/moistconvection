@@ -332,4 +332,5 @@ class BOMEX(BaseCase):
         return q_v/qv_sat
 
     def __str__(self):
-        return "BOMEX (%s wind)" % ['without', 'with'][self.include_wind]
+        ext = [' without with', ''][self.include_wind]
+        return super(BOMEX, self).__str__() + ext

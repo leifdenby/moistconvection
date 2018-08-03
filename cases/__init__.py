@@ -76,7 +76,11 @@ class BaseCase:
         raise NotImplementedError
 
     def __str__(self):
-        return self.__class__.__name__
+        return "{} ({})".format(
+            self.__class__.__name__.replace('_', ' '),
+            self.SCITATION_REF
+        )
+
 
 modules = glob.glob(dirname(__file__)+"/*/*.py")
 
