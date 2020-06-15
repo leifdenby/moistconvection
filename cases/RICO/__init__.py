@@ -9,22 +9,11 @@ class RICO(BaseCase):
     Based on KNMI's synthesis of the RICO field compaign for a LES intercomparison study
 
     http://projects.knmi.nl/rico/setup3d.html
-
-    OBS: The sea surface temperature is different from the temperature at z=0m,
-    which is necessary to have surface fluxes.
     """
     SCITATION_REF = "vanZanten et al 2011"
     FORCING_IS_TRANSIENT = False
 
-    def __init__(self, include_wind=True):
-        self.include_wind = include_wind
-        if include_wind:
-            self.u_wind = self._u_wind
-            self.v_wind = self._v_wind
-        else:
-            self.u_wind = lambda z: np.zeros_like(z)
-            self.v_wind = lambda z: np.zeros_like(z)
-
+    def __init__(self):
         # surface conditions
         self.ps = 101540.  # [Pa], surface pressure
         self.p0 = 100000. # [Pa], reference pressure
@@ -38,17 +27,12 @@ class RICO(BaseCase):
 
         self.z_max = 4e3
 
-        self._create_profile()
-
     # forcing
-
     @np.vectorize
     def ddt_theta_l__ls(z):
         """
         Large Scale Horizontal Liq. Water Pot. Temperature Advection combined
-        with Radiative Cooling [K/s] 
-
-        NB: Initial profile contains no liquid water so `temp = pot. temp`
+        with Radiative Cooling [K/s]
         """
         if z > 0:
             return -2.5 / 86400
